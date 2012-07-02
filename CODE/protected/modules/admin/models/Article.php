@@ -1,0 +1,18 @@
+<?php
+class Article extends CActiveRecord
+{	//Config type of article
+	const ARTICLE_STATICPAGE=1;
+	const ARTICLE_NEWS=2;
+	const ARTICLE_QA=3;
+	const ARTICLE_ALBUM=4;
+	const ARTICLE_VIDEO=5;
+	const ARTICLE_BANNER=6;
+	const ARTICLE_CONTACT=7;
+	const ARTICLE_RECRUITMENT=8;
+	const ARTICLE_APP=9;
+	const ARTICLE_NOTICE=10;
+	const ARTICLE_EVENT=11;
+	const ARTICLE_SPECIALPAGE=12;
+	const ARTICLE_ENTRANCE=14;
+}
+?>

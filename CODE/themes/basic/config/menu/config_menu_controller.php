@@ -1,0 +1,23 @@
+<?php
+return array(
+	'album'=>'Album',
+	'banner'=>'Banner',
+	'setting'=>'Cấu hình',
+	'register'=>'Đơn đăng kí',
+	'order'=>'Đơn hàng',
+	'qa'=>'Hỏi đáp',
+	'image'=>'Image',
+	'keyword'=>'Keyword',
+	'contact'=>'Liên hệ',
+	'menu'=>'Menu',
+	'language'=>'Ngôn ngữ',
+	'role'=>'Quản lý quyền',
+	'event'=>'Sự kiện',
+	'news'=>'Tin tức',	
+	'specialPage'=>'Tin riêng cho từng trường',
+	'notice'=>'Thông báo',
+	'staticPage'=>'Trang giới thiệu',
+	'entrance'=>'Tuyển sinh',
+	'user'=>'User',
+	'galleryVideo'=>'Video',	
+);
