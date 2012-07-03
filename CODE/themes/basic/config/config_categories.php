@@ -56,11 +56,25 @@ return array(
 			'class'=>'Event',
 			'label'=>'Danh mục sự kiện'
 		),
-		Category::TYPE_SPECIALPAGE=>array(
+		Category::TYPE_PRESCHOOL=>array(
 			'form'=>'_form',
 			'max_rank'=>3,
-			'code'=>'specialPage',
-			'class'=>'SpecialPage',
-			'label'=>'Danh mục tin riêng'
-		)
+			'code'=>'preschool',
+			'class'=>'PreSchool',
+			'label'=>'Danh mục tin của trường mẫu giáo'
+		),
+		Category::TYPE_PRIMARYSCHOOL=>array(
+			'form'=>'_form',
+			'max_rank'=>3,
+			'code'=>'primayShool',
+			'class'=>'PrimarySchool',
+			'label'=>'Danh mục tin của trường tiểu học'
+		),
+		Category::TYPE_HIGHSCHOOL=>array(
+			'form'=>'_form',
+			'max_rank'=>3,
+			'code'=>'highSchool',
+			'class'=>'HighSchool',
+			'label'=>'Danh mục tin của trường THCS&THPT'
+		)		
 	);

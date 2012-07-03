@@ -12,7 +12,7 @@
 		<!--end title-->
 		<div class="folder-content form">
 		<div>
-                <input type="button" class="button" value="Danh sách tin" style="width:180px;" onClick="parent.location='<?php echo Yii::app()->createUrl('admin/specialPage')?>'"/>
+                <input type="button" class="button" value="Danh sách tin" style="width:180px;" onClick="parent.location='<?php echo Yii::app()->createUrl('admin/highSchool')?>'"/>
                 <div class="line top bottom"></div>	
             </div>
 		<?php $form=$this->beginWidget('CActiveForm', array('method'=>'post','enableAjaxValidation'=>true)); ?>	
@@ -31,7 +31,7 @@
 						<div class="row">
 						<li>
                         	<?php echo $form->labelEx($model,'list_special'); ?>
-                        	<?php echo $form->dropDownList($model,'list_special',SpecialPage::getList_label_specials(),array('style'=>'width:250px','multiple' => 'multiple')); ?>
+                        	<?php echo $form->dropDownList($model,'list_special',HighSchool::getList_label_specials(),array('style'=>'width:250px','multiple' => 'multiple')); ?>
                   			<?php echo $form->error($model, 'list_special'); ?>
                     	</li>
                     	</div>
@@ -134,23 +134,23 @@
 <div class="folder-content">
 <ul>
 		<?php 
-			Yii::app()->clientScript->registerScript('search-specialPage-suggest', "
-				$('#specialPage-search').submit(function(){
-				$.fn.yiiGridView.update('specialPage-list', {
+			Yii::app()->clientScript->registerScript('search-highSchool-suggest', "
+				$('#highSchool-search').submit(function(){
+				$.fn.yiiGridView.update('highSchool-list', {
 					data: $(this).serialize()});
 					return false;
 				});");
 		?>
-	 <?php $form=$this->beginWidget('CActiveForm', array('method'=>'get','id'=>'specialPage-search')); ?>
+	 <?php $form=$this->beginWidget('CActiveForm', array('method'=>'get','id'=>'highSchool-search')); ?>
 	 <li>
      	<?php echo $form->labelEx($model,'title'); ?>
        	<?php $this->widget('CAutoComplete', array(
         	            	'model'=>$suggest,
                          	'attribute'=>'title',
-							'url'=>array('specialPage/suggestTitle'),
+							'url'=>array('highSchool/suggestTitle'),
 							'htmlOptions'=>array(
 								'style'=>'width:230px;',
-       							'name'=>'SuggestSpecialPage[title]'
+       							'name'=>'SuggestHighSchool[title]'
 								),
 						)); ?>								
       </li>
@@ -167,7 +167,7 @@
 	?>
 	<li>
 		<label>Thuộc thư mục:</label>
-		<?php echo $form->dropDownList($suggest,'catid',$list,array('style'=>'width:200px','name'=>'SuggestSpecialPage[catid]')); ?>
+		<?php echo $form->dropDownList($suggest,'catid',$list,array('style'=>'width:200px','name'=>'SuggestHighSchool[catid]')); ?>
 	</li>            
 	<li>
 	<label>&nbsp;</label> 
@@ -177,7 +177,7 @@
 	<li>
 	  <?php 
 			$this->widget('iPhoenixGridView', array(
-  				'id'=>'specialPage-list',
+  				'id'=>'highSchool-list',
   				'dataProvider'=>$suggest->search(),		
   				'columns'=>array(
 					array(
@@ -236,11 +236,11 @@ $("#update_suggest").click(
 			jQuery.ajax({
 				data: {'list-checked':list_checked.toString(), 'list-unchecked':list_unchecked.toString(),},
 				success:function(data){
-					$('#SpecialPage_list_suggest').val(data);
+					$('#HighSchool_list_suggest').val(data);
 					hidenPopUp();
 				},
 				type:'POST',
-				url:'<?php echo $this->createUrl('specialPage/updateSuggest');?>',
+				url:'<?php echo $this->createUrl('highSchool/updateSuggest');?>',
 				'cache':'false'});
 			return false;
 		});

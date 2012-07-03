@@ -17,8 +17,14 @@ return array (
 					'staticPage' => array (
 						'manager_category' => array ('type' => Category::TYPE_STATICPAGE),
 					),
-					'specialPage' => array (
-						'manager_category' => array ('type' => Category::TYPE_SPECIALPAGE),
+					'preschool' => array (
+						'manager_category' => array ('type' => Category::TYPE_PRESCHOOL),
+					),
+					'primarySchool' => array (
+						'manager_category' => array ('type' => Category::TYPE_PRIMARYSCHOOL),
+					),
+					'highSchool' => array (
+						'manager_category' => array ('type' => Category::TYPE_HIGHSCHOOL),
 					),
 					'entrance' => array (
 						'manager_category' => array ('type' => Category::TYPE_ENTRANCE),

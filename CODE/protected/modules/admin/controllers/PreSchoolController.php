@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * SpecialPageController class file 
+ * PreschoolController class file 
  * @author ihbvietnam <hotro@ihbvietnam.com>
  * @link http://iphoenix.vn
  * @copyright Copyright &copy; 2012 IHB Vietnam
@@ -10,18 +10,18 @@
  */
 
 /**
- * SpecialPageController includes actions relevant to SpecialPage model:
- *** create SpecialPage
- *** copy SpecialPage
+ * PreschoolController includes actions relevant to Preschool model:
+ *** create Preschool
+ *** copy Preschool
  *** update
- *** delete SpecialPage
- *** index SpecialPage
- *** reverse status SpecialPage
- *** suggest title SpecialPage
+ *** delete Preschool
+ *** index Preschool
+ *** reverse status Preschool
+ *** suggest title Preschool
  *** update suggest
  *** load model  
  */
-class SpecialPageController extends Controller
+class PreSchoolController extends Controller
 {
 	/**
 	 * @return array action filters
@@ -41,18 +41,17 @@ class SpecialPageController extends Controller
 	public function accessRules()
 	{
 		return array(
-			/*
 			array('allow',  
 				'actions'=>array('index'),
-				'roles'=>array('specialPage_index'),
+				'roles'=>array('preschool_index'),
 			),
 			array('allow',  
 				'actions'=>array('create'),
-				'roles'=>array('specialPage_create'),
+				'roles'=>array('preschool_create'),
 			),
 			array('allow',  
 				'actions'=>array('suggestTitle'),
-				'roles'=>array('specialPage_suggestTitle'),
+				'roles'=>array('preschool_suggestTitle'),
 			),
 			array('allow', 
 				'actions'=>array('update'),
@@ -60,35 +59,31 @@ class SpecialPageController extends Controller
 			),
 			array('allow',  
 				'actions'=>array('reverseStatus'),
-				'roles'=>array('specialPage_reverseStatus'),
+				'roles'=>array('preschool_reverseStatus'),
 			),
 			array('allow',  
 				'actions'=>array('delete'),
-				'roles'=>array('specialPage_delete'),
+				'roles'=>array('preschool_delete'),
 			),
 			array('allow',  
 				'actions'=>array('checkbox'),
-				'roles'=>array('specialPage_checkbox'),
+				'roles'=>array('preschool_checkbox'),
 			),
 			array('allow',  
 				'actions'=>array('copy'),
-				'roles'=>array('specialPage_copy'),
+				'roles'=>array('preschool_copy'),
 			),
 			array('allow',  
 				'actions'=>array('dynamicCat'),
-				'roles'=>array('specialPage_dynamicCat'),
+				'roles'=>array('preschool_dynamicCat'),
 			),
 			array('allow',  
 				'actions'=>array('updateSuggest'),
-				'roles'=>array('specialPage_updateSuggest'),
+				'roles'=>array('preschool_updateSuggest'),
 			),
 			array('deny', 
 				'users'=>array('*'),
-			),
-			*/	
-			array('allow', 
-				'users'=>array('*'),
-			),		
+			),	
 		);
 	}
 	
@@ -98,32 +93,32 @@ class SpecialPageController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new SpecialPage('write');
+		$model=new Preschool('write');
 		// Ajax validate
 		$this->performAjaxValidation($model);	
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['SpecialPage']))
+		if(isset($_POST['Preschool']))
 		{
-			$model->attributes=$_POST['SpecialPage'];
-			if(!isset($_POST['SpecialPage']['list_special'])) $model->list_special=array();
+			$model->attributes=$_POST['Preschool'];
+			if(!isset($_POST['Preschool']['list_special'])) $model->list_special=array();
 			if($model->save())
 				$this->redirect(array('update','id'=>$model->id));
 		}
-		//Group categories that contains specialPage
+		//Group categories that contains preschool
 		$group=new Category();		
-		$group->type=Category::TYPE_SPECIALPAGE;
+		$group->type=Category::TYPE_PRESCHOOL;
 		$list_category=$group->list_nodes;
 		if (! Yii::app ()->getRequest ()->getIsAjaxRequest ())
 				Yii::app ()->session ['checked-suggest-list'] = array();
-		//Handler list suggest specialPage		
+		//Handler list suggest preschool		
 		$this->initCheckbox('checked-suggest-list');
-		$suggest=new SpecialPage('search');
+		$suggest=new Preschool('search');
 		$suggest->unsetAttributes();  // clear any default values
 		if(isset($_GET['catid'])) $suggest->catid=$model->catid;
-		if(isset($_GET['SuggestSpecialPage']))
-			$suggest->attributes=$_GET['SuggestSpecialPage'];
+		if(isset($_GET['SuggestPreschool']))
+			$suggest->attributes=$_GET['SuggestPreschool'];
 		
 		//Group keyword
 		$group=new Category();		
@@ -143,7 +138,7 @@ class SpecialPageController extends Controller
 	 */
 	public function actionCopy($id)
 	{
-		$copy=SpecialPage::copy($id);
+		$copy=Preschool::copy($id);
 		if(isset($copy))
 		{
 				$this->redirect(array('update','id'=>$copy->id));
@@ -157,33 +152,33 @@ class SpecialPageController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);	
-		if (Yii::app ()->user->checkAccess ( 'specialPage_update', array ('specialPage' => $model ) )) {
+		if (Yii::app ()->user->checkAccess ( 'preschool_update', array ('preschool' => $model ) )) {
 		$model->scenario = 'write';
 		// Ajax validate
 		$this->performAjaxValidation($model);	
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		if(isset($_POST['SpecialPage']))
+		if(isset($_POST['Preschool']))
 		{
-			if(!isset($_POST['SpecialPage']['list_special'])) $model->list_special=array();
-			$model->attributes=$_POST['SpecialPage'];
+			if(!isset($_POST['Preschool']['list_special'])) $model->list_special=array();
+			$model->attributes=$_POST['Preschool'];
 			if($model->save()){				
 				$this->redirect(array('update','id'=>$model->id));
 			}
 		}
 		//Group categories 
 		$group=new Category();		
-		$group->type=Category::TYPE_SPECIALPAGE;
+		$group->type=Category::TYPE_PRESCHOOL;
 		$list_category=$group->list_nodes;
 		if (! Yii::app ()->getRequest ()->getIsAjaxRequest ())
 				Yii::app ()->session ['checked-suggest-list'] = array_diff ( explode ( ',', $model->list_suggest ), array ('' ) );
-		//Handler list suggest specialPage
+		//Handler list suggest preschool
 		$this->initCheckbox('checked-suggest-list');
-		$suggest=new SpecialPage('search');
+		$suggest=new Preschool('search');
 		$suggest->unsetAttributes();  // clear any default values
 		if(isset($_GET['catid'])) $suggest->catid=$model->catid;
-		if(isset($_GET['SuggestSpecialPage']))
-			$suggest->attributes=$_GET['SuggestSpecialPage'];
+		if(isset($_GET['SuggestPreschool']))
+			$suggest->attributes=$_GET['SuggestPreschool'];
 			
 		//Group keyword
 		$group=new Category();		
@@ -221,42 +216,42 @@ class SpecialPageController extends Controller
 	}
 
 	/**
-	 * Performs the action with multi-selected specialPage from checked models in section
+	 * Performs the action with multi-selected preschool from checked models in section
 	 * @param string action to perform
 	 * @return boolean, true if the action is procced successfully, otherwise return false
 	 */
 	public function actionCheckbox($action)
 	{
-		$this->initCheckbox('checked-specialPage-list');
-		$list_checked = Yii::app()->session["checked-specialPage-list"];
+		$this->initCheckbox('checked-preschool-list');
+		$list_checked = Yii::app()->session["checked-preschool-list"];
 		switch ($action) {
 			case 'delete' :
-				if (Yii::app ()->user->checkAccess ( 'specialPage_delete')) {
+				if (Yii::app ()->user->checkAccess ( 'preschool_delete')) {
 					foreach ( $list_checked as $id ) {
-						$item = SpecialPage::model ()->findByPk ( (int)$id );
+						$item = Preschool::model ()->findByPk ( (int)$id );
 						if (isset ( $item ))
 							if (! $item->delete ()) {
 								echo 'false';
 								Yii::app ()->end ();
 							}
 					}
-					Yii::app ()->session ["checked-specialPage-list"] = array ();
+					Yii::app ()->session ["checked-preschool-list"] = array ();
 				} else {
 					echo 'false';
 					Yii::app ()->end ();
 				}
 				break;
 			case 'copy' :
-				if (Yii::app ()->user->checkAccess ( 'specialPage_copy')) {
+				if (Yii::app ()->user->checkAccess ( 'preschool_copy')) {
 				foreach ( $list_checked as $id ) {
-					$copy=SpecialPage::copy((int)$id);
+					$copy=Preschool::copy((int)$id);
 					if(!isset($copy))
 					{
 						echo 'false';
 						Yii::app ()->end ();
 					}
 				}
-				Yii::app ()->session ["checked-specialPage-list"] = array ();
+				Yii::app ()->session ["checked-preschool-list"] = array ();
 				}
 				else {
 					echo 'false';
@@ -273,16 +268,16 @@ class SpecialPageController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->initCheckbox('checked-specialPage-list');
-		$model=new SpecialPage('search');
+		$this->initCheckbox('checked-preschool-list');
+		$model=new Preschool('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['catid'])) $model->catid=$_GET['catid'];
 		$model->lang=Language::DEFAULT_LANGUAGE;
-		if(isset($_GET['SpecialPage']))
-			$model->attributes=$_GET['SpecialPage'];	
-		//Group categories that contains specialPage
+		if(isset($_GET['Preschool']))
+			$model->attributes=$_GET['Preschool'];	
+		//Group categories that contains preschool
 		$group=new Category();		
-		$group->type=Category::TYPE_SPECIALPAGE;
+		$group->type=Category::TYPE_PRESCHOOL;
 		$list_category=$group->list_nodes;
 		//Group keyword
 		$group=new Category();		
@@ -296,12 +291,12 @@ class SpecialPageController extends Controller
 		));
 	}
 	/**
-	 * Reverse status of specialPage
-	 * @param integer $id, the ID of specialPage to be reversed
+	 * Reverse status of preschool
+	 * @param integer $id, the ID of preschool to be reversed
 	 */
 	public function actionReverseStatus($id)
 	{
-		$src=SpecialPage::reverseStatus($id);
+		$src=Preschool::reverseStatus($id);
 			if($src) 
 				echo json_encode(array('success'=>true,'src'=>$src));
 			else 
@@ -309,13 +304,13 @@ class SpecialPageController extends Controller
 	}
 	
 	/**
-	 * Suggests title of specialPage.
+	 * Suggests title of preschool.
 	 */
 	public function actionSuggestTitle()
 	{
 		if(isset($_GET['q']) && ($keyword=trim($_GET['q']))!=='')
 		{
-			$titles=SpecialPage::model()->suggestTitle($keyword);
+			$titles=Preschool::model()->suggestTitle($keyword);
 			if($titles!==array())
 				echo implode("\n",$titles);
 		}
@@ -357,7 +352,7 @@ class SpecialPageController extends Controller
 		}
 	}
 	/*
-	 * List specialPage suggest 
+	 * List preschool suggest 
 	 */
 	public function actionUpdateSuggest()
 	{
@@ -372,7 +367,7 @@ class SpecialPageController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=SpecialPage::model()->findByPk($id);
+		$model=Preschool::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -386,7 +381,7 @@ class SpecialPageController extends Controller
 	{
 		if(Yii::app()->getRequest()->getIsAjaxRequest() )
 		{
-		if( !isset($_GET['ajax'] )  || ($_GET['ajax'] != 'specialPage-list-suggest' && $_GET['ajax'] != 'specialPage-list')){
+		if( !isset($_GET['ajax'] )  || ($_GET['ajax'] != 'preschool-list-suggest' && $_GET['ajax'] != 'preschool-list')){
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}

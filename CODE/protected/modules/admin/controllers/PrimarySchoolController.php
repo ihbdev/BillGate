@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * AppController class file 
+ * PrimarySchoolController class file 
  * @author ihbvietnam <hotro@ihbvietnam.com>
  * @link http://iphoenix.vn
  * @copyright Copyright &copy; 2012 IHB Vietnam
@@ -10,18 +10,18 @@
  */
 
 /**
- * AppController includes actions relevant to App model:
- *** create App
- *** copy App
+ * PrimarySchoolController includes actions relevant to PrimarySchool model:
+ *** create PrimarySchool
+ *** copy PrimarySchool
  *** update
- *** delete App
- *** index App
- *** reverse status App
- *** suggest title App
+ *** delete PrimarySchool
+ *** index PrimarySchool
+ *** reverse status PrimarySchool
+ *** suggest title PrimarySchool
  *** update suggest
  *** load model  
  */
-class AppController extends Controller
+class PrimarySchoolController extends Controller
 {
 	/**
 	 * @return array action filters
@@ -43,15 +43,15 @@ class AppController extends Controller
 		return array(
 			array('allow',  
 				'actions'=>array('index'),
-				'roles'=>array('app_index'),
+				'roles'=>array('primarySchool_index'),
 			),
 			array('allow',  
 				'actions'=>array('create'),
-				'roles'=>array('app_create'),
+				'roles'=>array('primarySchool_create'),
 			),
 			array('allow',  
 				'actions'=>array('suggestTitle'),
-				'roles'=>array('app_suggestTitle'),
+				'roles'=>array('primarySchool_suggestTitle'),
 			),
 			array('allow', 
 				'actions'=>array('update'),
@@ -59,31 +59,31 @@ class AppController extends Controller
 			),
 			array('allow',  
 				'actions'=>array('reverseStatus'),
-				'roles'=>array('app_reverseStatus'),
+				'roles'=>array('primarySchool_reverseStatus'),
 			),
 			array('allow',  
 				'actions'=>array('delete'),
-				'roles'=>array('app_delete'),
+				'roles'=>array('primarySchool_delete'),
 			),
 			array('allow',  
 				'actions'=>array('checkbox'),
-				'roles'=>array('app_checkbox'),
+				'roles'=>array('primarySchool_checkbox'),
 			),
 			array('allow',  
 				'actions'=>array('copy'),
-				'roles'=>array('app_copy'),
+				'roles'=>array('primarySchool_copy'),
 			),
 			array('allow',  
 				'actions'=>array('dynamicCat'),
-				'roles'=>array('app_dynamicCat'),
+				'roles'=>array('primarySchool_dynamicCat'),
 			),
 			array('allow',  
 				'actions'=>array('updateSuggest'),
-				'roles'=>array('app_updateSuggest'),
+				'roles'=>array('primarySchool_updateSuggest'),
 			),
 			array('deny', 
 				'users'=>array('*'),
-			),			
+			),	
 		);
 	}
 	
@@ -93,32 +93,32 @@ class AppController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new App('write');
+		$model=new PrimarySchool('write');
 		// Ajax validate
 		$this->performAjaxValidation($model);	
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['App']))
+		if(isset($_POST['PrimarySchool']))
 		{
-			$model->attributes=$_POST['App'];
-			if(!isset($_POST['App']['list_special'])) $model->list_special=array();
+			$model->attributes=$_POST['PrimarySchool'];
+			if(!isset($_POST['PrimarySchool']['list_special'])) $model->list_special=array();
 			if($model->save())
 				$this->redirect(array('update','id'=>$model->id));
 		}
-		//Group categories that contains app
+		//Group categories that contains primarySchool
 		$group=new Category();		
-		$group->type=Category::TYPE_APP;
+		$group->type=Category::TYPE_PRIMARYSCHOOL;
 		$list_category=$group->list_nodes;
 		if (! Yii::app ()->getRequest ()->getIsAjaxRequest ())
 				Yii::app ()->session ['checked-suggest-list'] = array();
-		//Handler list suggest app		
+		//Handler list suggest primarySchool		
 		$this->initCheckbox('checked-suggest-list');
-		$suggest=new App('search');
+		$suggest=new PrimarySchool('search');
 		$suggest->unsetAttributes();  // clear any default values
 		if(isset($_GET['catid'])) $suggest->catid=$model->catid;
-		if(isset($_GET['SuggestApp']))
-			$suggest->attributes=$_GET['SuggestApp'];
+		if(isset($_GET['SuggestPrimarySchool']))
+			$suggest->attributes=$_GET['SuggestPrimarySchool'];
 		
 		//Group keyword
 		$group=new Category();		
@@ -138,7 +138,7 @@ class AppController extends Controller
 	 */
 	public function actionCopy($id)
 	{
-		$copy=App::copy($id);
+		$copy=PrimarySchool::copy($id);
 		if(isset($copy))
 		{
 				$this->redirect(array('update','id'=>$copy->id));
@@ -152,33 +152,33 @@ class AppController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);	
-		if (Yii::app ()->user->checkAccess ( 'app_update', array ('app' => $model ) )) {
+		if (Yii::app ()->user->checkAccess ( 'primarySchool_update', array ('primarySchool' => $model ) )) {
 		$model->scenario = 'write';
 		// Ajax validate
 		$this->performAjaxValidation($model);	
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-		if(isset($_POST['App']))
+		if(isset($_POST['PrimarySchool']))
 		{
-			if(!isset($_POST['App']['list_special'])) $model->list_special=array();
-			$model->attributes=$_POST['App'];
+			if(!isset($_POST['PrimarySchool']['list_special'])) $model->list_special=array();
+			$model->attributes=$_POST['PrimarySchool'];
 			if($model->save()){				
 				$this->redirect(array('update','id'=>$model->id));
 			}
 		}
 		//Group categories 
 		$group=new Category();		
-		$group->type=Category::TYPE_APP;
+		$group->type=Category::TYPE_PRIMARYSCHOOL;
 		$list_category=$group->list_nodes;
 		if (! Yii::app ()->getRequest ()->getIsAjaxRequest ())
 				Yii::app ()->session ['checked-suggest-list'] = array_diff ( explode ( ',', $model->list_suggest ), array ('' ) );
-		//Handler list suggest app
+		//Handler list suggest primarySchool
 		$this->initCheckbox('checked-suggest-list');
-		$suggest=new App('search');
+		$suggest=new PrimarySchool('search');
 		$suggest->unsetAttributes();  // clear any default values
 		if(isset($_GET['catid'])) $suggest->catid=$model->catid;
-		if(isset($_GET['SuggestApp']))
-			$suggest->attributes=$_GET['SuggestApp'];
+		if(isset($_GET['SuggestPrimarySchool']))
+			$suggest->attributes=$_GET['SuggestPrimarySchool'];
 			
 		//Group keyword
 		$group=new Category();		
@@ -216,40 +216,42 @@ class AppController extends Controller
 	}
 
 	/**
-	 * Performs the action with multi-selected app from checked models in section
+	 * Performs the action with multi-selected primarySchool from checked models in section
 	 * @param string action to perform
 	 * @return boolean, true if the action is procced successfully, otherwise return false
 	 */
 	public function actionCheckbox($action)
 	{
-		$this->initCheckbox('checked-app-list');
-		$list_checked = Yii::app()->session["checked-app-list"];
+		$this->initCheckbox('checked-primarySchool-list');
+		$list_checked = Yii::app()->session["checked-primarySchool-list"];
 		switch ($action) {
 			case 'delete' :
-				if (Yii::app ()->user->checkAccess ( 'app_delete')) {
+				if (Yii::app ()->user->checkAccess ( 'primarySchool_delete')) {
 					foreach ( $list_checked as $id ) {
-						$item = App::model ()->findByPk ( (int)$id );
+						$item = PrimarySchool::model ()->findByPk ( (int)$id );
 						if (isset ( $item ))
 							if (! $item->delete ()) {
 								echo 'false';
 								Yii::app ()->end ();
 							}
 					}
+					Yii::app ()->session ["checked-primarySchool-list"] = array ();
 				} else {
 					echo 'false';
 					Yii::app ()->end ();
 				}
 				break;
 			case 'copy' :
-				if (Yii::app ()->user->checkAccess ( 'app_copy')) {
+				if (Yii::app ()->user->checkAccess ( 'primarySchool_copy')) {
 				foreach ( $list_checked as $id ) {
-					$copy=App::copy((int)$id);
+					$copy=PrimarySchool::copy((int)$id);
 					if(!isset($copy))
 					{
 						echo 'false';
 						Yii::app ()->end ();
 					}
 				}
+				Yii::app ()->session ["checked-primarySchool-list"] = array ();
 				}
 				else {
 					echo 'false';
@@ -266,16 +268,16 @@ class AppController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->initCheckbox('checked-app-list');
-		$model=new App('search');
+		$this->initCheckbox('checked-primarySchool-list');
+		$model=new PrimarySchool('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['catid'])) $model->catid=$_GET['catid'];
 		$model->lang=Language::DEFAULT_LANGUAGE;
-		if(isset($_GET['App']))
-			$model->attributes=$_GET['App'];	
-		//Group categories that contains app
+		if(isset($_GET['PrimarySchool']))
+			$model->attributes=$_GET['PrimarySchool'];	
+		//Group categories that contains primarySchool
 		$group=new Category();		
-		$group->type=Category::TYPE_APP;
+		$group->type=Category::TYPE_PRIMARYSCHOOL;
 		$list_category=$group->list_nodes;
 		//Group keyword
 		$group=new Category();		
@@ -289,12 +291,12 @@ class AppController extends Controller
 		));
 	}
 	/**
-	 * Reverse status of app
-	 * @param integer $id, the ID of app to be reversed
+	 * Reverse status of primarySchool
+	 * @param integer $id, the ID of primarySchool to be reversed
 	 */
 	public function actionReverseStatus($id)
 	{
-		$src=App::reverseStatus($id);
+		$src=PrimarySchool::reverseStatus($id);
 			if($src) 
 				echo json_encode(array('success'=>true,'src'=>$src));
 			else 
@@ -302,13 +304,13 @@ class AppController extends Controller
 	}
 	
 	/**
-	 * Suggests title of app.
+	 * Suggests title of primarySchool.
 	 */
 	public function actionSuggestTitle()
 	{
 		if(isset($_GET['q']) && ($keyword=trim($_GET['q']))!=='')
 		{
-			$titles=App::model()->suggestTitle($keyword);
+			$titles=PrimarySchool::model()->suggestTitle($keyword);
 			if($titles!==array())
 				echo implode("\n",$titles);
 		}
@@ -350,7 +352,7 @@ class AppController extends Controller
 		}
 	}
 	/*
-	 * List app suggest 
+	 * List primarySchool suggest 
 	 */
 	public function actionUpdateSuggest()
 	{
@@ -365,7 +367,7 @@ class AppController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=App::model()->findByPk($id);
+		$model=PrimarySchool::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -379,10 +381,11 @@ class AppController extends Controller
 	{
 		if(Yii::app()->getRequest()->getIsAjaxRequest() )
 		{
-		if( !isset($_GET['ajax'] )  || ($_GET['ajax'] != 'app-list-suggest' && $_GET['ajax'] != 'app-list')){
+		if( !isset($_GET['ajax'] )  || ($_GET['ajax'] != 'primarySchool-list-suggest' && $_GET['ajax'] != 'primarySchool-list')){
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 		}
 	}
 }
+

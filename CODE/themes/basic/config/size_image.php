@@ -50,10 +50,16 @@ return array(
 		'Notice'=>array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),
-		'SpecialPage'=>array(
+		'Preschool'=>array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),
 		'Entrance'=>array(
+			'introimage'=>array('h'=>135,'w'=>180)
+		),
+		'PrimarySchool'=>array(
+			'introimage'=>array('h'=>135,'w'=>180)
+		),
+		'HighSchool'=>array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),
 	);

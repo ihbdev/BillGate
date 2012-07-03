@@ -12,21 +12,21 @@
 		<!--end title-->
 		<div class="folder-content">
             <div>
-            	<input type="button" class="button" value="Thêm tin" style="width:180px;" onClick="parent.location='<?php echo Yii::app()->createUrl('admin/specialPage/create')?>'"/>
+            	<input type="button" class="button" value="Thêm tin" style="width:180px;" onClick="parent.location='<?php echo Yii::app()->createUrl('admin/preschool/create')?>'"/>
                 <div class="line top bottom"></div>	
             </div>
              <!--begin box search-->
          <?php 
 			Yii::app()->clientScript->registerScript('search', "
-				$('#specialPage-search').submit(function(){
-				$.fn.yiiGridView.update('specialPage-list', {
+				$('#preschool-search').submit(function(){
+				$.fn.yiiGridView.update('preschool-list', {
 					data: $(this).serialize()});
 					return false;
 				});");
 		?>
             <div class="box-search">            
                 <h2>Tìm kiếm</h2>
-                <?php $form=$this->beginWidget('CActiveForm', array('method'=>'get','id'=>'specialPage-search')); ?>
+                <?php $form=$this->beginWidget('CActiveForm', array('method'=>'get','id'=>'preschool-search')); ?>
                 <!--begin left content-->
                 <div class="fl" style="width:480px;">
                     <ul>
@@ -35,7 +35,7 @@
                          	<?php $this->widget('CAutoComplete', array(
                          	'model'=>$model,
                          	'attribute'=>'title',
-							'url'=>array('specialPage/suggestTitle'),
+							'url'=>array('preschool/suggestTitle'),
 							'htmlOptions'=>array(
 								'style'=>'width:230px;',
 								),
@@ -43,7 +43,7 @@
                         </li>   
                          <?php 
 							$list=array(''=>'Không lọc');
-							$list +=SpecialPage::getList_label_specials();
+							$list +=Preschool::getList_label_specials();
 						?>	
 						<li>
 							<?php echo $form->labelEx($model,'special'); ?>
@@ -94,14 +94,14 @@
             <!--end box search-->		
            <?php 
 			$this->widget('iPhoenixGridView', array(
-  				'id'=>'specialPage-list',
+  				'id'=>'preschool-list',
   				'dataProvider'=>$model->search(),		
   				'columns'=>array(
 					array(
       					'class'=>'CCheckBoxColumn',
 						'selectableRows'=>2,
 						'headerHtmlOptions'=>array('width'=>'2%','class'=>'table-title'),
-						'checked'=>'in_array($data->id,Yii::app()->session["checked-specialPage-list"])'
+						'checked'=>'in_array($data->id,Yii::app()->session["checked-preschool-list"])'
     				),			
     				array(
 						'name'=>'title',
@@ -144,7 +144,7 @@
     						(
             					'label'=>'Đổi trạng thái bài viết',
             					'imageUrl'=>'$data->imageStatus',
-            					'url'=>'Yii::app()->createUrl("admin/specialPage/reverseStatus", array("id"=>$data->id))',
+            					'url'=>'Yii::app()->createUrl("admin/preschool/reverseStatus", array("id"=>$data->id))',
     							'click'=>'function(){
 									var th=this;									
 									jQuery.ajax({
@@ -187,7 +187,7 @@
     						(
             					'label'=>'Copy bài viết',
             					'imageUrl'=>Yii::app()->request->getBaseUrl(true).'/images/admin/copy.gif',
-            					'url'=>'Yii::app()->createUrl("admin/specialPage/copy", array("id"=>$data->id))',
+            					'url'=>'Yii::app()->createUrl("admin/preschool/copy", array("id"=>$data->id))',
         					),
         					'view'=>array(
     							'url'=>'$data->url',
@@ -204,13 +204,13 @@
 						'action'=>'delete',
 						'label'=>'Xóa',
 						'imageUrl' => '/images/admin/delete.png',
-						'url'=>'admin/specialPage/checkbox'
+						'url'=>'admin/preschool/checkbox'
 					),
 					'copy'=>array(
 						'action'=>'copy',
 						'label'=>'Copy',
 						'imageUrl' => '/images/admin/copy.gif',
-						'url'=>'admin/specialPage/checkbox'
+						'url'=>'admin/preschool/checkbox'
 					)
 				),
  	 			)); ?>

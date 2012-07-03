@@ -91,7 +91,21 @@ return array(
 		'create'=>'Tạo mới',
 		'manager_category'=>'Danh mục'
 	),
-	'specialPage'=>array(
+	'preschool'=>array(
+		'view_all'=>'Hiển thị tất cả',
+		'view_categories'=>'Hiển thị theo danh mục',
+		'index'=>'Quản lý',
+		'create'=>'Tạo mới',
+		'manager_category'=>'Danh mục'
+	),
+	'primarySchool'=>array(
+		'view_all'=>'Hiển thị tất cả',
+		'view_categories'=>'Hiển thị theo danh mục',
+		'index'=>'Quản lý',
+		'create'=>'Tạo mới',
+		'manager_category'=>'Danh mục'
+	),
+	'highSchool'=>array(
 		'view_all'=>'Hiển thị tất cả',
 		'view_categories'=>'Hiển thị theo danh mục',
 		'index'=>'Quản lý',

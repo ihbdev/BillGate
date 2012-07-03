@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * SpecialPage class file 
+ * Preschool class file 
  * @author ihbvietnam <hotro@ihbvietnam.com>
  * @link http://iphoenix.vn
  * @copyright Copyright &copy; 2012 IHB Vietnam
@@ -9,10 +9,10 @@
  *
  */
 /**
- * This is the model class for table "specialPage".
+ * This is the model class for table "preschool".
  *
  */
-class SpecialPage extends CActiveRecord
+class Preschool extends CActiveRecord
 {	
 	/**
 	 * @return string the associated database table name
@@ -22,15 +22,15 @@ class SpecialPage extends CActiveRecord
 		return 'tbl_article';
 	}
 	/**
-	 * Config scope of specialPage
+	 * Config scope of preschool
 	 */
 	public function defaultScope(){
 		return array(
-			'condition'=>'type = '.Article::ARTICLE_SPECIALPAGE,
+			'condition'=>'type = '.Article::ARTICLE_PRESCHOOL,
 		);	
 	}
 	/**
-	 * Config status of specialPage
+	 * Config status of preschool
 	 */
 	const STATUS_PENDING=0;
 	const STATUS_ACTIVE=1;
@@ -38,27 +38,27 @@ class SpecialPage extends CActiveRecord
 	const LIST_ADMIN=10;
 	/**
 	 * Config special
-	 * SPECIAL_REMARK specialPage is specialPage that can be viewed at homepage
-	 * SPECIAL_NOTICE specialPage is specialPage that can be viewed at notice
-	 * SPECIAL_MARQUEE specialPage is specialPage that can be viewed at...
+	 * SPECIAL_REMARK preschool is preschool that can be viewed at homepage
+	 * SPECIAL_NOTICE preschool is preschool that can be viewed at notice
+	 * SPECIAL_MARQUEE preschool is preschool that can be viewed at...
 	 */
 	const SPECIAL_REMARK=0;
 	
 	/**
 	 * Config other attribute
-	 ** INTRO_LENGTH number characters of specialPage displayed in introduction
-	 ** INTRO_HOMEPAGE_LENGTH number characters of specialPage displayed in homepage
-	 ** OTHER_SPECIALPAGE number of specialPage display in the other specialPage widget
-	 ** LIST_SPECIALPAGE number of specialPage displayed in the list specialPage page
-	 ** LIST_SEARCH number of specialPage displayed in the list of search page
+	 ** INTRO_LENGTH number characters of preschool displayed in introduction
+	 ** INTRO_HOMEPAGE_LENGTH number characters of preschool displayed in homepage
+	 ** OTHER_PRESCHOOL number of preschool display in the other preschool widget
+	 ** LIST_PRESCHOOL number of preschool displayed in the list preschool page
+	 ** LIST_SEARCH number of preschool displayed in the list of search page
 	 ** PRESENT_CATEGORY
 	 ** PRESENT_CATEGORY_EN 
 	 */
 	const INTRO_LENGTH=100; 	
 	const META_LENGTH=30;
 	const INTRO_HOMEPAGE_LENGTH=20;	
-	const OTHER_SPECIALPAGE=5;
-	const LIST_SPECIALPAGE=10;
+	const OTHER_PRESCHOOL=5;
+	const LIST_PRESCHOOL=10;
 	const LIST_SEARCH=10;
 	const PRESENT_CATEGORY=30;
 	const GUIDE_CATEGORY=59;
@@ -94,23 +94,23 @@ class SpecialPage extends CActiveRecord
 			return array('0'=>'Không thiết lập','1'=>'Mức 1');
 	}
 	/**
-	 * Get update url of specialPage
-	 * @return specialPage's update url
+	 * Get update url of preschool
+	 * @return preschool's update url
 	 */
 	public function getUpdate_url()
  	{
- 		$url=Yii::app()->createUrl("admin/specialPage/update",array('id'=>$this->id));
+ 		$url=Yii::app()->createUrl("admin/preschool/update",array('id'=>$this->id));
 		return $url;
  	}
 	/**
-	 * Get url of this specialPage
-	 * @return string $url, the absoluted path of this specialPage
+	 * Get url of this preschool
+	 * @return string $url, the absoluted path of this preschool
 	 */
 	public function getUrl()
  	{
  		$cat_alias=$this->category->alias;
  		$alias=$this->alias;
- 		$url=Yii::app()->createUrl("specialPage/view",array('cat_alias'=>$cat_alias,'specialPage_alias'=>$alias));
+ 		$url=Yii::app()->createUrl("preschool/view",array('cat_alias'=>$cat_alias,'preschool_alias'=>$alias));
 		return $url;
  	}
 	/*
@@ -121,17 +121,17 @@ class SpecialPage extends CActiveRecord
 		if($this->introimage>0){
 			$image=Image::model()->findByPk($this->introimage);
 			if(isset($image)){
-				$src=$image->getThumb('SpecialPage',$type);
+				$src=$image->getThumb('Preschool',$type);
 				if( $image->title != '')	$alt=$image->title;
 			}
 			else {
-				$src=Image::getDefaultThumb('SpecialPage', $type);
+				$src=Image::getDefaultThumb('Preschool', $type);
 			}
 			return '<img class="'.$class.'" src="'.$src.'" alt="'.$alt.'">';
 		}
 		else {
 			
-			return '<img class="'.$class.'" src="'.Image::getDefaultThumb('SpecialPage', $type).'" alt="'.$alt.'">';
+			return '<img class="'.$class.'" src="'.Image::getDefaultThumb('Preschool', $type).'" alt="'.$alt.'">';
 		}
 	}
 	/**
@@ -152,7 +152,7 @@ class SpecialPage extends CActiveRecord
  	}
 	
  	/** 
- 	 * Get name of category of this specialPage
+ 	 * Get name of category of this preschool
  	 * @return string name of the category
  	 */
 	public function getLabel_category()
@@ -162,7 +162,7 @@ class SpecialPage extends CActiveRecord
  	}	
 
  	/**
-	 * Get similar specialPage
+	 * Get similar preschool
 	 */
 	public function getList_similar(){
 		if($this->list_suggest != ''){
@@ -170,11 +170,11 @@ class SpecialPage extends CActiveRecord
 			$result=array();
 			$index=0;
 			foreach ($list as $id){
-				$specialPage=SpecialPage::model()->findByPk($id);
-				if(isset($specialPage)){
+				$preschool=Preschool::model()->findByPk($id);
+				if(isset($preschool)){
 					$index++;
-					if($index <= Setting::s('LIMIT_SIMILAR_SPECIALPAGE','SpecialPage'))
-						$result[]=SpecialPage::model()->findByPk($id);
+					if($index <= Setting::s('LIMIT_SIMILAR_PRESCHOOL','Preschool'))
+						$result[]=Preschool::model()->findByPk($id);
 				}
 				else{
 					$list_clear=array_diff(explode(',',$this->list_suggest),array(''));
@@ -186,19 +186,19 @@ class SpecialPage extends CActiveRecord
 		}
 		else {
 			$criteria=new CDbCriteria;
-			$criteria->compare('status', SpecialPage::STATUS_ACTIVE);
+			$criteria->compare('status', Preschool::STATUS_ACTIVE);
 			$criteria->addCondition('id <>'. $this->id);
 			$criteria->compare ( 'status', QA::STATUS_ACTIVE );
 			$criteria->order='id desc';
 			$criteria->compare('catid',$this->catid);
-			$criteria->limit=Setting::s('LIMIT_SIMILAR_SPECIALPAGE','SpecialPage');
-			$result=SpecialPage::model()->findAll($criteria);		
+			$criteria->limit=Setting::s('LIMIT_SIMILAR_PRESCHOOL','Preschool');
+			$result=Preschool::model()->findAll($criteria);		
 		}
 		return $result;
 	}	
  	/*
-	 * Get all specials of class SpecialPage
-	 * Used in dropdownlist when create or update specialPage
+	 * Get all specials of class Preschool
+	 * Used in dropdownlist when create or update preschool
 	 */
 	static function getList_label_specials()
  	{
@@ -241,16 +241,16 @@ class SpecialPage extends CActiveRecord
  		return $result;
  	}
 	/**
-	 * Get thumb image of this specialPage
+	 * Get thumb image of this preschool
 	 * @param string $type, type of needed thumb image
 	 */
 	public function getImage($type){
 		$image=Image::model()->findByPk($this->introimage);
 		if(isset($image)){
-			$url='<img class="img" src="'.$image->getThumb('SpecialPage',$type).'" alt="'.$image->title.'" />';
+			$url='<img class="img" src="'.$image->getThumb('Preschool',$type).'" alt="'.$image->title.'" />';
 		}
 		else {
-			$url='<img class="img" src="'.Image::getDefaultThumb('SpecialPage',$type).'" />';
+			$url='<img class="img" src="'.Image::getDefaultThumb('Preschool',$type).'" />';
 		}
 			return $url;	
 	}
@@ -287,7 +287,7 @@ class SpecialPage extends CActiveRecord
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return SpecialPage the static model class
+	 * @return Preschool the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -315,7 +315,7 @@ class SpecialPage extends CActiveRecord
 	}
 
 	/**
-	 * Function validate specialPage title, don't allow add a specialPage has same title with an existing specialPage
+	 * Function validate preschool title, don't allow add a preschool has same title with an existing preschool
 	 * @param string $attributes
 	 * @param $params
 	 */
@@ -338,7 +338,7 @@ class SpecialPage extends CActiveRecord
 		$criteria->compare ( 'lower(alias)', strtolower ( $this->alias) );
 		if ($this->id > 0)
 			$criteria->addCondition ( 'id <> ' . $this->id );
-		$list = SpecialPage::model ()->findAll ( $criteria );
+		$list = Preschool::model ()->findAll ( $criteria );
 		if (sizeof ( $list ) > 0)
 			return false;
 		else
@@ -430,9 +430,9 @@ class SpecialPage extends CActiveRecord
 			{
 				$this->created_date=time();
 				$this->created_by=Yii::app()->user->id;
-				$this->status=SpecialPage::STATUS_ACTIVE;
+				$this->status=Preschool::STATUS_ACTIVE;
 				$alias=iPhoenixString::createAlias($this->title);
-				while(sizeof(SpecialPage::model()->findAll('alias = "'.$alias.'"'))>0){
+				while(sizeof(Preschool::model()->findAll('alias = "'.$alias.'"'))>0){
 					$suffix=rand(1,99);
 					$alias =$alias.'-'.$suffix;
 				}
@@ -444,13 +444,13 @@ class SpecialPage extends CActiveRecord
 				$this->modified=json_encode($modified);
 				if($this->title != $this->old_title) {
 				$alias=iPhoenixString::createAlias($this->title);
-				while(sizeof(SpecialPage::model()->findAll('alias = "'.$alias.'"'))>0){
+				while(sizeof(Preschool::model()->findAll('alias = "'.$alias.'"'))>0){
 					$suffix=rand(1,99);
 					$alias =$alias.'-'.$suffix;
 				}
 				$this->alias=$alias;
 				}
-				//Handler list suggest specialPage
+				//Handler list suggest preschool
 				$list_clear=array_diff(explode(',',$this->list_suggest),array(''));
 				$list_filter=array_diff($list_clear,array($this->id));
 				$this->list_suggest=implode(',', $list_filter);
@@ -476,7 +476,7 @@ class SpecialPage extends CActiveRecord
 			//Encode special
 			$this->special=iPhoenixStatus::encodeStatus($this->list_special);		
 			//Encode other attributes  		
-			$this->type=Article::ARTICLE_SPECIALPAGE;
+			$this->type=Article::ARTICLE_PRESCHOOL;
 			//Encode fulltext
 			if($this->old_fulltext != $this->fulltext || $this->isNewRecord){
 				$fulltext=$this->fulltext;
@@ -554,7 +554,7 @@ class SpecialPage extends CActiveRecord
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'lang', $this->lang );
 		$criteria->compare ( 'title', $this->title, true );
-		if (!Yii::app ()->user->checkAccess ( 'specialPage_update') && Yii::app()->controller->id == 'specialPage' && Yii::app()->controller->action->id == 'index') {
+		if (!Yii::app ()->user->checkAccess ( 'preschool_update') && Yii::app()->controller->id == 'preschool' && Yii::app()->controller->action->id == 'index') {
 			$criteria->compare ( 'created_by', Yii::app()->user->id);
 		}	
 		//Filter catid
@@ -595,7 +595,7 @@ class SpecialPage extends CActiveRecord
 	 */
 	public function suggestTitle($keyword,$limit=20)
 	{
-		$list_specialPage=$this->findAll(array(
+		$list_preschool=$this->findAll(array(
 			'condition'=>'title LIKE :keyword',
 			'order'=>'title DESC',
 			'limit'=>$limit,
@@ -604,8 +604,8 @@ class SpecialPage extends CActiveRecord
 			),
 		));
 		$titles=array();
-		foreach($list_specialPage as $specialPage)
-			$titles[]=$specialPage->title;
+		foreach($list_preschool as $preschool)
+			$titles[]=$preschool->title;
 			return $titles;
 	}
 	/**
@@ -642,15 +642,15 @@ class SpecialPage extends CActiveRecord
 		else return false;
 	}
 	/**
-	 * Copy specialPage
-	 * @param integer $id, the ID of specialPage to be copied
+	 * Copy preschool
+	 * @param integer $id, the ID of preschool to be copied
 	 */
 	static function copy($id) {
 		$sql = 'insert into ' . self::model ()->tableName () . ' (catid,type,lang,status,special,order_view,title,alias,keyword,other,created_date,created_by) select catid,type,lang,status,special,order_view,title,alias,keyword,other,created_date,created_by from ' . self::model ()->tableName () . ' where id=' . $id;
 		$command = Yii::app ()->db->createCommand ( $sql );
 		if ($command->execute ()) {
 			$copy_id = Yii::app ()->db->getLastInsertID ();
-			$model = SpecialPage::model ()->findByPk ( $copy_id );
+			$model = Preschool::model ()->findByPk ( $copy_id );
 			$model->scenario = 'copy';
 			$model->title = $model->title . ' - Copy ';
 			$model->alias=$model->alias . '-copy';

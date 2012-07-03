@@ -2,31 +2,31 @@
 	<div class="folder top">
 		<!--begin title-->
 		<div class="folder-header">
-			<h1>quản trị bài viết về ứng dụng của sản phẩm</h1>
+			<h1>quản trị tin tức</h1>
 			<div class="header-menu">
 				<ul>
-					<li class="ex-show"><a class="activities-icon" href=""><span>Danh sách bài viết</span></a></li>
+					<li class="ex-show"><a class="activities-icon" href=""><span>Danh sách tin tức</span></a></li>
 				</ul>
 			</div>
 		</div>
 		<!--end title-->
 		<div class="folder-content">
             <div>
-            	<input type="button" class="button" value="Thêm tin" style="width:180px;" onClick="parent.location='<?php echo Yii::app()->createUrl('admin/app/create')?>'"/>
+            	<input type="button" class="button" value="Thêm tin" style="width:180px;" onClick="parent.location='<?php echo Yii::app()->createUrl('admin/primarySchool/create')?>'"/>
                 <div class="line top bottom"></div>	
             </div>
              <!--begin box search-->
          <?php 
 			Yii::app()->clientScript->registerScript('search', "
-				$('#app-search').submit(function(){
-				$.fn.yiiGridView.update('app-list', {
+				$('#primarySchool-search').submit(function(){
+				$.fn.yiiGridView.update('primarySchool-list', {
 					data: $(this).serialize()});
 					return false;
 				});");
 		?>
             <div class="box-search">            
                 <h2>Tìm kiếm</h2>
-                <?php $form=$this->beginWidget('CActiveForm', array('method'=>'get','id'=>'app-search')); ?>
+                <?php $form=$this->beginWidget('CActiveForm', array('method'=>'get','id'=>'primarySchool-search')); ?>
                 <!--begin left content-->
                 <div class="fl" style="width:480px;">
                     <ul>
@@ -35,7 +35,7 @@
                          	<?php $this->widget('CAutoComplete', array(
                          	'model'=>$model,
                          	'attribute'=>'title',
-							'url'=>array('app/suggestTitle'),
+							'url'=>array('primarySchool/suggestTitle'),
 							'htmlOptions'=>array(
 								'style'=>'width:230px;',
 								),
@@ -43,7 +43,7 @@
                         </li>   
                          <?php 
 							$list=array(''=>'Không lọc');
-							$list +=News::getList_label_specials();
+							$list +=PrimarySchool::getList_label_specials();
 						?>	
 						<li>
 							<?php echo $form->labelEx($model,'special'); ?>
@@ -84,26 +84,6 @@
 						<?php echo $form->labelEx($model,'catid'); ?>
 						<?php echo $form->dropDownList($model,'catid',$list,array('style'=>'width:200px')); ?>
 					</li>
-					<?php 
-						$list=array(''=>'Tất cả các nhóm');
-						foreach ($list_keyword_categories as $id=>$level){
-							$cat=Category::model()->findByPk($id);
-							$view = "";
-							for($i=1;$i<$level;$i++){
-								$view .="---";
-							}
-							$keywords=Keyword::viewListKeyword($id);
-							if($keywords != "")
-								$list[$id]=$view." ".$cat->name." (".$keywords.") ".$view;
-							else 	
-								$list[$id]=$view." ".$cat->name." ".$view;
-						}
-						?>
-						<li>
-							<?php echo $form->labelEx($model,'keyword'); ?>
-							<?php echo $form->dropDownList($model,'keyword',$list,array('style'=>'width:200px')); ?>
-							<?php echo $form->error($model, 'keyword'); ?>
-						</li>
                     </ul>
                 </div>
                 <!--end right content-->
@@ -114,14 +94,14 @@
             <!--end box search-->		
            <?php 
 			$this->widget('iPhoenixGridView', array(
-  				'id'=>'app-list',
+  				'id'=>'primarySchool-list',
   				'dataProvider'=>$model->search(),		
   				'columns'=>array(
 					array(
       					'class'=>'CCheckBoxColumn',
 						'selectableRows'=>2,
 						'headerHtmlOptions'=>array('width'=>'2%','class'=>'table-title'),
-						'checked'=>'in_array($data->id,Yii::app()->session["checked-app-list"])'
+						'checked'=>'in_array($data->id,Yii::app()->session["checked-primarySchool-list"])'
     				),			
     				array(
 						'name'=>'title',
@@ -164,7 +144,7 @@
     						(
             					'label'=>'Đổi trạng thái bài viết',
             					'imageUrl'=>'$data->imageStatus',
-            					'url'=>'Yii::app()->createUrl("admin/app/reverseStatus", array("id"=>$data->id))',
+            					'url'=>'Yii::app()->createUrl("admin/primarySchool/reverseStatus", array("id"=>$data->id))',
     							'click'=>'function(){
 									var th=this;									
 									jQuery.ajax({
@@ -207,7 +187,7 @@
     						(
             					'label'=>'Copy bài viết',
             					'imageUrl'=>Yii::app()->request->getBaseUrl(true).'/images/admin/copy.gif',
-            					'url'=>'Yii::app()->createUrl("admin/app/copy", array("id"=>$data->id))',
+            					'url'=>'Yii::app()->createUrl("admin/primarySchool/copy", array("id"=>$data->id))',
         					),
         					'view'=>array(
     							'url'=>'$data->url',
@@ -224,13 +204,13 @@
 						'action'=>'delete',
 						'label'=>'Xóa',
 						'imageUrl' => '/images/admin/delete.png',
-						'url'=>'admin/app/checkbox'
+						'url'=>'admin/primarySchool/checkbox'
 					),
 					'copy'=>array(
 						'action'=>'copy',
 						'label'=>'Copy',
 						'imageUrl' => '/images/admin/copy.gif',
-						'url'=>'admin/app/checkbox'
+						'url'=>'admin/primarySchool/checkbox'
 					)
 				),
  	 			)); ?>

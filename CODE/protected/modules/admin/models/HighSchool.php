@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * App class file 
+ * HighSchool class file 
  * @author ihbvietnam <hotro@ihbvietnam.com>
  * @link http://iphoenix.vn
  * @copyright Copyright &copy; 2012 IHB Vietnam
@@ -9,10 +9,10 @@
  *
  */
 /**
- * This is the model class for table "app".
+ * This is the model class for table "highSchool".
  *
  */
-class App extends CActiveRecord
+class HighSchool extends CActiveRecord
 {	
 	/**
 	 * @return string the associated database table name
@@ -22,15 +22,15 @@ class App extends CActiveRecord
 		return 'tbl_article';
 	}
 	/**
-	 * Config scope of app
+	 * Config scope of highSchool
 	 */
 	public function defaultScope(){
 		return array(
-			'condition'=>'type = '.Article::ARTICLE_APP,
+			'condition'=>'type = '.Article::ARTICLE_HIGHSCHOOL,
 		);	
 	}
 	/**
-	 * Config status of app
+	 * Config status of highSchool
 	 */
 	const STATUS_PENDING=0;
 	const STATUS_ACTIVE=1;
@@ -38,29 +38,27 @@ class App extends CActiveRecord
 	const LIST_ADMIN=10;
 	/**
 	 * Config special
-	 * SPECIAL_REMARK app is app that can be viewed at homepage
-	 * SPECIAL_NOTICE app is app that can be viewed at notice
-	 * SPECIAL_MARQUEE app is app that can be viewed at...
+	 * SPECIAL_REMARK highSchool is highSchool that can be viewed at homepage
+	 * SPECIAL_NOTICE highSchool is highSchool that can be viewed at notice
+	 * SPECIAL_MARQUEE highSchool is highSchool that can be viewed at...
 	 */
 	const SPECIAL_REMARK=0;
-	const SPECIAL_NOTICE=1;
-	const SPECIAL_MARQUEE=2;
 	
 	/**
 	 * Config other attribute
-	 ** INTRO_LENGTH number characters of app displayed in introduction
-	 ** INTRO_HOMEPAGE_LENGTH number characters of app displayed in homepage
-	 ** OTHER_APP number of app display in the other app widget
-	 ** LIST_APP number of app displayed in the list app page
-	 ** LIST_SEARCH number of app displayed in the list of search page
+	 ** INTRO_LENGTH number characters of highSchool displayed in introduction
+	 ** INTRO_HOMEPAGE_LENGTH number characters of highSchool displayed in homepage
+	 ** OTHER_HIGHSCHOOL number of highSchool display in the other highSchool widget
+	 ** LIST_HIGHSCHOOL number of highSchool displayed in the list highSchool page
+	 ** LIST_SEARCH number of highSchool displayed in the list of search page
 	 ** PRESENT_CATEGORY
 	 ** PRESENT_CATEGORY_EN 
 	 */
 	const INTRO_LENGTH=100; 	
 	const META_LENGTH=30;
 	const INTRO_HOMEPAGE_LENGTH=20;	
-	const OTHER_APP=5;
-	const LIST_APP=10;
+	const OTHER_HIGHSCHOOL=5;
+	const LIST_HIGHSCHOOL=10;
 	const LIST_SEARCH=10;
 	const PRESENT_CATEGORY=30;
 	const GUIDE_CATEGORY=59;
@@ -96,23 +94,23 @@ class App extends CActiveRecord
 			return array('0'=>'Không thiết lập','1'=>'Mức 1');
 	}
 	/**
-	 * Get update url of app
-	 * @return app's update url
+	 * Get update url of highSchool
+	 * @return highSchool's update url
 	 */
 	public function getUpdate_url()
  	{
- 		$url=Yii::app()->createUrl("admin/app/update",array('id'=>$this->id));
+ 		$url=Yii::app()->createUrl("admin/highSchool/update",array('id'=>$this->id));
 		return $url;
  	}
 	/**
-	 * Get url of this app
-	 * @return string $url, the absoluted path of this app
+	 * Get url of this highSchool
+	 * @return string $url, the absoluted path of this highSchool
 	 */
 	public function getUrl()
  	{
  		$cat_alias=$this->category->alias;
  		$alias=$this->alias;
- 		$url=Yii::app()->createUrl("app/view",array('cat_alias'=>$cat_alias,'app_alias'=>$alias));
+ 		$url=Yii::app()->createUrl("highSchool/view",array('cat_alias'=>$cat_alias,'highSchool_alias'=>$alias));
 		return $url;
  	}
 	/*
@@ -123,17 +121,17 @@ class App extends CActiveRecord
 		if($this->introimage>0){
 			$image=Image::model()->findByPk($this->introimage);
 			if(isset($image)){
-				$src=$image->getThumb('App',$type);
+				$src=$image->getThumb('HighSchool',$type);
 				if( $image->title != '')	$alt=$image->title;
 			}
 			else {
-				$src=Image::getDefaultThumb('App', $type);
+				$src=Image::getDefaultThumb('HighSchool', $type);
 			}
 			return '<img class="'.$class.'" src="'.$src.'" alt="'.$alt.'">';
 		}
 		else {
 			
-			return '<img class="'.$class.'" src="'.Image::getDefaultThumb('App', $type).'" alt="'.$alt.'">';
+			return '<img class="'.$class.'" src="'.Image::getDefaultThumb('HighSchool', $type).'" alt="'.$alt.'">';
 		}
 	}
 	/**
@@ -154,7 +152,7 @@ class App extends CActiveRecord
  	}
 	
  	/** 
- 	 * Get name of category of this app
+ 	 * Get name of category of this highSchool
  	 * @return string name of the category
  	 */
 	public function getLabel_category()
@@ -164,7 +162,7 @@ class App extends CActiveRecord
  	}	
 
  	/**
-	 * Get similar app
+	 * Get similar highSchool
 	 */
 	public function getList_similar(){
 		if($this->list_suggest != ''){
@@ -172,11 +170,11 @@ class App extends CActiveRecord
 			$result=array();
 			$index=0;
 			foreach ($list as $id){
-				$app=App::model()->findByPk($id);
-				if(isset($app)){
+				$highSchool=HighSchool::model()->findByPk($id);
+				if(isset($highSchool)){
 					$index++;
-					if($index <= Setting::s('LIMIT_SIMILAR_APP','Application'))
-						$result[]=App::model()->findByPk($id);
+					if($index <= Setting::s('LIMIT_SIMILAR_HIGHSCHOOL','HighSchool'))
+						$result[]=HighSchool::model()->findByPk($id);
 				}
 				else{
 					$list_clear=array_diff(explode(',',$this->list_suggest),array(''));
@@ -188,26 +186,24 @@ class App extends CActiveRecord
 		}
 		else {
 			$criteria=new CDbCriteria;
-			$criteria->compare('status', App::STATUS_ACTIVE);
+			$criteria->compare('status', HighSchool::STATUS_ACTIVE);
 			$criteria->addCondition('id <>'. $this->id);
 			$criteria->compare ( 'status', QA::STATUS_ACTIVE );
 			$criteria->order='id desc';
 			$criteria->compare('catid',$this->catid);
-			$criteria->limit=Setting::s('LIMIT_SIMILAR_APP','Application');
-			$result=App::model()->findAll($criteria);		
+			$criteria->limit=Setting::s('LIMIT_SIMILAR_HIGHSCHOOL','HighSchool');
+			$result=HighSchool::model()->findAll($criteria);		
 		}
 		return $result;
 	}	
  	/*
-	 * Get all specials of class App
-	 * Used in dropdownlist when create or update app
+	 * Get all specials of class HighSchool
+	 * Used in dropdownlist when create or update highSchool
 	 */
 	static function getList_label_specials()
  	{
 	return array(
-			self::SPECIAL_NOTICE=>'Hiển thị trong thông báo',
-			self::SPECIAL_REMARK=>'Hiển thị trong phần tin nổi bật',
-			self::SPECIAL_MARQUEE=>'Hiển thị trong phần tin chạy',
+			self::SPECIAL_REMARK=>'Hiển thị trong phần tin riêng nổi bật',
 		);
  	}
  	/**
@@ -245,16 +241,16 @@ class App extends CActiveRecord
  		return $result;
  	}
 	/**
-	 * Get thumb image of this app
+	 * Get thumb image of this highSchool
 	 * @param string $type, type of needed thumb image
 	 */
 	public function getImage($type){
 		$image=Image::model()->findByPk($this->introimage);
 		if(isset($image)){
-			$url='<img class="img" src="'.$image->getThumb('App',$type).'" alt="'.$image->title.'" />';
+			$url='<img class="img" src="'.$image->getThumb('HighSchool',$type).'" alt="'.$image->title.'" />';
 		}
 		else {
-			$url='<img class="img" src="'.Image::getDefaultThumb('App',$type).'" />';
+			$url='<img class="img" src="'.Image::getDefaultThumb('HighSchool',$type).'" />';
 		}
 			return $url;	
 	}
@@ -291,7 +287,7 @@ class App extends CActiveRecord
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return App the static model class
+	 * @return HighSchool the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -319,7 +315,7 @@ class App extends CActiveRecord
 	}
 
 	/**
-	 * Function validate app title, don't allow add a app has same title with an existing app
+	 * Function validate highSchool title, don't allow add a highSchool has same title with an existing highSchool
 	 * @param string $attributes
 	 * @param $params
 	 */
@@ -342,7 +338,7 @@ class App extends CActiveRecord
 		$criteria->compare ( 'lower(alias)', strtolower ( $this->alias) );
 		if ($this->id > 0)
 			$criteria->addCondition ( 'id <> ' . $this->id );
-		$list = App::model ()->findAll ( $criteria );
+		$list = HighSchool::model ()->findAll ( $criteria );
 		if (sizeof ( $list ) > 0)
 			return false;
 		else
@@ -409,8 +405,7 @@ class App extends CActiveRecord
 		$introtext=$this->introtext;
 		$this->introtext=CHtml::decode($introtext);
 		//Store old title
-		$this->old_title=$this->title;
-		
+		$this->old_title=$this->title;		
 		if(isset($this->list_other_attributes['modified']))
 			$this->list_other_attributes['modified']=json_decode($this->list_other_attributes['modified'],true);
 		else 
@@ -435,9 +430,9 @@ class App extends CActiveRecord
 			{
 				$this->created_date=time();
 				$this->created_by=Yii::app()->user->id;
-				$this->status=App::STATUS_ACTIVE;
+				$this->status=HighSchool::STATUS_ACTIVE;
 				$alias=iPhoenixString::createAlias($this->title);
-				while(sizeof(App::model()->findAll('alias = "'.$alias.'"'))>0){
+				while(sizeof(HighSchool::model()->findAll('alias = "'.$alias.'"'))>0){
 					$suffix=rand(1,99);
 					$alias =$alias.'-'.$suffix;
 				}
@@ -446,16 +441,16 @@ class App extends CActiveRecord
 			else {
 				$modified=$this->modified;
 				$modified[time()]=Yii::app()->user->id;
-				$this->modified=json_encode($modified);	
+				$this->modified=json_encode($modified);
 				if($this->title != $this->old_title) {
-					$alias=iPhoenixString::createAlias($this->title);
-					while(sizeof(App::model()->findAll('alias = "'.$alias.'"'))>0){
+				$alias=iPhoenixString::createAlias($this->title);
+				while(sizeof(HighSchool::model()->findAll('alias = "'.$alias.'"'))>0){
 					$suffix=rand(1,99);
 					$alias =$alias.'-'.$suffix;
 				}
 				$this->alias=$alias;
 				}
-				//Handler list suggest app
+				//Handler list suggest highSchool
 				$list_clear=array_diff(explode(',',$this->list_suggest),array(''));
 				$list_filter=array_diff($list_clear,array($this->id));
 				$this->list_suggest=implode(',', $list_filter);
@@ -481,7 +476,7 @@ class App extends CActiveRecord
 			//Encode special
 			$this->special=iPhoenixStatus::encodeStatus($this->list_special);		
 			//Encode other attributes  		
-			$this->type=Article::ARTICLE_APP;
+			$this->type=Article::ARTICLE_HIGHSCHOOL;
 			//Encode fulltext
 			if($this->old_fulltext != $this->fulltext || $this->isNewRecord){
 				$fulltext=$this->fulltext;
@@ -544,13 +539,9 @@ class App extends CActiveRecord
 			//Delete introimage		
 			$introimage = Image::model()->findByPk($this->introimage);
 			if(isset($introimage)){
-				if($introimage->delete()) 
-					return true;
-				else 
-					return false;	
-			}
-			else 	
-				return true;		
+				$introimage->delete();
+			}	
+			return true;		
 		}
 	}
 	/**
@@ -563,7 +554,7 @@ class App extends CActiveRecord
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'lang', $this->lang );
 		$criteria->compare ( 'title', $this->title, true );
-		if (!Yii::app ()->user->checkAccess ( 'app_update') && Yii::app()->controller->id == 'app' && Yii::app()->controller->action->id == 'index') {
+		if (!Yii::app ()->user->checkAccess ( 'highSchool_update') && Yii::app()->controller->id == 'highSchool' && Yii::app()->controller->action->id == 'index') {
 			$criteria->compare ( 'created_by', Yii::app()->user->id);
 		}	
 		//Filter catid
@@ -604,7 +595,7 @@ class App extends CActiveRecord
 	 */
 	public function suggestTitle($keyword,$limit=20)
 	{
-		$list_app=$this->findAll(array(
+		$list_highSchool=$this->findAll(array(
 			'condition'=>'title LIKE :keyword',
 			'order'=>'title DESC',
 			'limit'=>$limit,
@@ -613,8 +604,8 @@ class App extends CActiveRecord
 			),
 		));
 		$titles=array();
-		foreach($list_app as $app)
-			$titles[]=$app->title;
+		foreach($list_highSchool as $highSchool)
+			$titles[]=$highSchool->title;
 			return $titles;
 	}
 	/**
@@ -651,15 +642,15 @@ class App extends CActiveRecord
 		else return false;
 	}
 	/**
-	 * Copy app
-	 * @param integer $id, the ID of app to be copied
+	 * Copy highSchool
+	 * @param integer $id, the ID of highSchool to be copied
 	 */
 	static function copy($id) {
 		$sql = 'insert into ' . self::model ()->tableName () . ' (catid,type,lang,status,special,order_view,title,alias,keyword,other,created_date,created_by) select catid,type,lang,status,special,order_view,title,alias,keyword,other,created_date,created_by from ' . self::model ()->tableName () . ' where id=' . $id;
 		$command = Yii::app ()->db->createCommand ( $sql );
 		if ($command->execute ()) {
 			$copy_id = Yii::app ()->db->getLastInsertID ();
-			$model = App::model ()->findByPk ( $copy_id );
+			$model = HighSchool::model ()->findByPk ( $copy_id );
 			$model->scenario = 'copy';
 			$model->title = $model->title . ' - Copy ';
 			$model->alias=$model->alias . '-copy';
@@ -677,3 +668,4 @@ class App extends CActiveRecord
 			return null;
 	}
 }
+

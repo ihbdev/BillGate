@@ -41,7 +41,6 @@ class NoticeController extends Controller
 	public function accessRules()
 	{
 		return array(
-			/*
 			array('allow',  
 				'actions'=>array('index'),
 				'roles'=>array('notice_index'),
@@ -83,10 +82,6 @@ class NoticeController extends Controller
 				'roles'=>array('notice_updateSuggest'),
 			),
 			array('deny', 
-				'users'=>array('*'),
-			),	
-			*/	
-			array('allow', 
 				'users'=>array('*'),
 			),		
 		);

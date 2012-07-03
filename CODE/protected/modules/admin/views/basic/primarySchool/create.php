@@ -2,17 +2,17 @@
 	<div class="folder top">
 		<!--begin title-->
 		<div class="folder-header">
-			<h1>Quản trị bài viết về ứng dụng của sản phẩm</h1>
+			<h1>Quản trị tin</h1>
 			<div class="header-menu">
 				<ul>
-					<li><a class="header-menu-active new-icon" href=""><span>Thêm bài viết mới</span></a></li>					
+					<li><a class="header-menu-active new-icon" href=""><span>Thêm tin mới</span></a></li>					
 				</ul>
 			</div>
 		</div>
 		<!--end title-->
 		<div class="folder-content form">
 		<div>
-                <input type="button" class="button" value="Danh sách bài viết" style="width:180px;" onClick="parent.location='<?php echo Yii::app()->createUrl('admin/app')?>'"/>
+                <input type="button" class="button" value="Danh sách tin" style="width:180px;" onClick="parent.location='<?php echo Yii::app()->createUrl('admin/primarySchool')?>'"/>
                 <div class="line top bottom"></div>	
             </div>
 		<?php $form=$this->beginWidget('CActiveForm', array('method'=>'post','enableAjaxValidation'=>true)); ?>	
@@ -31,7 +31,7 @@
 						<div class="row">
 						<li>
                         	<?php echo $form->labelEx($model,'list_special'); ?>
-                        	<?php echo $form->dropDownList($model,'list_special',News::getList_label_specials(),array('style'=>'width:250px','multiple' => 'multiple')); ?>
+                        	<?php echo $form->dropDownList($model,'list_special',PrimarySchool::getList_label_specials(),array('style'=>'width:250px','multiple' => 'multiple')); ?>
                   			<?php echo $form->error($model, 'list_special'); ?>
                     	</li>
                     	</div>
@@ -104,28 +104,6 @@
 								<?php echo $form->textArea($model,'metadesc',array('style'=>'width:280px;max-width:280px;','rows'=>6)); ?>			
 							</li>
 						</div>
-						<?php 
-						$list=array();
-						foreach ($list_keyword_categories as $id=>$level){
-							$cat=Category::model()->findByPk($id);
-							$view = "";
-							for($i=1;$i<$level;$i++){
-								$view .="---";
-							}
-							$keywords=Keyword::viewListKeyword($id);
-							if($keywords != "")
-								$list[$id]=$view." ".$cat->name." (".$keywords.") ".$view;
-							else 	
-								$list[$id]=$view." ".$cat->name." ".$view;
-						}
-						?>
-						<div class="row">
-						<li>
-							<?php echo $form->labelEx($model,'keyword'); ?>
-							<?php echo $form->dropDownList($model,'keyword',$list,array('style'=>'width:200px')); ?>
-							<?php echo $form->error($model, 'keyword'); ?>
-						</li>
-						</div>
 					</div>
 					</div>		
                     <div class="row">
@@ -156,23 +134,23 @@
 <div class="folder-content">
 <ul>
 		<?php 
-			Yii::app()->clientScript->registerScript('search-app-suggest', "
-				$('#app-search').submit(function(){
-				$.fn.yiiGridView.update('app-list', {
+			Yii::app()->clientScript->registerScript('search-primarySchool-suggest', "
+				$('#primarySchool-search').submit(function(){
+				$.fn.yiiGridView.update('primarySchool-list', {
 					data: $(this).serialize()});
 					return false;
 				});");
 		?>
-	 <?php $form=$this->beginWidget('CActiveForm', array('method'=>'get','id'=>'app-search')); ?>
+	 <?php $form=$this->beginWidget('CActiveForm', array('method'=>'get','id'=>'primarySchool-search')); ?>
 	 <li>
      	<?php echo $form->labelEx($model,'title'); ?>
        	<?php $this->widget('CAutoComplete', array(
         	            	'model'=>$suggest,
                          	'attribute'=>'title',
-							'url'=>array('app/suggestTitle'),
+							'url'=>array('primarySchool/suggestTitle'),
 							'htmlOptions'=>array(
 								'style'=>'width:230px;',
-       							'name'=>'SuggestNews[title]'
+       							'name'=>'SuggestPrimarySchool[title]'
 								),
 						)); ?>								
       </li>
@@ -189,17 +167,17 @@
 	?>
 	<li>
 		<label>Thuộc thư mục:</label>
-		<?php echo $form->dropDownList($suggest,'catid',$list,array('style'=>'width:200px','name'=>'SuggestNews[catid]')); ?>
+		<?php echo $form->dropDownList($suggest,'catid',$list,array('style'=>'width:200px','name'=>'SuggestPrimarySchool[catid]')); ?>
 	</li>            
 	<li>
 	<label>&nbsp;</label> 
-	<input type="submit" class="button" value="Lọc bài viết">
+	<input type="submit" class="button" value="Lọc tin">
 	</li>
 	<?php $this->endWidget(); ?>	
 	<li>
 	  <?php 
 			$this->widget('iPhoenixGridView', array(
-  				'id'=>'app-list',
+  				'id'=>'primarySchool-list',
   				'dataProvider'=>$suggest->search(),		
   				'columns'=>array(
 					array(
@@ -258,11 +236,11 @@ $("#update_suggest").click(
 			jQuery.ajax({
 				data: {'list-checked':list_checked.toString(), 'list-unchecked':list_unchecked.toString(),},
 				success:function(data){
-					$('#News_list_suggest').val(data);
+					$('#PrimarySchool_list_suggest').val(data);
 					hidenPopUp();
 				},
 				type:'POST',
-				url:'<?php echo $this->createUrl('app/updateSuggest');?>',
+				url:'<?php echo $this->createUrl('primarySchool/updateSuggest');?>',
 				'cache':'false'});
 			return false;
 		});

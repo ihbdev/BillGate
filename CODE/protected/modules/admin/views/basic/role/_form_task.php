@@ -1,6 +1,5 @@
 <?php $form=$this->beginWidget('CActiveForm', array('id'=>'role-form','enableAjaxValidation'=>true,'clientOptions'=>array('validationUrl'=>$this->createUrl('role/validate',array('type'=>$type))))); ?>	
 <input type="hidden" name="id" id="current_id" value="<?php echo isset($model->id)?$model->id:'0';?>" /> 
-<input type="hidden" name="group" id="group" value="<?php echo $group?>" /> 
 			<div class="fl" style="width:580px;">
 				<ul>
 				 	<?php if($model->id > 0):?>
