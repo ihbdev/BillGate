@@ -119,7 +119,26 @@ class GalleryVideo extends CActiveRecord
 		return '<img class="'.$class.'" src="http://img.youtube.com/vi/'.$vars['v'].'/1.jpg" alt="'.$alt.'">';
 		}
 	}
-
+	public function getThumb($type,$class){
+		$alt=$this->title;
+		if($this->introimage>0){
+			$image=Image::model()->findByPk($this->introimage);
+			if(isset($image)){
+				$src=$image->getThumb('GalleryVideo',$type);
+				if( $image->title != '')$alt=$image->title;
+			}
+			else {
+				$src=Image::getDefaultThumb('GalleryVideo', $type);
+			}
+			return $src;
+		}
+		else {			
+			//return '<img class="img" src="'.Image::getDefaultThumb('GalleryVideo', $type).'" alt="">';
+					//Get thumb youtube
+		parse_str( parse_url( $this->link, PHP_URL_QUERY ), $vars );
+		return 'http://img.youtube.com/vi/'.$vars['v'].'/1.jpg';
+		}
+	}
 	/**
 	 * Get all specials of class Album
 	 * Used in dropdown in creating, updating an album

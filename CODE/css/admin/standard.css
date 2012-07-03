@@ -93,7 +93,7 @@ right:50px;
 }
 #TP_right_panel {
 right:0px;
-z-index:10020;
+z-index:-10020;
 text-align:right;
 _padding-top:10px;
 margin:0px;

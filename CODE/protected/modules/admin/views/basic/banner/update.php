@@ -20,7 +20,10 @@
 									break;
 								case Banner::CODE_SONXE:
 									$type_image="thumb_sonxe";
-									break;						
+									break;
+								case Banner::CODE_HOMEPAGE:
+									$type_image="thumb_homepage";
+									break;	
 							}
 ?>
 <!--begin inside content-->
