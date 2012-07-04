@@ -7,12 +7,11 @@
 <meta name="keywords" content= "<?php echo Language::t(Setting::s('META_KEYWORD','System'));?>">
 <meta name="desc" content="Billgates School">
 <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
-<title><?php echo Language::t(Setting::s('FRONT_SITE_TITLE','System'));?></title>
 <!--css default-->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/reset.css">
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/common.css">
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/form.css">
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/anythingslider.css">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/nivo-slider.css">
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/print.css" media="print">
 <!--css only page-->
@@ -20,11 +19,12 @@
 <!--js default-->
 <script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/jquery.mousewheel-3.0.4.pack.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/jquery.anythingslider.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/jquery.nivo.slider.pack.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/style.js"></script>
 <!--js only page-->
 <script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/jquery.jcarousel.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/newslider.js"></script>
+<title><?php echo Language::t(Setting::s('FRONT_SITE_TITLE','System'));?></title>
 </head>
 <body>
 <div class="header-top">
@@ -39,8 +39,8 @@
             	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/vie.png" alt="vie" /></a>
                 <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/eng.png" alt="vie" /></a>
           	</div>
-            <input name="" type="text" class="text" onfocus="javascript:if(this.value=='Từ khoá...'){this.value='';};" onblur="javascript:if(this.value==''){this.value='Từ khoá...';};" value="Từ khoá..." />
-            <input name="" type="submit" class="btn-search" value="Tìm kiếm" />
+            <input name="" type="text" class="text" onfocus="javascript:if(this.value=='Từ khoá...'){this.value='';};" onblur="javascript:if(this.value==''){this.value='<?php echo Language::t('Từ khoá...');?>';};" value="<?php echo Language::t('Từ khoá...');?>" />
+            <input name="" type="submit" class="btn-search" value="<?php echo Language::t('Tìm kiếm');?>" />
         </div><!--box-search-->
     </div><!--wrapper-->
 </div><!--header-top-->
@@ -49,42 +49,15 @@
     	<div class="menu-inner">
             <a href="#" class="logo"></a>
             <div class="menu">
-                <ul>
-                    <li class="active"><a href="#">Trang chủ</a></li>
-                    <li>
-                        <a href="#">Giới thiệu</a>
-                        <ul>
-                            <li><a href="#">Thư ngỏ</a></li>
-                            <li><a href="#">Giới thiệu chung</a></li>
-                            <li><a href="#">Mục tiêu giáo dục</a></li>
-                            <li><a href="#">Phương pháp giáo dục</a></li>
-                            <li><a href="#">Cơ sở vật chất</a></li>
-                            <li><a href="#">Nhân sự</a></li>
-                            <li><a href="#">Hệ thống giáo dục</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Tin tức</a>
-                        <ul>
-                            <li><a href="#">Tin tuyển sinh</a></li>
-                            <li><a href="#">Tin giáo dục</a></li>
-                            <li><a href="#">Tin du học</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Tuyển sinh</a></li>
-                    <li><a href="#">Hình ảnh</a></li>
-                    <li><a href="#">BGS TV</a></li>
-                    <li><a href="#">Liên hệ</a></li>
-                    <li class="last"><a href="#">Hỏi đáp</a></li>
-                </ul>
+            <?php $this->widget('wMenu',array('type'=>Category::TYPE_NEWS,'view'=>'menu-top'))?>
             </div><!--menu-->
         </div><!--menu-inner-->
     </div><!--wrapper-->
 </div><!--menu-outer-->
 <div class="slider-outer">
 	<div class="wrapper">
-    	<div class="slider-wrapper">
-    		<?php $this->widget('wBanner',array('code'=>Banner::CODE_HEADLINE,'view'=>'head-line'))?>
+    	<div class="slider-wrapper theme-default">
+			<?php $this->widget('wBanner',array('code'=>Banner::CODE_HEADLINE,'view'=>'head-line'))?>
             <div class="slider-left"></div>
         </div><!--slider-wrapper-->
         <div class="video-top">
@@ -101,11 +74,11 @@
         </div><!--bigicon-menu-->
         <div class="main-login">
         	<form action="#" method="get">
-            	<div class="row"><label>Học sinh</label></div>
+            	<div class="row"><label><?php echo Language::t('Học sinh');?></label></div>
                 <div class="row"><input name="" type="text" class="text" /></div>
-                <div class="row"><label>Mật khẩu</label></div>
+                <div class="row"><label><?php echo Language::t('Mật khẩu');?></label></div>
                 <div class="row"><input name="" type="password" class="text" /></div>
-                <div class="row"><input name="" type="submit" class="main-login-submit" value="Đăng nhập" /></div>
+                <div class="row"><input name="" type="submit" class="main-login-submit" value="<?php echo Language::t('Đăng nhập');?>" /></div>
             </form>
         </div><!--main-login-->
     </div><!--wrapper-->	
@@ -117,23 +90,23 @@
             	<div class="shool-level">
                 	<a class="box-level level-1" href="#">
                     	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/data/level1.png" alt="Mầm non" />
-                        <label>Mầm non</label>
+                        <label><?php echo Language::t('Mầm non');?></label>
                     </a><!--box-level-->
                     <a class="box-level level-2" href="#">
                     	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/data/level2.png" alt="Tiểu học" />
-                        <label>Tiểu học</label>
+                        <label><?php echo Language::t('Tiểu học');?></label>
                     </a><!--box-level-->
                     <a class="box-level level-3" href="#">
                     	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/data/level3.png" alt="THCS&THPT" />
-                        <label>THCS&amp;THPT</label>
+                        <label><?php echo Language::t('THCS&amp;THPT');?></label>
                     </a><!--box-level-->
                     <a class="box-level level-4" href="#">
                     	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/data/level4.png" alt="Du học" />
-                        <label>Du học</label>
+                        <label><?php echo Language::t('Du học');?></label>
                     </a><!--box-level-->
                 </div><!--shool-level-->
                 <div class="winget">
-                	<div class="winget-title"><label>Thông báo</label></div>
+                	<div class="winget-title"><label><?php echo Language::t('Thông báo');?></label></div>
                     <div class="winget-content">
                     	<div class="box-message">
                     		<?php $this->widget('wNotice',array('view'=>'notice','limit'=>8))?>
@@ -143,59 +116,12 @@
             </div><!--sidebar-left-->
             <div class="main">
             	<div class="box">
-                	<div class="box-title"><label>Lời khuyên từ Bill Gates</label></div>
-                    <div class="box-content">
-                    	<div class="main-content">
-                        	<p><b>Chủ tịch Tập đoàn Microsoft trở thành tỉ phú ở tuổi 31 và trở thành người giàu nhất nước Mỹ khi chưa bước vào tuổi 40. Dưới đây là những nguyên tắc giúp Gates thành công, qua chính tâm sự của ông.</b></p>
-                            <br />
-                            <p>"Bạn không nên quyết định hai lần cho một vấn đề. Hãy dành đủ thời gian và suy nghĩ để ra quyết định đúng đắn ngay từ lần đầu tiên mà không cần phải quay trở lại xem xét vấn đề đó vào sau này nữa"</p>
-                            <br />
-                            <p>"Làm việc theo nguyên tắc bao giờ cũng hiệu quả hơn nhiều so với làm việc theo sự vụ."</p> 
-                            <p>"Phải thắng được nỗi sợ hãi bằng vũ khí có tên "tự tin". Thành công tạo niềm tin, vì thế nếu bạn thiếu tự tin, hãy đưa ra mục tiêu. Sau đó nên ăn mừng và làm kễ kỷ niệm khi bạn đạt được mục tiêu đó."</p>
-                            <p>"Chúng ta không thể thoát khỏi thua lỗ, chúng ta chỉ có thể biến nó thành bạn đồng hành trong mọi nỗ lực. Nôn nóng khi thua lỗ là một trong những cảm giác cơ bản nhất của xúc cảm con người. Nó không thể giúp ích được gì cho các doanh nhân trẻ trong việc lập kế hoạch song cũng không thể làm ngưng trệ công việc kinh doanh của họ. Nếu bạn cảm thấy nơm nớp lo âu về kinh doanh".</p>
-                        </div><!--main-content-->
-                    </div>
+            		<?php $this->widget('wStaticPage',array('view'=>'static-page','special'=>StaticPage::SPECIAL_REMARK,'limit'=>1))?>
                 </div><!--box-->
                 <div class="box">
-                	<div class="box-title"><label>TIN BILLGATES SCHOOL</label></div>
+                	<div class="box-title"><label><?php echo Language::t('TIN BILLGATES SCHOO');?>L</label></div>
                     <div class="box-content">
-                    	<?php $this->widget('wBanner',array('code'=>Banner::CODE_HOMEPAGE,'view'=>'home-page'))?>
-                        <div class="news-list">
-                        	<div class="grid">
-                            	<a href="#"><img class="img" src="images/data/image1.jpg" alt="news" /></a>
-                                <div class="g-content">
-                                	<div class="g-row"><a href="#" class="g-title">Triển lãm đồ dụng dạy học tự làm của Trường mầm non</a></div>
-                                    <div class="g-row">
-                                    	"Bạn không nên quyết định hai lần cho một vấn đề. Hãy dành đủ thời gian và suy nghĩ để ra quyết định đúng đắn ngay từ lần đầu tiên mà không cần phải quay trở lại xem xét vấn đề đó vào sau này nữa".
-                                    </div>
-                                </div>
-                            </div><!--grid-->
-                            <div class="grid">
-                            	<a href="#"><img class="img" src="images/data/image1.jpg" alt="news" /></a>
-                                <div class="g-content">
-                                	<div class="g-row"><a href="#" class="g-title">Triển lãm đồ dụng dạy học tự làm của Trường mầm non</a></div>
-                                    <div class="g-row">
-                                    	"Bạn không nên quyết định hai lần cho một vấn đề. Hãy dành đủ thời gian và suy nghĩ để ra quyết định đúng đắn ngay từ lần đầu tiên mà không cần phải quay trở lại xem xét vấn đề đó vào sau này nữa".
-                                    </div>
-                                </div>
-                            </div><!--grid-->
-                            <div class="grid">
-                            	<a href="#"><img class="img" src="images/data/image1.jpg" alt="news" /></a>
-                                <div class="g-content">
-                                	<div class="g-row"><a href="#" class="g-title">Triển lãm đồ dụng dạy học tự làm của Trường mầm non</a></div>
-                                    <div class="g-row">
-                                    	"Bạn không nên quyết định hai lần cho một vấn đề. Hãy dành đủ thời gian và suy nghĩ để ra quyết định đúng đắn ngay từ lần đầu tiên mà không cần phải quay trở lại xem xét vấn đề đó vào sau này nữa".
-                                    </div>
-                                </div>
-                            </div><!--grid-->
-                        </div><!--news-list-->
-                        <div class="other-list">
-                            <ul>
-                                <li><a href="#">Thực đơn Tuần từ ngày 09/04 - 15/04/2012</a></li>
-                                <li><a href="#">Thực đơn Tuần từ ngày 09/04 - 15/04/2012</a></li>
-                                <li><a href="#">Thực đơn Tuần từ ngày 09/04 - 15/04/2012</a></li>
-                            </ul>
-                        </div><!--other-list-->
+                    	<?php $this->widget('wNews',array('view'=>'news','limit'=>6))?>
                     </div>
                 </div><!--box-->
             </div><!--main-->
@@ -209,16 +135,7 @@
     </div><!--wrapper-->
 </div><!--bground-outer-->
 <div class="menu-bottom">
-    <ul>
-        <li><a href="#">Trang chủ</a></li>
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Tin tức</a></li>
-        <li><a href="#">Tuyển sinh</a></li>
-        <li><a href="#">Hình ảnh</a></li>
-        <li><a href="#">BGS TV</a></li>
-        <li><a href="#">Liên hệ</a></li>
-        <li><a href="#">Hỏi đáp</a></li>
-    </ul>
+	<?php $this->widget('wMenu',array('type'=>Category::TYPE_NEWS,'view'=>'menu-footer'))?>
 </div><!--menu-bottom-->
 <div class="footer">
 	<div class="wrapper">
@@ -257,7 +174,7 @@
 </div><!--footer-->
 <div class="footer-address">
 	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/footer-address.png" alt="Địa chỉ: Lô X1 Khu đô thị Bắc Linh Đàm - Hoàng Mai - Hà Nội; Điện thoại:84.4.35401588 - 35401589" />
-	<p>Copyright © 1997-2012 billgatesshool.vn</p>
+	<p><?php echo Language::t(Setting::s('COPYRIGHT_FOOTER','System'));?></p>
 </div><!--footer-address-->
 </body>
 </html>

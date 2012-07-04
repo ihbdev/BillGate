@@ -10,15 +10,15 @@ return array(
 	'language'=>'Language',
 	'menu'=>'Menu',
 	'news'=>'News',
-	'order'=>'Order',
-	'product'=>'Product',
 	'qa'=>'QA',
-	'recruitment'=>'Recruitment',
-	'register'=>'Register',
 	'role'=>'Role',
 	'setting'=>'Setting',
 	'static_page'=>'Static Page',
-	'support'=>'Support',
 	'user'=>'User',
-	'app'=>'Application'
+	'event'=>'Event',
+	'notice'=>'Notice',
+	'entrance'=>'Entrance',
+	'preschool'=>'Pre-School',
+	'primary_school'=>'Primary-School',
+	'high_school'=>'High-School'
 );

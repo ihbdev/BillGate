@@ -12,7 +12,9 @@ class Article extends CActiveRecord
 	const ARTICLE_APP=9;
 	const ARTICLE_NOTICE=10;
 	const ARTICLE_EVENT=11;
-	const ARTICLE_SPECIALPAGE=12;
+	const ARTICLE_PRESCHOOL=12;
 	const ARTICLE_ENTRANCE=14;
+	const ARTICLE_PRIMARYSCHOOL=13;
+	const ARTICLE_HIGHSCHOOL=15;
 }
 ?>

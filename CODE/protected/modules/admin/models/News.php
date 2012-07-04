@@ -43,7 +43,7 @@ class News extends CActiveRecord
 	 * SPECIAL_MARQUEE news is news that can be viewed at...
 	 */
 	const SPECIAL_REMARK=0;
-	
+	const SPECIAL_HOMEPAGE=1;
 	/**
 	 * Config other attribute
 	 ** INTRO_LENGTH number characters of news displayed in introduction
@@ -127,11 +127,11 @@ class News extends CActiveRecord
 			else {
 				$src=Image::getDefaultThumb('News', $type);
 			}
-			return '<img class="'.$class.'" src="'.$src.'" alt="'.$alt.'">';
+			return '<img class="'.$class.' img" src="'.$src.'" alt="'.$alt.'">';
 		}
 		else {
 			
-			return '<img class="'.$class.'" src="'.Image::getDefaultThumb('News', $type).'" alt="'.$alt.'">';
+			return '<img class="'.$class.' img" src="'.Image::getDefaultThumb('News', $type).'" alt="'.$alt.'">';
 		}
 	}
 	/**
@@ -204,6 +204,7 @@ class News extends CActiveRecord
  	{
 	return array(
 			self::SPECIAL_REMARK=>'Hiển thị trong phần tin nổi bật',
+			self::SPECIAL_HOMEPAGE=>'Hiển thị trong trang chủ',
 		);
  	}
  	/**

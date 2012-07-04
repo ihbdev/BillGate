@@ -41,7 +41,6 @@ class EventController extends Controller
 	public function accessRules()
 	{
 		return array(
-			/*
 			array('allow',  
 				'actions'=>array('index'),
 				'roles'=>array('event_index'),
@@ -85,10 +84,6 @@ class EventController extends Controller
 			array('deny', 
 				'users'=>array('*'),
 			),	
-			*/		
-			array('allow', 
-				'users'=>array('*'),
-			),
 		);
 	}
 	

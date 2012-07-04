@@ -41,7 +41,6 @@ class EntranceController extends Controller
 	public function accessRules()
 	{
 		return array(
-			/*
 			array('allow',  
 				'actions'=>array('index'),
 				'roles'=>array('entrance_index'),
@@ -83,10 +82,6 @@ class EntranceController extends Controller
 				'roles'=>array('entrance_updateSuggest'),
 			),
 			array('deny', 
-				'users'=>array('*'),
-			),	
-			*/		
-			array('allow', 
 				'users'=>array('*'),
 			),	
 		);

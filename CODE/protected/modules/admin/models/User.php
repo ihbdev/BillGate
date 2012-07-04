@@ -68,7 +68,7 @@ class User extends CActiveRecord
 		$list = $model->list_nodes;
 		foreach ( $list as $id => $level ) {
 			$role = Role::model()->findByPk($id);
-			$list_roles[$role->name]=$view." ".$role->name." ".$view;
+			$list_roles[$role->name]=$role->name;
 		}
 		return $list_roles;
  	}
@@ -220,7 +220,7 @@ class User extends CActiveRecord
 	 */
 	public function validatorRole($attributes,$params){
 		foreach ($this->role as $role) {
-			if(in_array($role, $this->list_roles)){
+			if(!in_array($role, array_keys($this->list_roles))){
 				$this->addError('role', 'Không tồn tại quyền này');
 			}
 		}

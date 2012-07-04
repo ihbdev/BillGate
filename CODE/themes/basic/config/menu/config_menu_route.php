@@ -33,12 +33,26 @@ return array(
 				'view_categories'=>'/entrance/list',
 				'view_all'=>'/entrance/index',
 			),
-			'specialPage'=>array(
-				'index'=>'/admin/specialPage/index',
-				'create'=>'/admin/specialPage/create',
+			'preschool'=>array(
+				'index'=>'/admin/preschool/index',
+				'create'=>'/admin/preschool/create',
 				'manager_category'=>'/admin/category',
-				'view_categories'=>'/specialPage/list',
-				'view_all'=>'/specialPage/index',
+				'view_categories'=>'/preschool/list',
+				'view_all'=>'/preschool/index',
+			),
+			'highSchool'=>array(
+				'index'=>'/admin/highSchool/index',
+				'create'=>'/admin/highSchool/create',
+				'manager_category'=>'/admin/category',
+				'view_categories'=>'/highSchool/list',
+				'view_all'=>'/highSchool/index',
+			),
+			'primarySchool'=>array(
+				'index'=>'/admin/primarySchool/index',
+				'create'=>'/admin/primarySchool/create',
+				'manager_category'=>'/admin/category',
+				'view_categories'=>'/primarySchool/list',
+				'view_all'=>'/primarySchool/index',
 			),
 			'staticPage'=>array(
 				'index'=>Yii::app ()->user->checkAccess ('static_page_index')?'/admin/staticPage/index':'',

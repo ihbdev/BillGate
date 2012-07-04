@@ -29,8 +29,6 @@ class StaticPage extends CActiveRecord
 	 * SPECIAL_REMARK album is viewed at homepage
 	 */
 	const SPECIAL_REMARK=0;
-	const SPECIAL_NOTICE=1;
-	const SPECIAL_MARQUEE=2;
 	
 	const META_LENGTH=30;
 	const INTRO_LENGTH=100; 	
@@ -154,9 +152,8 @@ class StaticPage extends CActiveRecord
 	static function getList_label_specials()
  	{
 	return array(
-			self::SPECIAL_NOTICE=>'Hiển thị trong thông báo',
-			self::SPECIAL_REMARK=>'Hiển thị trong phần tin nổi bật',
-			self::SPECIAL_MARQUEE=>'Hiển thị trong phần tin chạy thuộc trang chủ',
+			self::SPECIAL_REMARK=>'Hiển thị trong trang chủ',
+
 		);
  	}
  	 /*

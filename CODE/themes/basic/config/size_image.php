@@ -3,7 +3,7 @@ return array(
 		'News'=>array(
 			'introimage'=>array('h'=>100,'w'=>140),
 			'thumb_introimage'=>array('h'=>62,'w'=>84),
-			'thumb_homepage'=>array('h'=>68,'w'=>68)
+			'thumb_homepage'=>array('h'=>100,'w'=>130)
 		),
 		'Product'=>array(
 			'introimage'=>array('h'=>174,'w'=>174),
@@ -21,7 +21,7 @@ return array(
 		'Banner'=>array(
 			'thumb_upload'=>array('h'=>350,'w'=>655),
 			'thumb_headline'=>array('h'=>100,'w'=>200),
-			'headline'=>array('h'=>295,'w'=>780),
+			'headline'=>array('h'=>350,'w'=>655),
 			'thumb_top'=>array('h'=>100,'w'=>260),
 			'top'=>array('h'=>295,'w'=>780),
 			'left'=>array('h'=>107,'w'=>225),
@@ -32,7 +32,7 @@ return array(
 			'thumb_homepage'=>array('h'=>100,'w'=>150),
 		),
 		'GalleryVideo'=>array(
-			'thumb_upload'=>array('h'=>53,'w'=>'93'),
+			'thumb_upload'=>array('h'=>53,'w'=>93),
 			'thumb'=>array('h'=>53,'w'=>93),
 			'thumb_video'=>array('h'=>53,'w'=>93)
 		),
@@ -53,10 +53,16 @@ return array(
 		'Notice'=>array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),
-		'SpecialPage'=>array(
+		'Preschool'=>array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),
 		'Entrance'=>array(
+			'introimage'=>array('h'=>135,'w'=>180)
+		),
+		'PrimarySchool'=>array(
+			'introimage'=>array('h'=>135,'w'=>180)
+		),
+		'HighSchool'=>array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),
 	);

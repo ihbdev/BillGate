@@ -13,6 +13,7 @@ class SiteController extends Controller
 		Yii::app()->clientScript->scriptMap['jquery.js'] = false;
 		Yii::app()->clientScript->scriptMap['jquery.min.js'] = false;
 	}
+
 	/**
 	 * This is the action to handle external exceptions.
 	 */
@@ -26,6 +27,7 @@ class SiteController extends Controller
 					$this->render( 'error', $error );
 			}
 	}
+
 	/**
 	 * This is the action to handle view home page
 	 */
@@ -114,3 +116,4 @@ class SiteController extends Controller
 					array('value'=>'none'),CHtml::encode('none'),true);
 	}
 }
+?>
