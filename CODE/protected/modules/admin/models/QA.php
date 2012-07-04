@@ -77,7 +77,10 @@ class QA extends CActiveRecord
 	public $status_answer;
 	public function getUrl()
  	{		
- 		$url=Yii::app()->createUrl("qA/view",array('cat_alias'=>$this->category->alias,'qa_alias'=>$this->alias));
+ 		if(isset($this->category))
+ 			$url=Yii::app()->createUrl("qA/view",array('cat_alias'=>$this->category->alias,'qa_alias'=>$this->alias));
+ 		else 
+ 			$url='';
 		return $url;
  	}
 	/**
@@ -259,7 +262,8 @@ class QA extends CActiveRecord
 			'list_special' => 'Hiển thị',
 			'special'=>'Hiển thị',
 			'visits'=>'Người đọc',
-			'category'=>'Nhóm'
+			'category'=>'Nhóm',
+			'catid'=>'Danh mục'
 		);
 	}
 /**

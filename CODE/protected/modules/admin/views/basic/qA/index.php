@@ -133,7 +133,7 @@
     				),	
     				array(
 						'name'=>'title',
-						'headerHtmlOptions'=>array('width'=>'20%','class'=>'table-title'),		
+						'headerHtmlOptions'=>array('width'=>'10%','class'=>'table-title'),		
 					),	
 					array(
 						'name'=>'question',
@@ -146,6 +146,11 @@
 						'type'=>'html',
 						'headerHtmlOptions'=>array('width'=>'10%','class'=>'table-title'),		
 					), 	
+					array(
+						'name'=>'catid',
+						'value'=>'isset($data->category)?$data->category->name:""',
+						'headerHtmlOptions'=>array('width'=>'10%','class'=>'table-title'),		
+					),	
 					array(
 						'name'=>'created_date',
 						'value'=>'date("H:i d/m/Y",$data->created_date)',
