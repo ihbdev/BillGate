@@ -51,7 +51,8 @@ class Banner extends CActiveRecord
 	const CODE_BOCGHE=40;
 	const CODE_DOXE=41;
 	const CODE_SONXE=42;
-	
+	const CODE_HOMEPAGE=57;
+
 	/**
 	 * @var string old images of the banner	 
 	 */

@@ -3,7 +3,7 @@ return array(
 		'News'=>array(
 			'introimage'=>array('h'=>100,'w'=>140),
 			'thumb_introimage'=>array('h'=>62,'w'=>84),
-			'thumb_homepage'=>array('h'=>68,'w'=>68)
+			'thumb_homepage'=>array('h'=>100,'w'=>130)
 		),
 		'Product'=>array(
 			'introimage'=>array('h'=>174,'w'=>174),
@@ -19,19 +19,22 @@ return array(
 			'thumb'=>array('h'=>100,'w'=>125)
 		),
 		'Banner'=>array(
-			'thumb_upload'=>array('h'=>100,'w'=>'100'),
-			'thumb_headline'=>array('h'=>100,'w'=>260),
-			'headline'=>array('h'=>295,'w'=>780),
+			'thumb_upload'=>array('h'=>350,'w'=>655),
+			'thumb_headline'=>array('h'=>100,'w'=>200),
+			'headline'=>array('h'=>350,'w'=>655),
 			'thumb_top'=>array('h'=>100,'w'=>260),
 			'top'=>array('h'=>295,'w'=>780),
-			'left'=>array('h'=>153,'w'=>233),
-			'thumb_left'=>array('h'=>153,'w'=>233),
-			'right'=>array('h'=>450,'w'=>300),
-			'thumb_right'=>array('h'=>450,'w'=>300)
+			'left'=>array('h'=>107,'w'=>225),
+			'thumb_left'=>array('h'=>107,'w'=>225),
+			'right'=>array('h'=>105,'w'=>225),
+			'thumb_right'=>array('h'=>105,'w'=>225),
+			'homepage'=>array('h'=>100,'w'=>150),
+			'thumb_homepage'=>array('h'=>100,'w'=>150),
 		),
 		'GalleryVideo'=>array(
-			'thumb_upload'=>array('h'=>100,'w'=>'100'),
-			'thumb'=>array('h'=>50,'w'=>50)
+			'thumb_upload'=>array('h'=>53,'w'=>93),
+			'thumb'=>array('h'=>53,'w'=>93),
+			'thumb_video'=>array('h'=>53,'w'=>93)
 		),
 		'Image'=>array(
 		),

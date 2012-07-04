@@ -105,7 +105,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=billgate',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'thanhdaica',
+			'password' => '',
 			'charset' => 'utf8',
 			'schemaCachingDuration' => 180,
 		),
