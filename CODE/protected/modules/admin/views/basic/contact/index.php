@@ -32,14 +32,8 @@
 					<li>
 						<label>Thuộc nhóm:</label>
 						<?php echo $form->dropDownList($model,'status',$list,array('style'=>'width:200px')); ?>
-					</li>                                              
-                    </ul>
-                </div>
-                <!--end left content-->    
-                 <!--begin right content-->
-                <div class="fl" style="width:480px;">
-                    <ul>
-                  	 <li>
+					</li>   
+					 <li>
                         <?php 
 							echo CHtml::submitButton('Lọc kết quả',
     						array(
@@ -48,7 +42,28 @@
     							''
     						)); 						
     					?>
-                        </li> 
+                        </li>                                            
+                    </ul>
+                </div>
+                <!--end left content-->    
+                 <!--begin right content-->
+                <div class="fl" style="width:480px;">
+                    <ul>
+                    <?php 
+					$list=array(''=>'Tất cả các thư mục');
+					foreach ($list_category as $id=>$level){
+						$cat=Category::model()->findByPk($id);
+						$view = "";
+						for($i=1;$i<$level;$i++){
+							$view .="---";
+						}
+						$list[$id]=$view." ".$cat->name." ".$view;
+					}
+					?>
+					<li>
+						<?php echo $form->labelEx($model,'catid'); ?>
+						<?php echo $form->dropDownList($model,'catid',$list,array('style'=>'width:200px')); ?>
+					</li>                  	
                     </ul>
                 </div>
                 <!--end right content-->            
@@ -80,7 +95,12 @@
 						'name'=>'content',
 						'value'=>'iPhoenixString::createIntrotext($data->content,Contact::SIZE_INTRO_CONTENT)',
 						'headerHtmlOptions'=>array('width'=>'40%','class'=>'table-title'),		
-					),			
+					),		
+					array(
+						'name'=>'catid',
+						'value'=>'$data->catid > 0 ? $data->category->name : ""',
+						'headerHtmlOptions'=>array('width'=>'15%','class'=>'table-title'),		
+					), 	
 					array(
 						'name'=>'created_date',
 						'value'=>'date("H:i d/m/Y",$data->created_date)',

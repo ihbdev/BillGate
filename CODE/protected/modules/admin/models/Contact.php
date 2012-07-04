@@ -154,7 +154,8 @@ class Contact extends CActiveRecord
 			'address'=>'Địa chỉ', 
 			'created_date'=> 'Ngày tạo',
 			'fax'=>'Fax',
-			'with'=>'Liên hệ với phòng, ban'
+			'with'=>'Liên hệ với phòng, ban',
+			'catid'=>'Danh mục'
 		);
 	}
 /**

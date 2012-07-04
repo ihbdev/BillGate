@@ -14,6 +14,9 @@
  */
 class Banner extends CActiveRecord
 {
+	const DOMAIN_PRESCHOOL=1;
+	const DOMAIN_PRIMARYSCHOOL=2;
+	const DOMAIN_HIGHSCHOOL=3;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -25,7 +28,7 @@ class Banner extends CActiveRecord
 	/**
 	 * Config scope of banner
 	 */
-	public function defaultScope(){
+	public function defaultScope(){		
 		return array(
 			'condition'=>'type = '.Article::ARTICLE_BANNER,
 		);	
@@ -70,6 +73,23 @@ class Banner extends CActiveRecord
 	 */
 	private $config_other_attributes=array('modified','images','description','metakey','metadesc');	
 	
+	/**
+	 * 
+	 * PHP getter magic method for virtual property list_label_roles
+	 */
+ 	public function getLabel_domain()
+ 	{
+		switch($this->domain) {
+			case self::DOMAIN_HIGHSCHOOL: 
+				return 'THCS&THPT';
+			case self::DOMAIN_PRIMARYSCHOOL: 
+				return 'Tiểu học';
+			case self::DOMAIN_PRESCHOOL: 
+				return 'Mẫu giáo';
+			case 0:
+				return 'Trang tổng';
+		}
+ 	}
 	/**
 	 * Get image url which view status of banner 
 	 */
@@ -122,7 +142,7 @@ class Banner extends CActiveRecord
 		}
 		return '<img align="middle" class="'.$class.'" src="'.$src.'" alt="'.$alt.'">';
 	}
-/**
+	/**
 	 * Get update url of banner
 	 * @return banner's update url
 	 */
@@ -131,6 +151,27 @@ class Banner extends CActiveRecord
  		$url=Yii::app()->createUrl("admin/banner/update",array('id'=>$this->id));
 		return $url;
  	}
+ 	/**
+ 	 * Get list domain
+ 	 */
+	public function getList_domain()
+ 	{
+ 		$tmp=array();
+		if (Yii::app ()->user->checkAccess ( 'Manager PreSchool')) {
+			$tmp[self::DOMAIN_PRESCHOOL]='Mẫu giáo';
+		}
+		if (Yii::app ()->user->checkAccess ( 'Manager Primary School')) {
+			$tmp[self::DOMAIN_PRIMARYSCHOOL]='Tiểu học';
+		}
+		if (Yii::app ()->user->checkAccess ( 'Manager High School')) {
+			$tmp[self::DOMAIN_HIGHSCHOOL]='THCS&THPT';
+		}
+		if(!Yii::app ()->user->checkAccess ( 'Admin'))
+			return $tmp;
+		else
+			return $tmp+array('0'=>'Trang tổng');
+ 	}
+ 	
 	/**
 	 * PHP setter magic method for other attributes
 	 * @param $name the attribute name
@@ -174,10 +215,10 @@ class Banner extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('title,images','required','on'=>'write',),
+			array('title,images,domain','required','on'=>'write',),
 			array('title', 'length', 'max'=>256,'on'=>'write'),
 			array('description', 'length', 'max'=>512,'on'=>'write'),
-			array('title','safe','on'=>'search'),
+			array('title,domain','safe','on'=>'search'),
 			array('images','safe','on'=>'upload_image'),
 		);
 	}
@@ -207,7 +248,8 @@ class Banner extends CActiveRecord
 			'created_date'=>'Thời điểm đăng Banner',
 			'description'=>'Mô tả Banner',
 			'quantity_images'=>'Số lượng ảnh trong Banner',
-			'thumb_Banner'=>'Ảnh đại diện của Banner'
+			'thumb_Banner'=>'Ảnh đại diện của Banner',
+			'domain'=>'Thuộc trang'
 		);
 	}
 	/**
@@ -310,9 +352,24 @@ class Banner extends CActiveRecord
 	{
 		$criteria=new CDbCriteria;
 		$criteria->compare('title',$this->title,true);
+		$criteria->compare('domain',$this->domain);
 		if (!Yii::app ()->user->checkAccess ( 'banner_update')) {
 			$criteria->compare ( 'created_by', Yii::app()->user->id);
 		}
+		
+		$tmp=array();
+		if (Yii::app ()->user->checkAccess ( 'Manager PreSchool')) {
+			$tmp[] = self::DOMAIN_PRESCHOOL;
+		}
+		if (Yii::app ()->user->checkAccess ( 'Manager Primary School')) {
+			$tmp[] = self::DOMAIN_PRIMARYSCHOOL;
+		}
+		if (Yii::app ()->user->checkAccess ( 'Manager High School')) {
+			$tmp[] = self::DOMAIN_HIGHSCHOOL;
+		}
+		if(!Yii::app ()->user->checkAccess ( 'Admin'))
+			$criteria->addInCondition('domain', $tmp);
+		
 		if(isset($_GET['pageSize']))
 				Yii::app()->user->setState('pageSize',$_GET['pageSize']);
 		return new CActiveDataProvider($this, array(

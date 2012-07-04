@@ -40,5 +40,8 @@ return array (
 					),
 					'galleryVideo' => array (
 						'manager_category' => array ('type' => Category::TYPE_GALLERYVIDEO),
-					),		
+					),	
+					'contact' => array (
+						'manager_category' => array ('type' => Category::TYPE_CONTACT),
+					),	
 			);

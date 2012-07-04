@@ -44,6 +44,7 @@ class Category extends CActiveRecord
 	const TYPE_ENTRANCE=14;
 	const TYPE_PRIMARYSCHOOL=15;
 	const TYPE_HIGHSCHOOL=16;
+	const TYPE_CONTACT=17;
 
 	/**
 	 * Config special

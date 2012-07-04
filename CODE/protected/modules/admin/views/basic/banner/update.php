@@ -50,7 +50,14 @@
 							<?php echo $form->textField($model,'title',array('style'=>'width:280px;','maxlength'=>'256')); ?>	
 							<?php echo $form->error($model, 'title'); ?>				
 						</li>
-					</div>						
+					</div>		
+					<div class="row">
+						<li>
+							<?php echo $form->labelEx($model,'domain'); ?>
+							<?php echo $form->dropDownList($model,'domain',$model->list_domain,array('style'=>'width:200px')); ?>
+							<?php echo $form->error($model, 'domain'); ?>				
+						</li>
+					</div>					
            			<div class="row">
 					<li>
 						<?php echo $form->labelEx($model,'description'); ?>

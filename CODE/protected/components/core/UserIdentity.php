@@ -8,7 +8,6 @@
 class UserIdentity extends CUserIdentity
 {
 	private $_id;
-
 	/**
 	 * Authenticates a user.
 	 * @return boolean whether authentication succeeds.

@@ -111,8 +111,15 @@ class ContactController extends Controller
 		$model->status=Contact::STATUS_PENDING;
 		if(isset($_GET['Contact']))
 			$model->attributes=$_GET['Contact'];
+			
+		//Group categories that contains news
+		$group=new Category();		
+		$group->type=Category::TYPE_CONTACT;
+		$list_category=$group->list_nodes;
+		
 		$this->render('index',array(
-			'model'=>$model
+			'model'=>$model,
+			'list_category'=>$list_category
 		));
 	}
 	

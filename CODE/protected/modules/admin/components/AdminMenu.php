@@ -8,21 +8,27 @@ class AdminMenu extends CPortlet
 	}
 	protected function renderContent()
 	{
-		switch(Yii::app ()->session ['view']){
-			case 'advance':
-				$model=new Menu();				
-				$model->type=Menu::TYPE_ADVANCE_ADMIN_MENU;		
-				break;
-			default: 
-				$model=new Menu();				
-				$model->type=Menu::TYPE_ADMIN_MENU;				
+		if (Yii::app ()->user->checkAccess ( 'Admin')){
+			switch(Yii::app ()->session ['view']){
+				case 'advance':
+					$model=new Menu();				
+					$model->type=Menu::TYPE_ADVANCE_ADMIN_MENU;		
+					break;
+				default: 
+					$model=new Menu();				
+					$model->type=Menu::TYPE_ADMIN_MENU;				
+			}
+		}
+		else {
+			$model=new Menu();				
+			$model->type=Menu::TYPE_BASIC_ADMIN_MENU;		
 		}
 		//Create list menu which are used when view menu
 		$list_nodes=$model->list_nodes;
 		foreach ($list_nodes as $id=>$level) {
 			$menu=Menu::model()->findByPk($id);	
-			if($menu->url == '')
-				unset($list_nodes[$id]);			
+			if($menu->url == '')				
+				unset($list_nodes[$id]);
 		}
 		$list=array();
 		$list_active_menu_id=$model->findActiveMenu();		

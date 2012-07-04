@@ -40,14 +40,8 @@
 								'style'=>'width:230px;',
 								),
 						)); ?>								
-                        </li>                       
-                    </ul>
-                </div>
-                <!--end left content-->     
-                <!--begin right content-->
-                <div class="fl" style="width:480px;">
-                    <ul>
-                  	 <li>
+                        </li>  
+                        <li>
                         <?php 
 							echo CHtml::submitButton('Lọc kết quả',
     						array(
@@ -56,7 +50,18 @@
     							''
     						)); 						
     					?>
-                        </li>
+                        </li>                     
+                    </ul>
+                </div>
+                <!--end left content-->     
+                <!--begin right content-->
+                <div class="fl" style="width:480px;">
+                    <ul>
+						<li>
+							<?php echo $form->labelEx($model,'domain'); ?>
+							<?php echo $form->dropDownList($model,'domain',$model->list_domain,array('style'=>'width:200px')); ?>
+							<?php echo $form->error($model, 'domain'); ?>				
+						</li>                  	 
                     </ul>
                 </div>
                 <!--end right content-->           
@@ -83,7 +88,12 @@
     				array(
 						'name'=>'title',
 						'headerHtmlOptions'=>array('width'=>'20%','class'=>'table-title'),		
-					), 		
+					), 	
+					array(
+						'name'=>'domain',
+						'value'=>'$data->label_domain',
+						'headerHtmlOptions'=>array('width'=>'10%','class'=>'table-title'),		
+					),	
 					array(
 						'name'=>'quantity_images',
 						'type'=>'html',

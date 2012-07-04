@@ -32,7 +32,7 @@ class Menu extends CActiveRecord
 	const TYPE_ADVANCE_ADMIN_MENU=1;
 	const TYPE_USER_MENU=2;
 	const TYPE_ADMIN_MENU=3;
-	const TYPE_TEST_MENU=4;
+	const TYPE_BASIC_ADMIN_MENU=4;
 		
 	private $config_other_attributes=array('params','action','controller','description','modified');	
 	private $list_other_attributes;
@@ -585,15 +585,17 @@ class Menu extends CActiveRecord
 	 */
 	public function getUrl() {	
 		$configFile = Yii::app ()->theme->basePath.'/config/menu/config_menu_params.php';
-    	$config_params=require($configFile);	
-			if ($this->params != "") {
-				$params = ( array ) json_decode ( $this->params );
-			} elseif (isset ( $config_params [$this->controller] [$this->action] ))
-				$params = $config_params [$this->controller] [$this->action];
-			if (isset ( $params ))
-				$url = Yii::app ()->createUrl ( $this->route, $params );
-			else
-				$url = Yii::app ()->createUrl ( $this->route );				
+    	$config_params=require($configFile);
+    	if($this->route == '') return '';	
+		if ($this->params != "") {
+			$params = ( array ) json_decode ( $this->params );
+		}
+		elseif (isset ( $config_params [$this->controller] [$this->action] ))
+			$params = $config_params [$this->controller] [$this->action];
+		if (isset ( $params ))
+			$url = Yii::app ()->createUrl ( $this->route, $params );
+		else
+			$url = Yii::app ()->createUrl ( $this->route );				
 		return $url;
 	}
 	/**

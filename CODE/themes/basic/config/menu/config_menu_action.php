@@ -58,7 +58,8 @@ return array(
 	),
 	'contact'=>array(
 		'index'=>'Quản lý',
-		'view_contact'=>'Hiển thị'
+		'view_contact'=>'Hiển thị',
+		'manager_category'=>'Danh mục'
 	),
 	'image'=>array(
 		'list'=>'Danh sách',
