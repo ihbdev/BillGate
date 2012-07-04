@@ -1,29 +1,38 @@
 <?php 
 							switch ($model->id){
-								case Banner::CODE_LEFT:
-									$type_image="thumb_left";
-									break;	
 								case Banner::CODE_HEADLINE:
 									$type_image="thumb_headline";
 									break;	
 								case Banner::CODE_RIGHT:
 									$type_image="thumb_right";
 									break;	
-								case Banner::CODE_FOOTER:
-									$type_image="thumb_footer";
+								case Banner::CODE_PRESCHOOL_HEADLINE:
+									$type_image="thumb_school_headline";
 									break;
-								case Banner::CODE_BOCGHE:
-									$type_image="thumb_bocghe";
+								case Banner::CODE_PRESCHOOL_LEFT:
+									$type_image="thumb_school_left";
 									break;
-								case Banner::CODE_DOXE:
-									$type_image="thumb_doxe";
+								case Banner::CODE_PRESCHOOL_MIDDLE:
+									$type_image="thumb_school_middle";
 									break;
-								case Banner::CODE_SONXE:
-									$type_image="thumb_sonxe";
+								case Banner::CODE_PRIMARY_SCHOOL_HEADLINE:
+									$type_image="thumb_school_headline";
 									break;
-								case Banner::CODE_HOMEPAGE:
-									$type_image="thumb_homepage";
-									break;	
+								case Banner::CODE_PRIMARY_SCHOOL_LEFT:
+									$type_image="thumb_school_left";
+									break;
+								case Banner::CODE_PRIMARY_SCHOOL_MIDDLE:
+									$type_image="thumb_school_middle";
+									break;
+								case Banner::CODE_HIGH_SCHOOL_HEADLINE:
+									$type_image="thumb_school_headline";
+									break;
+								case Banner::CODE_HIGH_SCHOOL_LEFT:
+									$type_image="thumb_school_left";
+									break;
+								case Banner::CODE_HIGH_SCHOOL_MIDDLE:
+									$type_image="thumb_school_middle";
+									break;
 							}
 ?>
 <!--begin inside content-->

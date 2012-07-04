@@ -5,12 +5,6 @@ return array(
 			'thumb_introimage'=>array('h'=>62,'w'=>84),
 			'thumb_homepage'=>array('h'=>100,'w'=>130)
 		),
-		'Product'=>array(
-			'introimage'=>array('h'=>174,'w'=>174),
-			'detail_introimage'=>array('h'=>500,'w'=>600),
-			'otherimage'=>array('h'=>174,'w'=>174),
-			'thumb_otherimage'=>array('h'=>100,'w'=>100),
-		),
 		'StaticPage'=>array(
 			'introimage'=>array('h'=>100,'w'=>130)
 		),
@@ -22,14 +16,15 @@ return array(
 			'thumb_upload'=>array('h'=>350,'w'=>655),
 			'thumb_headline'=>array('h'=>100,'w'=>200),
 			'headline'=>array('h'=>350,'w'=>655),
-			'thumb_top'=>array('h'=>100,'w'=>260),
-			'top'=>array('h'=>295,'w'=>780),
-			'left'=>array('h'=>107,'w'=>225),
-			'thumb_left'=>array('h'=>107,'w'=>225),
 			'right'=>array('h'=>105,'w'=>225),
 			'thumb_right'=>array('h'=>105,'w'=>225),
-			'homepage'=>array('h'=>100,'w'=>150),
-			'thumb_homepage'=>array('h'=>100,'w'=>150),
+			'school_headline'=>array('h'=>195,'w'=>490),
+			'thumb_school_headline'=>array('h'=>100,'w'=>200),
+			'school_left'=>array('h'=>499,'w'=>225),
+			'thumb_school_left'=>array('h'=>200,'w'=>110),
+			'school_middle'=>array('h'=>100,'w'=>150),
+			'thumb_school_middle'=>array('h'=>100,'w'=>150),
+			
 		),
 		'GalleryVideo'=>array(
 			'thumb_upload'=>array('h'=>53,'w'=>93),
@@ -41,12 +36,6 @@ return array(
 		'Category'=>array(
 			'introimage'=>array('h'=>100,'w'=>130)
 		),
-		'Recruitment'=>array(
-			'introimage'=>array('h'=>100,'w'=>'100'),
-		),
-		'App'=>array(
-			'introimage'=>array('h'=>135,'w'=>180)
-		),	
 		'Event'=>array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),	
