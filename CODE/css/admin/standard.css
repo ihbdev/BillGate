@@ -93,7 +93,7 @@ right:50px;
 }
 #TP_right_panel {
 right:0px;
-z-index:-10020;
+z-index:10020;
 text-align:right;
 _padding-top:10px;
 margin:0px;
@@ -121,7 +121,7 @@ right:30px;
 position:absolute;
 top:45px;
 width:1000px;
-z-index:9999;
+z-index:10030;
 }
 #sub_menuBar {
 width:1001px;
