@@ -7807,3 +7807,152 @@ REQUEST_URI=/index.php?r=preschool/list&cat_alias=danh-muc-tin-mau-giao-1
 in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\preschool\_news.php (2)
 in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\preschool\list.php (37)
 in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php (53)
+2012/07/05 17:18:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Yêu cầu của bạn không hợp lệ.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php:337
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('preschool/view')
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php?r=preschool/view&cat_alias=danh-muc-tin-mau-giao-1&preschool_alias=cong-dong-mang-phan-ung-ve-phong-su-cua-truyen-hinh-trung-quoc---copy--90
+HTTP_REFERER=http://billgate.com/index.php?r=preschool/list&cat_alias=danh-muc-tin-mau-giao-1&Preschool_page=2
+---
+2012/07/05 17:20:47 [error] [php] Undefined variable: product_alias (F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php:66)
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): PreSchoolController->runAction()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): PreSchoolController->runActionWithFilters()
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): PreSchoolController->run()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CWebApplication->run()
+REQUEST_URI=/index.php?r=preschool/view&cat_alias=danh-muc-tin-mau-giao-1&preschool_alias=cong-dong-mang-phan-ung-ve-phong-su-cua-truyen-hinh-trung-quoc---copy--90
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php (66)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php (17)
+2012/07/05 17:25:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Trong nhóm Preschoolkhông tồn tại tham số cấu hình LIMIT_SIMILAR_PRESCHOOL' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Setting.php:101
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Preschool.php(194): Setting::s('LIMIT_SIMILAR_P...', 'Preschool')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CComponent.php(112): Preschool->getList_similar()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(144): CComponent->__get('list_similar')
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Preschool.php(284): CActiveRecord->__get('list_similar')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\preschool\view.php(7): Preschool->__get('list_similar')
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require('F:\xampp\htdocs...')
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php(71): CController->render('view', Array)
+#10 [internal function]: PreSchoolController->actionView('danh-muc-tin-ma...', 'cong-dong-mang-...')
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(PreSchoolController), Array)
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(PreSchoolController), Object(ReflectionMethod), Array)
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#17 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('preschool/view')
+#18 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=preschool/view&cat_alias=danh-muc-tin-mau-giao-1&preschool_alias=cong-dong-mang-phan-ung-ve-phong-su-cua-truyen-hinh-trung-quoc---copy--90
+HTTP_REFERER=http://billgate.com/index.php?r=preschool/list&cat_alias=danh-muc-tin-mau-giao-1&Preschool_page=2
+---
+2012/07/05 17:26:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Trong nhóm Preschoolkhông tồn tại tham số cấu hình LIMIT_SIMILAR_SCHOOL' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Setting.php:101
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Preschool.php(194): Setting::s('LIMIT_SIMILAR_S...', 'Preschool')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CComponent.php(112): Preschool->getList_similar()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(144): CComponent->__get('list_similar')
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Preschool.php(284): CActiveRecord->__get('list_similar')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\preschool\view.php(7): Preschool->__get('list_similar')
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require('F:\xampp\htdocs...')
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php(71): CController->render('view', Array)
+#10 [internal function]: PreSchoolController->actionView('danh-muc-tin-ma...', 'cong-dong-mang-...')
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(PreSchoolController), Array)
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(PreSchoolController), Object(ReflectionMethod), Array)
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#17 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('preschool/view')
+#18 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=preschool/view&cat_alias=danh-muc-tin-mau-giao-1&preschool_alias=cong-dong-mang-phan-ung-ve-phong-su-cua-truyen-hinh-trung-quoc---copy--90
+HTTP_REFERER=http://billgate.com/index.php?r=preschool/list&cat_alias=danh-muc-tin-mau-giao-1&Preschool_page=2
+---
+2012/07/05 17:26:30 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Trong nhóm Preschoolkhông tồn tại tham số cấu hình LIMIT_SIMILAR_SCHOOL' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Setting.php:101
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Preschool.php(194): Setting::s('LIMIT_SIMILAR_S...', 'Preschool')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CComponent.php(112): Preschool->getList_similar()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(144): CComponent->__get('list_similar')
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Preschool.php(284): CActiveRecord->__get('list_similar')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\preschool\view.php(7): Preschool->__get('list_similar')
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require('F:\xampp\htdocs...')
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php(71): CController->render('view', Array)
+#10 [internal function]: PreSchoolController->actionView('danh-muc-tin-ma...', 'cong-dong-mang-...')
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(PreSchoolController), Array)
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(PreSchoolController), Object(ReflectionMethod), Array)
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#17 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('preschool/view')
+#18 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=preschool/view&cat_alias=danh-muc-tin-mau-giao-1&preschool_alias=cong-dong-mang-phan-ung-ve-phong-su-cua-truyen-hinh-trung-quoc---copy--90
+HTTP_REFERER=http://billgate.com/index.php?r=preschool/list&cat_alias=danh-muc-tin-mau-giao-1&Preschool_page=2
+---
+2012/07/05 17:26:33 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Trong nhóm Preschoolkhông tồn tại tham số cấu hình LIMIT_SIMILAR_SCHOOL' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Setting.php:101
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Preschool.php(194): Setting::s('LIMIT_SIMILAR_S...', 'Preschool')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CComponent.php(112): Preschool->getList_similar()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(144): CComponent->__get('list_similar')
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Preschool.php(284): CActiveRecord->__get('list_similar')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\preschool\view.php(7): Preschool->__get('list_similar')
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require('F:\xampp\htdocs...')
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): CController->renderPartial('view', Array, true)
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php(71): CController->render('view', Array)
+#10 [internal function]: PreSchoolController->actionView('danh-muc-tin-ma...', 'cong-dong-mang-...')
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(PreSchoolController), Array)
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(PreSchoolController), Object(ReflectionMethod), Array)
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#17 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('preschool/view')
+#18 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=preschool/view&cat_alias=danh-muc-tin-mau-giao-1&preschool_alias=cong-dong-mang-phan-ung-ve-phong-su-cua-truyen-hinh-trung-quoc---copy--90
+HTTP_REFERER=http://billgate.com/index.php?r=preschool/list&cat_alias=danh-muc-tin-mau-giao-1&Preschool_page=2
+---
+2012/07/05 17:27:16 [error] [php] Undefined variable: news (F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\preschool\view.php:5)
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): PreSchoolController->renderFile()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): PreSchoolController->renderPartial()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php(71): PreSchoolController->render()
+#3 unknown(0): PreSchoolController->actionView()
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams()
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): PreSchoolController->runAction()
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): PreSchoolController->runActionWithFilters()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): PreSchoolController->run()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CWebApplication->run()
+REQUEST_URI=/index.php?r=preschool/view&cat_alias=danh-muc-tin-mau-giao-1&preschool_alias=cong-dong-mang-phan-ung-ve-phong-su-cua-truyen-hinh-trung-quoc---copy--90
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\preschool\view.php (5)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php (71)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php (17)

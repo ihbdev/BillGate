@@ -5,9 +5,7 @@ class PreSchoolController extends Controller {
 	public function init(){
 		$this->layout='preschool';
 	}
-	/**
-	 * Displays all product
-	 */
+
 	public function actionIndex() {		
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'status', Preschool::STATUS_ACTIVE );
@@ -54,23 +52,23 @@ class PreSchoolController extends Controller {
 		}
 	}
 	/**
-	 * Displays product
+	 * Display
 	 */
-	public function actionView($cat_alias, $product_alias) {
+	public function actionView($cat_alias, $preschool_alias) {
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'alias', $cat_alias );
-		$criteria->compare('type',Category::TYPE_PRODUCT);
+		$criteria->compare('type',Category::TYPE_PRESCHOOL);
 		$cat = Category::model ()->find( $criteria );
 		if (isset ( $cat )) {
 		$criteria = new CDbCriteria ();
 		if (isset ( $cat ))
 			$criteria->compare ( 'catid', $cat->id );
-		$criteria->compare ( 'alias', $product_alias );
-		$product = Product::model ()->find ( $criteria );
-		if (isset ( $product )) {
-			$product->visits=$product->visits+1;
-			$product->save();
-			$this->render ( 'product', array ('cat' => $cat, 'product' => $product ) );
+		$criteria->compare ( 'alias', $preschool_alias );
+		$preschool = Preschool::model ()->find ( $criteria );
+		if (isset ( $preschool )) {
+			$preschool->visits=$preschool->visits+1;
+			$preschool->save();
+			$this->render ( 'view', array ('cat' => $cat, 'preschool' => $preschool ) );
 		}
 		}
 	}
