@@ -7245,3 +7245,374 @@ REQUEST_URI=/index.php?r=admin/banner/update&id=58
 in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\views\basic\image\_galleryupload.php (5)
 in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\views\basic\banner\update.php (93)
 in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\controllers\BannerController.php (121)
+2012/07/05 11:08:52 [error] [php] include(Product.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\YiiBase.php:418)
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php(10): spl_autoload_call()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): PreSchoolController->actionIndex()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): PreSchoolController->runAction()
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): PreSchoolController->runActionWithFilters()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): PreSchoolController->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CWebApplication->run()
+REQUEST_URI=/index.php?r=preschool/index
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php (10)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php (17)
+2012/07/05 11:29:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Bạn không có quyền để thực hiện hành động này.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'B???n kh??ng c?...')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('validate')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/category/...')
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/category/validate&type=13
+HTTP_REFERER=http://billgate.com/index.php?r=admin/category&type=13
+---
+2012/07/05 11:29:39 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Bạn không có quyền để thực hiện hành động này.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'B???n kh??ng c?...')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('validate')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/category/...')
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/category/validate&type=13
+HTTP_REFERER=http://billgate.com/index.php?r=admin/category&type=13
+---
+2012/07/05 11:29:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Bạn không có quyền để thực hiện hành động này.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'B???n kh??ng c?...')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('validate')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/category/...')
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/category/validate&type=13
+HTTP_REFERER=http://billgate.com/index.php?r=admin/category&type=13
+---
+2012/07/05 11:29:55 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Bạn không có quyền để thực hiện hành động này.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'B???n kh??ng c?...')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('validate')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/category/...')
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/category/validate&type=13
+HTTP_REFERER=http://billgate.com/index.php?r=admin/category&type=13
+---
+2012/07/05 11:30:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Bạn không có quyền để thực hiện hành động này.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'B???n kh??ng c?...')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('validate')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/category/...')
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/category/validate&type=13
+HTTP_REFERER=http://billgate.com/index.php?r=admin/category&type=13
+---
+2012/07/05 11:30:33 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Bạn không có quyền để thực hiện hành động này.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'B???n kh??ng c?...')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('validate')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/category/...')
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/category/validate&type=13
+HTTP_REFERER=http://billgate.com/index.php?r=admin/category&type=13
+---
+2012/07/05 11:30:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Bạn không có quyền để thực hiện hành động này.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'B???n kh??ng c?...')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('validate')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/category/...')
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/category/validate&type=13
+HTTP_REFERER=http://billgate.com/index.php?r=admin/category&type=13
+---
+2012/07/05 11:33:30 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Bạn không có quyền để thực hiện hành động này.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'B???n kh??ng c?...')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('validate')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/category/...')
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/category/validate&type=18
+HTTP_REFERER=http://billgate.com/index.php?r=admin/category&type=18
+---
+2012/07/05 11:33:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Bạn không có quyền để thực hiện hành động này.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'B???n kh??ng c?...')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('validate')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/category/...')
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/category/validate&type=18
+HTTP_REFERER=http://billgate.com/index.php?r=admin/category&type=18
+---
+2012/07/05 11:33:45 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Bạn không có quyền để thực hiện hành động này.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'B???n kh??ng c?...')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('validate')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/category/...')
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=admin/category/validate&type=18
+HTTP_REFERER=http://billgate.com/index.php?r=admin/category&type=18
+---
+2012/07/05 11:49:53 [error] [exception.CException] exception 'CException' with message 'Alias "application.extensions.CJuiDateTimePicker.CJuiDateTimePicker" không có hiệu lực. Phải chắc chắn nó chỉ đến một tập tin PHP đã có.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\YiiBase.php:318
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWidgetFactory.php(147): YiiBase::import('application.ext...', true)
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(EventController), 'application.ext...', Array)
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(173): CBaseController->createWidget('application.ext...', Array)
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\views\basic\event\create.php(46): CBaseController->widget('application.ext...', Array)
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require('F:\xampp\htdocs...')
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): CController->renderPartial('create', Array, true)
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\controllers\EventController.php(133): CController->render('create', Array)
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): EventController->actionCreate()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#17 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('create')
+#19 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/event/cre...')
+#20 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=admin/event/create
+HTTP_REFERER=http://billgate.com/index.php?r=admin/event/index
+---
+2012/07/05 12:10:47 [error] [php] Undefined variable: form (F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\views\basic\event\index.php:16)
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): EventController->renderFile()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): EventController->renderPartial()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\controllers\EventController.php(291): EventController->render()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): EventController->actionIndex()
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(134): EventController->runAction()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): EventController->filterAccessControl()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): EventController->runActionWithFilters()
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): EventController->run()
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/event
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\views\basic\event\index.php (16)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\controllers\EventController.php (291)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php (17)
+2012/07/05 12:13:15 [error] [php] Undefined variable: form (F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\views\basic\event\create.php:14)
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): EventController->renderFile()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): EventController->renderPartial()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\controllers\EventController.php(133): EventController->render()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): EventController->actionCreate()
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(134): EventController->runAction()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CInlineFilter.php(59): EventController->filterAccessControl()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(292): CFilterChain->run()
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): EventController->runActionWithFilters()
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): EventController->run()
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/event/create
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\views\basic\event\create.php (14)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\controllers\EventController.php (133)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php (17)
+2012/07/05 12:56:18 [error] [php] Undefined variable: model (F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\wEvent\event.php:4)
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\widgets\CWidget.php(244): wEvent->renderFile()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wEvent.php(22): wEvent->render()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\zii\widgets\CPortlet.php(95): wEvent->renderContent()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(174): wEvent->run()
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\layouts\preschool.php(212): PreSchoolController->widget()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): PreSchoolController->renderInternal()
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(785): PreSchoolController->renderFile()
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php(9): PreSchoolController->render()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): PreSchoolController->actionIndex()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams()
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): PreSchoolController->runAction()
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): PreSchoolController->runActionWithFilters()
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): PreSchoolController->run()
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CWebApplication->run()
+REQUEST_URI=/index.php?r=preschool/index
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\wEvent\event.php (4)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wEvent.php (22)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\layouts\preschool.php (212)
+2012/07/05 12:56:41 [error] [php] Use of undefined constant created_date - assumed 'created_date' (F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\wEvent\event.php:4)
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\widgets\CWidget.php(244): wEvent->renderFile()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wEvent.php(22): wEvent->render()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\zii\widgets\CPortlet.php(95): wEvent->renderContent()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(174): wEvent->run()
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\layouts\preschool.php(212): PreSchoolController->widget()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): PreSchoolController->renderInternal()
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(785): PreSchoolController->renderFile()
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php(9): PreSchoolController->render()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): PreSchoolController->actionIndex()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams()
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): PreSchoolController->runAction()
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): PreSchoolController->runActionWithFilters()
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): PreSchoolController->run()
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CWebApplication->run()
+REQUEST_URI=/index.php?r=preschool/index
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\wEvent\event.php (4)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wEvent.php (22)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\layouts\preschool.php (212)
+2012/07/05 13:40:20 [error] [php] Undefined variable: index (F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\wBanner\school-banner-left.php:3)
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\widgets\CWidget.php(244): wBanner->renderFile()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wBanner.php(16): wBanner->render()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\zii\widgets\CPortlet.php(95): wBanner->renderContent()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(174): wBanner->run()
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\layouts\preschool.php(90): PreSchoolController->widget()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): PreSchoolController->renderInternal()
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(785): PreSchoolController->renderFile()
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php(9): PreSchoolController->render()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): PreSchoolController->actionIndex()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams()
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): PreSchoolController->runAction()
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): PreSchoolController->runActionWithFilters()
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): PreSchoolController->run()
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CWebApplication->run()
+REQUEST_URI=/index.php?r=preschool/index
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\wBanner\school-banner-left.php (3)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wBanner.php (16)
+in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\layouts\preschool.php (90)
+2012/07/05 14:43:07 [error] [exception.CException] exception 'CException' with message 'Thuộc tính "Image.tilte" chưa được định nghĩa.' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CComponent.php:131
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(144): CComponent->__get('tilte')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\Image.php(242): CActiveRecord->__get('tilte')
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\wBanner\school-head-line.php(10): Image->__get('tilte')
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(131): require('F:\xampp\htdocs...')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', Array, false)
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\widgets\CWidget.php(244): CBaseController->renderFile('F:\xampp\htdocs...', Array, false)
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wBanner.php(16): CWidget->render('school-head-lin...', Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\zii\widgets\CPortlet.php(95): wBanner->renderContent()
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(174): CPortlet->run()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\layouts\preschool.php(94): CBaseController->widget('wBanner', Array)
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require('F:\xampp\htdocs...')
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', Array, true)
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(785): CBaseController->renderFile('F:\xampp\htdocs...', Array, true)
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\PreSchoolController.php(9): CController->render('index')
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): PreSchoolController->actionIndex()
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#17 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('index')
+#19 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('preschool/index')
+#20 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=preschool/index
+---
+2012/07/05 15:39:31 [error] [exception.CException] exception 'CException' with message 'Category and its behaviors do not have a method or closure named "findGroup".' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CComponent.php:266
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(226): CComponent->__call('findGroup', Array)
+#1 [internal function]: CActiveRecord->__call('findGroup', Array)
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\NewsController.php(43): Category->findGroup()
+#3 [internal function]: NewsController->actionList('tin-tuyen-sinh')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(NewsController), Array)
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(NewsController), Object(ReflectionMethod), Array)
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('list')
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('news/list')
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php?r=news/list&cat_alias=tin-tuyen-sinh
+HTTP_REFERER=http://billgate.com/index.php?r=preschool/index
+---

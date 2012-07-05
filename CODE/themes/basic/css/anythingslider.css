@@ -33,7 +33,7 @@
 /* Navigation buttons + start/stop button, default state */
 .anythingSlider-default .anythingControls a {
 	/* top shadow */
-	background: #777 url(../../../images/front/front/anythingslider/default.png) center -288px repeat-x;
+	background: #777 url(../images/anythingslider/default.png) center -288px repeat-x;
 	color: #000;
 }
 /* Make sure navigation text is visible */
@@ -116,7 +116,7 @@
 	margin:0; /* half height of image */
 	text-align: center;
 	outline: 0;
-	background: url(../../../images/front/front/anythingslider/slider-button.png) no-repeat;
+	background: url(../images/anythingslider/slider-button.png) no-repeat;
 }
 
 /* back arrow */

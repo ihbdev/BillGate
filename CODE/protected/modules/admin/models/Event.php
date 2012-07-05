@@ -79,7 +79,7 @@ class Event extends CActiveRecord
 	 * @var array config list other attributes of the banner
 	 * this attribute no need to search	 
 	 */	
-	private $config_other_attributes=array('modified','fulltext','introtext','introimage','list_suggest','metadesc');	
+	private $config_other_attributes=array('modified','fulltext','introtext','introimage','list_suggest','metadesc','time');	
 	private $list_other_attributes;
 	/**
 	 * Get list order view
@@ -380,7 +380,8 @@ class Event extends CActiveRecord
 			'list_suggest'=>'Sự kiện liên quan',
 			'visits'=>'Người đọc',
 			'metadesc'=>'Meta description',
-			'keyword'=>'Nhóm từ khóa'
+			'keyword'=>'Nhóm từ khóa',
+			'time'=>'Thời gian diễn ra'
 		);
 	}
 	/**

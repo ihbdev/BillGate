@@ -5,12 +5,13 @@ class PreSchoolController extends Controller {
 	 * Displays all product
 	 */
 	public function actionIndex() {
-			$this->layout='preschool';
-			$criteria = new CDbCriteria ();
-			$criteria->compare ( 'status', Product::STATUS_ACTIVE );
-			$criteria->order = 'id desc';
-			$list_product = new CActiveDataProvider ( 'Product', array ('pagination' => array ('pageSize' => Setting::s ( 'PRODUCT_PAGE_SIZE','Product' ) ), 'criteria' => $criteria ) );
-			$this->render ( 'list-product', array ('list_product' => $list_product ) );
+		$this->layout='preschool';
+		$criteria = new CDbCriteria ();
+		$criteria->compare ( 'status', Preschool::STATUS_ACTIVE );
+		$list_news = PreSchool::model ()->find( $criteria );
+		$this->render ( 'index',array(
+			'list_news'=>$list_news
+		));
 	}
 	/**
 	 * Displays a category product

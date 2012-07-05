@@ -13,7 +13,7 @@ class wBanner extends CPortlet
 		$banner = Banner::model ()->findByPk ( $this->code );
 		if (isset ( $banner )) {
 			$list_images = array_diff ( explode ( ',', $banner->images ), array ('' ) );
-			$this->render ( $this->view, array ('list_images' => $list_images ) );
+			$this->render ( $this->view, array ('banner'=>$banner,'list_images' => $list_images ) );
 		}
 	}
 }

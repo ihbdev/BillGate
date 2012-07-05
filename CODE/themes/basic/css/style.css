@@ -8,12 +8,12 @@ body{
 	margin:0 auto;
 }
 .header-top{
-	background: url(../../images/front/header-top.png) repeat-x bottom #ff9900;
+	background: url(../images/header-top.png) repeat-x bottom #ff9900;
 	height:43px;
 	border-bottom:5px solid #fff;
 }
 .menu-outer{
-	background:url(../../images/front/menu-outer.png) repeat-x bottom #f0f0f0;
+	background:url(../images/menu-outer.png) repeat-x bottom #f0f0f0;
 	height:102px;
 }
 .menu-inner{
@@ -26,12 +26,12 @@ body{
 	margin:0 7px 0 0;	
 }
 .bground-outer{
-	background:url(../../images/front/bg.png) no-repeat top center;
+	background:url(../images/bg.png) no-repeat top center;
 	min-height:395px;
 }
 .bground{
 	overflow:hidden;
-	background:url(../../images/front/bground.png) no-repeat 211px -8px;
+	background:url(../images/bground.png) no-repeat 211px -8px;
 	min-height:1065px;
 }
 .sidebar-left{
@@ -49,10 +49,10 @@ body{
 	width:500px;
 	margin:0 0 0 15px;
 	min-height:1065px;
-	background:url(../../images/front/content-bg.png) repeat top left;
+	background:url(../images/content-bg.png) repeat top left;
 }
 .footer{
-	background: url(../../images/front/footer-repeat.png) repeat top #f2f2f2;
+	background: url(../images/footer-repeat.png) repeat top #f2f2f2;
 	border-top:1px solid #fff;
 	min-height:206px;
 	overflow:hidden;
@@ -62,7 +62,7 @@ body{
 }
 .slider-outer{
 	height:361px;
-	background: url(../../images/front/slider-outer.png) repeat-x top #b1b1b1;
+	background: url(../images/slider-outer.png) repeat-x top #b1b1b1;
 }
 .main-panel{
 	height:149px;
@@ -70,7 +70,7 @@ body{
 	border-bottom:1px solid #ececec;
 }
 .content-home{
-	background:url(../../images/front/content-bg.png) repeat top left;
+	background:url(../images/content-bg.png) repeat top left;
 	min-height:395px;
 }
 .main-content{
@@ -119,7 +119,7 @@ body{
 	width:976px;
 	padding:0 3px;
   	left:7px;
-  	background: url(../../images/front/menu-sub-li.png) no-repeat top center #ff9900;
+  	background: url(../images/menu-sub-li.png) no-repeat top center #ff9900;
 	z-index:201;
 	height:auto !important;
 	border-left:none !important;
@@ -140,7 +140,7 @@ body{
 	font-size:12px;
 	min-width:70px;
 	padding:5px 12px 5px 12px;
-	background:url(../../images/front/menu-square.png) no-repeat 5px 14px !important;
+	background:url(../images/menu-square.png) no-repeat 5px 14px !important;
 	text-align:left;
 	color:#fff !important;
 	height:auto !important;
@@ -167,7 +167,7 @@ body{
 /*end menu*/
 /*header*/
 .logo{
-	background:url(../../images/front/logo.png) no-repeat;
+	background:url(../images/logo.png) no-repeat;
 	width:265px;
 	height:102px;
 	float:left;
@@ -184,7 +184,7 @@ body{
 /*end header*/
 /*search*/
 .box-search{
-	background: url(../../images/front/box-search.png) no-repeat;
+	background: url(../images/box-search.png) no-repeat;
 	width:481px;
 	height:28px;
 	margin:7px 7px 0 0;
@@ -241,7 +241,7 @@ body{
 	height:350px;
 }
 .slider-left{
-	background: url(../../images/front/anythingslider/slider-left.png) no-repeat;
+	background: url(../images/anythingslider/slider-left.png) no-repeat;
 	width:8px;
 	height:42px;
 	position:absolute;
@@ -277,7 +277,7 @@ body{
 .slider-outer .theme-default .nivo-directionNav a {
 	width:21px;
 	height:21px;
-	background: url(../../images/front/anythingslider/slider-button.png) no-repeat;
+	background: url(../images/anythingslider/slider-button.png) no-repeat;
 	text-indent:-9999px;
 }
 .slider-outer .theme-default a.nivo-nextNav {
@@ -295,7 +295,7 @@ body{
 .menu-bottom{
 	height:29px;
 	padding:13px 0 0;
-	background: url(../../images/front/menu-bottom.png) repeat-x bottom #ebebeb;
+	background: url(../images/menu-bottom.png) repeat-x bottom #ebebeb;
 	text-align:center;
 	border-bottom:1px solid #c8c8c8;
 }
@@ -330,7 +330,7 @@ body{
 	height:51px;
 	width:195px;
 	display:block;
-	background-image:url(../../images/front/icon-footer.png);
+	background-image:url(../images/icon-footer.png);
 }
 .icon-gmail{
 	background-position:0 0;
@@ -350,11 +350,11 @@ body{
 }
 .footer-contact{
 	height:50px;
-	background:url(../../images/front/footer-contact.png) no-repeat top left;
+	background:url(../images/footer-contact.png) no-repeat top left;
 }
 .footer-faq{
 	height:50px;
-	background:url(../../images/front/footer-faq.png) no-repeat top left;
+	background:url(../images/footer-faq.png) no-repeat top left;
 }
 .footer-content ul li{
 	padding:0 0 0 30px;
@@ -377,7 +377,7 @@ body{
 /*gallery*/
 .bground-home{
 	min-height:1070px;
-	background:url(../../images/front/bg-home.png) no-repeat top center;
+	background:url(../images/bg-home.png) no-repeat top center;
 }
 .home-gallery{
 	padding:7px;
@@ -432,7 +432,7 @@ body{
 	height:312px;
 	float:right;
 	margin:30px 4px 0 0;
-	background: url(../../images/front/video-top.png) repeat-x bottom #f3f3f3;
+	background: url(../images/video-top.png) repeat-x bottom #f3f3f3;
 	-moz-box-shadow:0 0 4px rgba(0,0,0,0.4);
 	-webkit-box-shadow:0 0 4px rgba(0,0,0,0.4);
 	box-shadow:0 0 4px rgba(0,0,0,0.4);
@@ -449,7 +449,7 @@ body{
 	color:#000;
 	text-transform:uppercase;
 	text-shadow:1px 1px 1px rgba(0,0,0,0.2);
-	background:url(../../images/front/icon-videotop.png) no-repeat 0px 1px;
+	background:url(../images/icon-videotop.png) no-repeat 0px 1px;
 }
 .video-top-show{
 	margin:8px 0 0 14px;
@@ -466,7 +466,7 @@ body{
 	width:95px;
 	height:53px;
 	padding:0 0 5px;
-	background:url(../../images/front/video-top-li.png) no-repeat bottom center;
+	background:url(../images/video-top-li.png) no-repeat bottom center;
 	float:left;
 	margin:0 6px 0 0;
 }
@@ -616,7 +616,7 @@ body{
 	padding:14px 5px 12px 8px;
 	height:15px;
 	overflow:hidden;
-	background-image:url(../../images/front/box-picture.png);
+	background-image:url(../images/box-picture.png);
 	background-color:#dbdbdb;
 	background-position:right bottom;
 	background-repeat:no-repeat;

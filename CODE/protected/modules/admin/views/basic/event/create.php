@@ -18,7 +18,7 @@
 		<?php $form=$this->beginWidget('CActiveForm', array('method'=>'post','enableAjaxValidation'=>true)); ?>	
 			<!--begin left content-->
 			<div class="fl">
-				<ul>
+				<ul>				
 					<div id="above_row">
 					<div id="left_row">
 						<div class="row">
@@ -28,6 +28,28 @@
 								<?php echo $form->error($model, 'title'); ?>				
 							</li>
 						</div>
+						<!-- 
+						<div class="row">
+							<li>
+								<?php echo $form->labelEx($model,'time'); ?>
+								<?php 
+    							$this->widget('application.extensions.CJuiDateTimePicker.CJuiDateTimePicker',array(
+        							'model'=>$model, //Model object
+        							'attribute'=>'time', //attribute name   						
+                					'mode'=>'date', //use "time","date" or "datetime" (default)
+    								'value'=>date('m/d/Y',$model->time),
+        							'language'=>'',
+                					'options'=>array(),// jquery plugin options
+        							'htmlOptions'=>array(
+        								'readonly'=>true,
+    									//'value' => $model->start_time,
+    								), // HTML options
+    							));
+								?>      
+								<?php echo $form->error($model, 'time'); ?>				
+							</li>
+						</div>
+						-->
 						<div class="row">
 						<li>
                         	<?php echo $form->labelEx($model,'list_special'); ?>

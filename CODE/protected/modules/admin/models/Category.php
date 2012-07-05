@@ -39,7 +39,7 @@ class Category extends CActiveRecord
 	const TYPE_RECRUITMENT=10;
 	const TYPE_APP=11;
 	const TYPE_NOTICE=12;
-	const TYPE_EVENT=13;
+	const TYPE_EVENT=18;
 	const TYPE_PRESCHOOL=13;
 	const TYPE_ENTRANCE=14;
 	const TYPE_PRIMARYSCHOOL=15;

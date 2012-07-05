@@ -4,8 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name='AUTHOR' content='<?php echo Language::t(Setting::s('META_AUTHOR','System'));?>'>
 <meta name='COPYRIGHT' content='<?php echo Language::t(Setting::s('META_COPYRIGHT','System'));?>'>
-<meta name="keywords" content= "<?php echo Language::t(Setting::s('META_KEYWORD','System'));?>">
-<meta name="desc" content="Billgates School">
 <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
 <!--css default-->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl?>/css/reset.css">
@@ -49,7 +47,7 @@
     	<div class="menu-inner">
             <a href="#" class="logo"></a>
             <div class="menu">
-            <?php $this->widget('wMenu',array('type'=>Category::TYPE_NEWS,'view'=>'menu-top'))?>
+            <?php $this->widget('wMenu',array('type'=>Menu::TYPE_USER_MENU,'view'=>'menu-top'))?>
             </div><!--menu-->
         </div><!--menu-inner-->
     </div><!--wrapper-->
@@ -135,7 +133,7 @@
     </div><!--wrapper-->
 </div><!--bground-outer-->
 <div class="menu-bottom">
-	<?php $this->widget('wMenu',array('type'=>Category::TYPE_NEWS,'view'=>'menu-footer'))?>
+	<?php $this->widget('wMenu',array('type'=>Menu::TYPE_USER_MENU,'view'=>'menu-footer'))?>
 </div><!--menu-bottom-->
 <div class="footer">
 	<div class="wrapper">

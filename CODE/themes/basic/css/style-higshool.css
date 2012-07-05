@@ -9,7 +9,7 @@
 }
 .box-title, .winget-title{
 	height:42px;
-	background:url(../../images/front/box-title.png) repeat-x bottom #f4f4f4;
+	background:url(../images/box-title.png) repeat-x bottom #f4f4f4;
 	border-bottom:1px solid #1a98ff;
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
@@ -23,7 +23,7 @@
 	float:left;
 	height:33px;
 	margin:10px 0 0 18px;
-	background:url(../../images/front/box-title-higshool.png) no-repeat 10px bottom;
+	background:url(../images/box-title-higshool.png) no-repeat 10px bottom;
 	min-width:20px;
 }
 .winget-orange .winget-title{
@@ -33,7 +33,7 @@
 }
 .winget-orange .winget-title label, .winget-orange .winget-title a{
 	text-transform:none;
-	background:url(../../images/front/box-title-orange.png) no-repeat 10px bottom;
+	background:url(../images/box-title-orange.png) no-repeat 10px bottom;
 	color:#f3f3f3;
 }
 .winget-orange .winget-content{
@@ -46,19 +46,19 @@
 body{
 	overflow-x: hidden;
 	word-wrap: break-word;
-	background: url(../../images/front/slider-outer.png) repeat-x 0 150px #f3f3f3;
+	background: url(../images/slider-outer.png) repeat-x 0 150px #f3f3f3;
 }
 .wrapper{
 	width:1000px;
 	margin:0 auto;
 }
 .header-top{
-	background: url(../../images/front/header-top-higshool.png) repeat-x bottom #ddd;
+	background: url(../images/header-top-higshool.png) repeat-x bottom #ddd;
 	height:43px;
 	border-bottom:5px solid #f3f3f3;
 }
 .menu-outer{
-	background:url(../../images/front/menu-outer-higshool.png) repeat-x bottom #f0f0f0;
+	background:url(../images/menu-outer-higshool.png) repeat-x bottom #f0f0f0;
 	height:102px;
 }
 .menu-inner{
@@ -71,12 +71,12 @@ body{
 	margin:0 7px 0 0;	
 }
 .bground-outer{
-	background:url(../../images/front/bg.png) no-repeat center 20px;
+	background:url(../images/bg.png) no-repeat center 20px;
 	min-height:395px;
 }
 .bground{
 	overflow:hidden;
-	background:url(../../images/front/bground.png) no-repeat 211px -8px;
+	background:url(../images/bground.png) no-repeat 211px -8px;
 	min-height:1065px;
 }
 .sidebar-left{
@@ -94,10 +94,10 @@ body{
 	width:500px;
 	margin:0 0 0 15px;
 	min-height:1065px;
-	background:url(../../images/front/content-bg.png) repeat top left;
+	background:url(../images/content-bg.png) repeat top left;
 }
 .footer{
-	background: url(../../images/front/footer-repeat.png) repeat top #f2f2f2;
+	background: url(../images/footer-repeat.png) repeat top #f2f2f2;
 	border-top:1px solid #fff;
 	min-height:206px;
 	overflow:hidden;
@@ -106,7 +106,7 @@ body{
 	line-height:18px;
 }
 .content-home{
-	background:url(../../images/front/content-bg.png) repeat top left;
+	background:url(../images/content-bg.png) repeat top left;
 	min-height:395px;
 }
 .main-content{
@@ -181,7 +181,7 @@ body{
 	font-size:12px;
 	min-width:70px;
 	padding:5px 12px 5px 12px;
-	background:url(../../images/front/menu-square.png) no-repeat 5px 14px !important;
+	background:url(../images/menu-square.png) no-repeat 5px 14px !important;
 	text-align:left;
 	color:#fff !important;
 	height:auto !important;
@@ -210,7 +210,7 @@ body{
 /*end menu*/
 /*header*/
 .logo{
-	background:url(../../images/front/logo2.png) no-repeat;
+	background:url(../images/logo2.png) no-repeat;
 	width:265px;
 	height:102px;
 	float:left;
@@ -225,14 +225,14 @@ body{
 	margin:0 5px 0 0;
 }
 .after-menu{
-	background: url(../../images/front/after-menu-higshool.png) repeat-x top #feb02f;
+	background: url(../images/after-menu-higshool.png) repeat-x top #feb02f;
 	height:67px;
 	-moz-border-radius:0 0 12px 12px;
 	-webkit-border-radius:0 0 12px 12px;
 	border-radius:0 0 12px 12px;
 }
 .after-menu .title-shool{
-	background:url(../../images/front/title-higshool.png) no-repeat;
+	background:url(../images/title-higshool.png) no-repeat;
 	width:365px;
 	height:35px;
 	margin:32px 0 0;
@@ -241,7 +241,7 @@ body{
 /*end header*/
 /*search*/
 .box-search{
-	background: url(../../images/front/box-search-higshool.png) no-repeat;
+	background: url(../images/box-search-higshool.png) no-repeat;
 	width:481px;
 	height:28px;
 	margin:7px 7px 0 0;
@@ -289,7 +289,7 @@ body{
 .menu-bottom{
 	height:29px;
 	padding:13px 0 0;
-	background: url(../../images/front/menu-bottom.png) repeat-x bottom #ebebeb;
+	background: url(../images/menu-bottom.png) repeat-x bottom #ebebeb;
 	text-align:center;
 	border-bottom:1px solid #c8c8c8;
 }
@@ -324,7 +324,7 @@ body{
 	height:51px;
 	width:195px;
 	display:block;
-	background-image:url(../../images/front/icon-footer.png);
+	background-image:url(../images/icon-footer.png);
 }
 .icon-gmail{
 	background-position:0 0;
@@ -344,11 +344,11 @@ body{
 }
 .footer-contact{
 	height:50px;
-	background:url(../../images/front/footer-contact.png) no-repeat top left;
+	background:url(../images/footer-contact.png) no-repeat top left;
 }
 .footer-faq{
 	height:50px;
-	background:url(../../images/front/footer-faq.png) no-repeat top left;
+	background:url(../images/footer-faq.png) no-repeat top left;
 }
 .footer-content ul li{
 	padding:0 0 0 30px;
@@ -371,7 +371,7 @@ body{
 /*gallery*/
 .bground-home{
 	min-height:1070px;
-	background:url(../../images/front/bg-home.png) no-repeat top center;
+	background:url(../images/bg-home.png) no-repeat top center;
 }
 .home-gallery{
 	padding:7px;
@@ -424,7 +424,7 @@ body{
 .menu-left{
 	padding:10px 10px 1px;
 	margin:0 0 5px 2px;
-	background: url(../../images/front/menu-left.png) repeat #d3d3d3;
+	background: url(../images/menu-left.png) repeat #d3d3d3;
 	-moz-border-radius:0 0 4px 4px;
 	-webkit-border-radius:0 0 4px 4px;
 	border-radius:0 0 4px 4px;
@@ -466,7 +466,7 @@ body{
 	border-bottom:1px dotted #fff;
 }
 .event-item .event-time{
-	background:url(../../images/front/event-higshool.png) no-repeat;
+	background:url(../images/event-higshool.png) no-repeat;
 	width:45px;
 	height:48px;
 	float:left;
@@ -495,12 +495,12 @@ body{
 	color:#333;
 	display:block;
 	padding:7px 10px 7px 22px;
-	background:url(../../images/front/other-list-li.png) no-repeat 8px 10px;
+	background:url(../images/other-list-li.png) no-repeat 8px 10px;
 	border-bottom:1px solid #c8c8c8;
 	border-top:1px solid #fff;
 }
 .box-message a:hover{
-	background:url(../../images/front/other-list-li-hover.png) no-repeat 8px 10px #1a98ff;
+	background:url(../images/other-list-li-hover.png) no-repeat 8px 10px #1a98ff;
 	color:#fff;
 }
 .box-ad{

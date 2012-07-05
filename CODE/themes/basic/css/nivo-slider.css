@@ -80,7 +80,7 @@
 /*theme -default*/
 .theme-default .nivoSlider {
 	position:relative;
-	background:url(../../images/front/loading.gif) no-repeat 50% 50%;
+	background:url(../images/loading.gif) no-repeat 50% 50%;
 }
 .theme-default .nivoSlider img {
 	position:absolute;
@@ -103,7 +103,7 @@
 	display:block;
 	width:22px;
 	height:22px;
-	background:url(../../images/front/bullets-higshool.png) no-repeat;
+	background:url(../images/bullets-higshool.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 	margin-right:3px;
@@ -117,7 +117,7 @@
 	display:block;
 	width:30px;
 	height:30px;
-	background:url(../../images/front/arrows.png) no-repeat;
+	background:url(../images/arrows.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 }
