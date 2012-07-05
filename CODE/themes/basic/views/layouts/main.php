@@ -115,15 +115,7 @@
                 </div><!--winget-->
             </div><!--sidebar-left-->
             <div class="main">
-            	<div class="box">
-            		<?php $this->widget('wStaticPage',array('view'=>'static-page','special'=>StaticPage::SPECIAL_REMARK,'limit'=>1))?>
-                </div><!--box-->
-                <div class="box">
-                	<div class="box-title"><label><?php echo Language::t('TIN BILLGATES SCHOO');?>L</label></div>
-                    <div class="box-content">
-                    	<?php $this->widget('wNews',array('view'=>'news','limit'=>6))?>
-                    </div>
-                </div><!--box-->
+            	<?php echo $content?>
             </div><!--main-->
             <div class="sidebar-right">
 			<?php $this->widget('wBanner',array('code'=>Banner::CODE_RIGHT,'view'=>'banner-right'))?>
