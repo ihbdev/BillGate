@@ -3554,3 +3554,28 @@ REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=news
 in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\protected\components\core\iPhoenixListView.php (27)
 in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\themes\basic\views\news\list-news.php (18)
 in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\protected\controllers\NewsController.php (32)
+2012/07/05 09:40:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "setting".' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('setting')
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=setting
+---
+2012/07/05 09:54:17 [error] [php] Undefined variable: template (C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\themes\basic\views\news\list-news.php:19)
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(870): NewsController->renderFile()
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(783): NewsController->renderPartial()
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\protected\controllers\NewsController.php(32): NewsController->render()
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): NewsController->actionIndex()
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): NewsController->runAction()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): NewsController->runActionWithFilters()
+#7 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): NewsController->run()
+#8 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CWebApplication->run()
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=news
+in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\themes\basic\views\news\list-news.php (19)
+in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\protected\controllers\NewsController.php (32)
+in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php (17)
