@@ -1,25 +1,41 @@
 <?php
 
 class PreSchoolController extends Controller {
+	
+	public function init(){
+		$this->layout='preschool';
+	}
 	/**
 	 * Displays all product
 	 */
-	public function actionIndex() {
-		$this->layout='preschool';
+	public function actionIndex() {		
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'status', Preschool::STATUS_ACTIVE );
-		$list_news = PreSchool::model ()->find( $criteria );
+		$criteria->addInCondition('special',Preschool::getCode_special(PreSchool::SPECIAL_REMARK));
+		$criteria->limit=3;
+		$list_remark_news = PreSchool::model ()->findAll( $criteria );
+		$list_remark_news_id=array();
+		foreach ($list_remark_news as $news){
+			$list_remark_news_id[]=$news->id;
+		}
+		
+		$criteria = new CDbCriteria ();
+		$criteria->compare ( 'status', Preschool::STATUS_ACTIVE );
+		$criteria->addNotInCondition('id', $list_remark_news_id);
+		$criteria->limit=6;
+		$list_news = PreSchool::model ()->findAll( $criteria );
 		$this->render ( 'index',array(
+			'list_remark_news'=>$list_remark_news,
 			'list_news'=>$list_news
 		));
 	}
 	/**
-	 * Displays a category product
+	 * Displays a category 
 	 */
 	public function actionList($cat_alias) {
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'alias', $cat_alias );
-		$criteria->compare('type',Category::TYPE_PRODUCT);
+		$criteria->compare('type',Category::TYPE_PRESCHOOL);
 		$cat = Category::model ()->find( $criteria );
 		if (isset ( $cat )) {
 			$child_categories = $cat->child_nodes;
@@ -31,10 +47,10 @@ class PreSchoolController extends Controller {
 			}
 			$criteria = new CDbCriteria ();
 			$criteria->addInCondition ( 'catid', $list_child_id );
-			$criteria->compare ( 'status', Product::STATUS_ACTIVE );
+			$criteria->compare ( 'status', Preschool::STATUS_ACTIVE );
 			$criteria->order = 'id desc';
-			$list_product = new CActiveDataProvider ( 'Product', array ('pagination' => array ('pageSize' => Setting::s ( 'PRODUCT_PAGE_SIZE','Product' ) ), 'criteria' => $criteria ) );
-			$this->render ( 'list-product', array ('cat' => $cat, 'list_product' => $list_product ) );
+			$list_news = new CActiveDataProvider ( 'Preschool', array ('pagination' => array ('pageSize' => Setting::s ( 'PAGE_SIZE','School' ) ), 'criteria' => $criteria ) );
+			$this->render ( 'list', array ('cat' => $cat, 'list_news' => $list_news ) );
 		}
 	}
 	/**

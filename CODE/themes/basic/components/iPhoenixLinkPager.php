@@ -1,8 +1,6 @@
 <?php
 class iPhoenixLinkPager extends CLinkPager
 {
-	const CSS_PREVIOUS_PAGE='btn-pre';
-	const CSS_NEXT_PAGE='btn-next';
 	public function run()
 	{
 		$this->registerClientScript();
@@ -20,6 +18,9 @@ class iPhoenixLinkPager extends CLinkPager
 		$currentPage=$this->getCurrentPage(false); // currentPage is calculated in getPageRange()
 		$buttons=array();
 
+		// first page
+		$buttons[]=$this->createPageButton($this->firstPageLabel,0,self::CSS_FIRST_PAGE,$currentPage<=0,false);
+
 		// prev page
 		if(($page=$currentPage-1)<0)
 			$page=0;
@@ -34,13 +35,19 @@ class iPhoenixLinkPager extends CLinkPager
 			$page=$pageCount-1;
 		$buttons[]=$this->createPageButton($this->nextPageLabel,$page,self::CSS_NEXT_PAGE,$currentPage>=$pageCount-1,false);
 
+		// last page
+		$buttons[]=$this->createPageButton($this->lastPageLabel,$pageCount-1,self::CSS_LAST_PAGE,$currentPage>=$pageCount-1,false);
+
 		return $buttons;
 	}
 	protected function createPageButton($label,$page,$class,$hidden,$selected)
 	{
 		if($hidden || $selected)
 			$class.=' '.($hidden ? self::CSS_HIDDEN_PAGE : self::CSS_SELECTED_PAGE);
-		return CHtml::link($label,$this->createPageUrl($page),array('class'=>$class));
+		if($class != 'page selected')
+			return CHtml::link($label,$this->createPageUrl($page),array('class'=>$class));
+		else
+			return '<h5>'.$label.'</h5>';
 	}
 }
 ?>

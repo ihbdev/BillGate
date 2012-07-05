@@ -66,13 +66,8 @@
                 </div><!--box-ad-left-->
             </div><!--sidebar-left-->
             <div class="main">
-            	<?php $this->widget('wBanner',array('code'=>Banner::CODE_PRESCHOOL_HEADLINE,'view'=>'school-head-line'))?>
-                <div class="box">
-                	<?php $this->widget('wBanner',array('code'=>Banner::CODE_PRESCHOOL_MIDDLE,'view'=>'school-middle'))?>
-                </div><!--box-->
-                <div class="box">
-                	<?php echo $content?>
-                </div><!--box-->
+            	<?php $this->widget('wBanner',array('code'=>Banner::CODE_PRESCHOOL_HEADLINE,'view'=>'school-head-line'))?>               
+                <?php echo $content?>
             </div><!--main-->
             <div class="sidebar-right">
             	<div class="winget winget-green">
