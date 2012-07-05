@@ -56,6 +56,7 @@ class Banner extends CActiveRecord
 	const CODE_HIGH_SCHOOL_LEFT=63;
 	const CODE_HIGH_SCHOOL_HEADLINE=64;
 	const CODE_HIGH_SCHOOL_MIDDLE=65;
+	const CODE_HOMEPAGE=66;
 	
 
 	/**

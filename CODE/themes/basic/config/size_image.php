@@ -44,16 +44,19 @@ return array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),
 		'Preschool'=>array(
-			'introimage'=>array('h'=>135,'w'=>180)
+			'remark'=>array('h'=>100,'w'=>150),
+			'introimage'=>array('h'=>100,'w'=>130)
 		),
 		'Entrance'=>array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),
 		'PrimarySchool'=>array(
-			'introimage'=>array('h'=>135,'w'=>180)
+			'remark'=>array('h'=>100,'w'=>150),
+			'introimage'=>array('h'=>100,'w'=>130)
 		),
 		'HighSchool'=>array(
-			'introimage'=>array('h'=>135,'w'=>180)
+			'remark'=>array('h'=>100,'w'=>150),
+			'introimage'=>array('h'=>100,'w'=>130)
 		),
 	);
 ?>
