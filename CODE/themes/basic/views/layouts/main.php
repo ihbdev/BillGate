@@ -8,22 +8,22 @@
 <meta name="desc" content="Billgates School">
 <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
 <!--css default-->
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/reset.css">
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/common.css">
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/form.css">
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/nivo-slider.css">
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/style.css">
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/print.css" media="print">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl?>/css/reset.css">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl?>/css/common.css">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl?>/css/form.css">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl?>/css/nivo-slider.css">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl?>/css/style.css">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl?>/css/print.css" media="print">
 <!--css only page-->
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->getBaseUrl(true)?>/css/front/jcarousel.css">
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl?>/css/jcarousel.css">
 <!--js default-->
-<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/jquery.mousewheel-3.0.4.pack.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/jquery.nivo.slider.pack.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/style.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/style.js"></script>
 <!--js only page-->
-<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/jquery.jcarousel.min.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->getBaseUrl(true)?>/js/front/newslider.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/newslider.js"></script>
 <title><?php echo Language::t(Setting::s('FRONT_SITE_TITLE','System'));?></title>
 </head>
 <body>
