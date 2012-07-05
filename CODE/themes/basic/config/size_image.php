@@ -24,7 +24,8 @@ return array(
 			'thumb_school_left'=>array('h'=>200,'w'=>110),
 			'school_middle'=>array('h'=>100,'w'=>150),
 			'thumb_school_middle'=>array('h'=>100,'w'=>150),
-			
+			'thumb_homepage'=>array('h'=>100,'w'=>150),
+			'homepage'=>array('h'=>100,'w'=>150),
 		),
 		'GalleryVideo'=>array(
 			'thumb_upload'=>array('h'=>53,'w'=>93),

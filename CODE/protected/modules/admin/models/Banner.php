@@ -17,6 +17,7 @@ class Banner extends CActiveRecord
 	const DOMAIN_PRESCHOOL=1;
 	const DOMAIN_PRIMARYSCHOOL=2;
 	const DOMAIN_HIGHSCHOOL=3;
+	const CODE_HOMEPAGE=57;
 	/**
 	 * @return string the associated database table name
 	 */

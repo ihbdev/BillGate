@@ -28,14 +28,14 @@
 <div class="header-top">
 	<div class="wrapper">
     	<div class="menu-top">
-        	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/icon-home.png" alt="home" /></a>
-            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/icon-sitemap.png" alt="sitemap" /></a>
-            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/icon-email.png" alt="email" /></a>
+        	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/icon-home.png" alt="home" /></a>
+            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/icon-sitemap.png" alt="sitemap" /></a>
+            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/icon-email.png" alt="email" /></a>
         </div><!--menu-top-->
     	<div class="box-search">
         	<div class="box-language">
-            	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/vie.png" alt="vie" /></a>
-                <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/eng.png" alt="vie" /></a>
+            	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/vie.png" alt="vie" /></a>
+                <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/eng.png" alt="vie" /></a>
           	</div>
             <input name="" type="text" class="text" onfocus="javascript:if(this.value=='Từ khoá...'){this.value='';};" onblur="javascript:if(this.value==''){this.value='<?php echo Language::t('Từ khoá...');?>';};" value="<?php echo Language::t('Từ khoá...');?>" />
             <input name="" type="submit" class="btn-search" value="<?php echo Language::t('Tìm kiếm');?>" />
@@ -66,9 +66,9 @@
 <div class="main-panel">
 	<div class="wrapper">
     	<div class="bigicon-menu">
-        	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/bigicon-mail.png" alt="mail" /><p>Hệ thống mail</p></a>
-            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/bigicon-book.png" alt="book" /><p>Sổ liên lạc điện tử</p></a>
-            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/bigicon-lib.png" alt="book" /><p>Thư viện nhà trường</p></a>
+        	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-mail.png" alt="mail" /><p>Hệ thống mail</p></a>
+            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-book.png" alt="book" /><p>Sổ liên lạc điện tử</p></a>
+            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-lib.png" alt="book" /><p>Thư viện nhà trường</p></a>
         </div><!--bigicon-menu-->
         <div class="main-login">
         	<form action="#" method="get">
@@ -87,19 +87,19 @@
             <div class="sidebar-left">
             	<div class="shool-level">
                 	<a class="box-level level-1" href="#">
-                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/data/level1.png" alt="Mầm non" />
+                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level1.png" alt="Mầm non" />
                         <label><?php echo Language::t('Mầm non');?></label>
                     </a><!--box-level-->
                     <a class="box-level level-2" href="#">
-                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/data/level2.png" alt="Tiểu học" />
+                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level2.png" alt="Tiểu học" />
                         <label><?php echo Language::t('Tiểu học');?></label>
                     </a><!--box-level-->
                     <a class="box-level level-3" href="#">
-                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/data/level3.png" alt="THCS&THPT" />
+                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level3.png" alt="THCS&THPT" />
                         <label><?php echo Language::t('THCS&amp;THPT');?></label>
                     </a><!--box-level-->
                     <a class="box-level level-4" href="#">
-                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/data/level4.png" alt="Du học" />
+                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level4.png" alt="Du học" />
                         <label><?php echo Language::t('Du học');?></label>
                     </a><!--box-level-->
                 </div><!--shool-level-->
@@ -118,7 +118,7 @@
             <div class="sidebar-right">
 			<?php $this->widget('wBanner',array('code'=>Banner::CODE_RIGHT,'view'=>'banner-right'))?>
 			<div class="box-ad">
-               	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/data/ad1.jpg" alt="Quang cao" /></a>
+               	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/ad1.jpg" alt="Quang cao" /></a>
 			</div><!--box-ad-->
             </div><!--sidebar-right-->
         </div><!--bground-->
@@ -163,7 +163,7 @@
     </div><!--wrapper-->
 </div><!--footer-->
 <div class="footer-address">
-	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/front/footer-address.png" alt="Địa chỉ: Lô X1 Khu đô thị Bắc Linh Đàm - Hoàng Mai - Hà Nội; Điện thoại:84.4.35401588 - 35401589" />
+	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/footer-address.png" alt="Địa chỉ: Lô X1 Khu đô thị Bắc Linh Đàm - Hoàng Mai - Hà Nội; Điện thoại:84.4.35401588 - 35401589" />
 	<p><?php echo Language::t(Setting::s('COPYRIGHT_FOOTER','System'));?></p>
 </div><!--footer-address-->
 </body>
