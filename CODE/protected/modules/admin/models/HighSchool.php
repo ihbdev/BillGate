@@ -173,7 +173,7 @@ class HighSchool extends CActiveRecord
 				$highSchool=HighSchool::model()->findByPk($id);
 				if(isset($highSchool)){
 					$index++;
-					if($index <= Setting::s('LIMIT_SIMILAR_HIGHSCHOOL','HighSchool'))
+					if($index <= Setting::s('LIMIT_SIMILAR_SCHOOL','School'))
 						$result[]=HighSchool::model()->findByPk($id);
 				}
 				else{
@@ -191,7 +191,7 @@ class HighSchool extends CActiveRecord
 			$criteria->compare ( 'status', QA::STATUS_ACTIVE );
 			$criteria->order='id desc';
 			$criteria->compare('catid',$this->catid);
-			$criteria->limit=Setting::s('LIMIT_SIMILAR_HIGHSCHOOL','HighSchool');
+			$criteria->limit=Setting::s('LIMIT_SIMILAR_SCHOOL','School');
 			$result=HighSchool::model()->findAll($criteria);		
 		}
 		return $result;
