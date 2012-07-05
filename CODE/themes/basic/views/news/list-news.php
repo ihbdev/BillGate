@@ -5,43 +5,36 @@ $this->bread_crumbs=array(
 )
 ?>
 <?php 
-$template='<div class="box">
-                <div class="box-title">
-                    <div class="page-button">
-                    	<span>{summary}</span>
-                       	{pager}
-                    </div>
-                </div>
-                <div class="box-content">
-                {items}
-                </div><!--box-content-->
-			</div><!--box-->';
+$template='<div class="news-list">
+				{items}
+				<div class="pages">
+					<div class="pages-inner">
+						{pager}
+					</div><!--pages-inner-->
+				</div><!--pages-->
+			</div><!--news-list-->';
 ?>
 	<div class="box">
-		<div class="box-title">
+		<div class="box-title"><label>Tin mới</label></div>
 		<div class="box-content">
-			<div class="box">
 				<?php $this->widget('wBanner',array('code'=>Banner::CODE_HOMEPAGE,'view'=>'home-page'))?>
-                <div class="box-content">
-                    <div class="news-list">
-						<?php $this->widget('iPhoenixListView', 
-							array(
-		            			'id'=>'list-product',
-								'dataProvider'=>$list_news,
-								'itemView'=>'_news',
-								'template'=>$template,	
-		            			'itemsCssClass'=>'news-list',
-		                   		'pagerCssClass'=>'pages-inner',
-		                   		'pager'=>array(
-		                   			'class'=>'iPhoenixLinkPager',
-		   							'prevPageLabel'=>'',
-		   							'nextPageLabel'=>'',        
-		                   			'maxButtonCount'=>0
-		                   		),
-		                   		'summaryText'=>'Trang {page}/{pages}'
-							)); ?>
-					</div>
-				</div><!--box-content-->
-			</div><!--box-->
-		</div>
+				<div class="news-list">
+					<?php $this->widget('iPhoenixListView', 
+						array(
+	            			'id'=>'list-product',
+							'dataProvider'=>$list_news,
+							'itemView'=>'_news',
+							'template'=>$template,	
+	            			'itemsCssClass'=>'news-list',
+	                   		'pagerCssClass'=>'pages-inner',
+	                   		'pager'=>array(
+	                   			'class'=>'iPhoenixLinkPager',
+	   							'prevPageLabel'=>'',
+	   							'nextPageLabel'=>'',        
+	                   			'maxButtonCount'=>0
+	                   		),
+	                   		'summaryText'=>'Trang {page}/{pages}'
+					)); ?>
+				</div>
+		</div><!--box-content-->
 	</div><!--box-->

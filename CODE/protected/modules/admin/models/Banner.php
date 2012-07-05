@@ -46,12 +46,16 @@ class Banner extends CActiveRecord
 	 */
 	const CODE_RIGHT=6;
 	const CODE_HEADLINE=7;
-	const CODE_LEFT=5;
-	const CODE_FOOTER=47;
-	const CODE_BOCGHE=40;
-	const CODE_DOXE=41;
-	const CODE_SONXE=42;
-	const CODE_HOMEPAGE=57;
+	const CODE_PRESCHOOL_LEFT=5;
+	const CODE_PRESCHOOL_HEADLINE=57;
+	const CODE_PRESCHOOL_MIDDLE=58;
+	const CODE_PRIMARY_SCHOOL_LEFT=60;
+	const CODE_PRIMAREY_SCHOOL_HEADLINE=61;
+	const CODE_PRIMARY_SCHOOL_MIDDLE=62;
+	const CODE_HIGH_SCHOOL_LEFT=63;
+	const CODE_HIGH_SCHOOL_HEADLINE=64;
+	const CODE_HIGH_SCHOOL_MIDDLE=65;
+	
 
 	/**
 	 * @var string old images of the banner	 
