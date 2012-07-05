@@ -65,10 +65,17 @@ class PreSchoolController extends Controller {
 			$criteria->compare ( 'catid', $cat->id );
 		$criteria->compare ( 'alias', $preschool_alias );
 		$preschool = Preschool::model ()->find ( $criteria );
+		
+		//List newest news
+		$criteria = new CDbCriteria ();
+		$criteria->compare ( 'status', Preschool::STATUS_ACTIVE );
+		$criteria->limit=3;
+		$list_news = PreSchool::model ()->findAll( $criteria );
+		
 		if (isset ( $preschool )) {
 			$preschool->visits=$preschool->visits+1;
 			$preschool->save();
-			$this->render ( 'view', array ('cat' => $cat, 'preschool' => $preschool ) );
+			$this->render ( 'view', array ('cat' => $cat, 'preschool' => $preschool, 'list_news'=>$list_news ) );
 		}
 		}
 	}

@@ -105,7 +105,7 @@ class BannerController extends Controller
 	 * @param integer $id the ID of the model to be updated
 	 */
 	public function actionUpdate($id) {
-		$model = $this->loadModel ( $id );	
+			$model = $this->loadModel ( $id );	
 			$model->scenario = 'write';
 			// Ajax validate
 			$this->performAjaxValidation ( $model );

@@ -33,6 +33,9 @@
 								case Banner::CODE_HIGH_SCHOOL_MIDDLE:
 									$type_image="thumb_school_middle";
 									break;
+								case Banner::CODE_HOMEPAGE:
+									$type_image="thumb_homepage";
+									break;
 							}
 ?>
 <!--begin inside content-->

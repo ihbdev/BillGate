@@ -22,14 +22,14 @@
                     </div>
                 </div><!--box-->
                 <div class="box">
-                	<div class="box-title"><label>Tin đã đăng</label></div>
+                	<div class="box-title"><label>Tin mới</label></div>
                     <div class="box-content">
                     	<div class="other-list">
                             <ul>
-                                <li><a href="#">Thực đơn Tuần từ ngày 09/04 - 15/04/2012</a></li>
-                                <li><a href="#">Thực đơn Tuần từ ngày 09/04 - 15/04/2012</a></li>
-                                <li><a href="#">Thực đơn Tuần từ ngày 09/04 - 15/04/2012</a></li>
-                            </ul>
+                            <?php foreach ($list_news as $news):?>
+                                <li><a href="<?php echo $news->url?>"><?php echo $news->title?></a></li>
+                           <?php endforeach;?> 
+                           </ul>
                         </div><!--other-list-->
                     </div>
                 </div><!--box-->

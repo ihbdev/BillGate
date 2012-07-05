@@ -173,7 +173,7 @@ class PrimarySchool extends CActiveRecord
 				$primarySchool=PrimarySchool::model()->findByPk($id);
 				if(isset($primarySchool)){
 					$index++;
-					if($index <= Setting::s('LIMIT_SIMILAR_PRIMARYSCHOOL','PrimarySchool'))
+					if($index <= Setting::s('LIMIT_SIMILAR_SCHOOL','School'))
 						$result[]=PrimarySchool::model()->findByPk($id);
 				}
 				else{
@@ -191,7 +191,7 @@ class PrimarySchool extends CActiveRecord
 			$criteria->compare ( 'status', QA::STATUS_ACTIVE );
 			$criteria->order='id desc';
 			$criteria->compare('catid',$this->catid);
-			$criteria->limit=Setting::s('LIMIT_SIMILAR_PRIMARYSCHOOL','PrimarySchool');
+			$criteria->limit=Setting::s('LIMIT_SIMILAR_SCHOOL','School');
 			$result=PrimarySchool::model()->findAll($criteria);		
 		}
 		return $result;
