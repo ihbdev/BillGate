@@ -61,11 +61,21 @@ $cs = Yii::app()->getClientScript();
 // Script view form update
 $cs->registerScript(
   'js-album-update',
-  "jQuery(function($) { $('body').on('click','.gallery-thumb',	
+  "jQuery(function($) { $('body').on('click','.album-item',	
   		function(){
-  			var url=$(this).attr('href');
-  			$('#video-iframe').attr('src',url);
-  			return false;
+  				jQuery.ajax({
+  					'data':{id : this.id},
+  					'success':function(data){
+						$(\".home-gallery-show\").html($(data));
+						$.getScript('".Yii::app()->theme->baseUrl."/js/jquery.jcarousel.min.js');
+						$.getScript('".Yii::app()->theme->baseUrl."/js/gallery.js');
+        			},
+        			'type':'GET',
+        			'url':'".$this->createUrl('album/load')."',
+        			'cache':true,
+        		});
+
+        		return false;
         	});
         })",
   CClientScript::POS_END

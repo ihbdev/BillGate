@@ -22,3 +22,198 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=qa/view&cat_alias=nhom-hoi-dap-1&qa_alias=lam-the-nao-de-thanh-cong-17052012
 ---
+2012/07/06 18:07:12 [error] [php] Undefined variable: model (C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\themes\basic\views\album\list-album.php:57)
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(870): AlbumController->renderFile()
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(783): AlbumController->renderPartial()
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\protected\controllers\AlbumController.php(33): AlbumController->render()
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): AlbumController->actionIndex()
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): AlbumController->runAction()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): AlbumController->runActionWithFilters()
+#7 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): AlbumController->run()
+#8 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CWebApplication->run()
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\themes\basic\views\album\list-album.php (57)
+in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\protected\controllers\AlbumController.php (33)
+in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php (17)
+2012/07/06 18:14:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "video".' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('video')
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=video
+---
+2012/07/06 18:17:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "category/write".' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('category/write')
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=category/write
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 18:17:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "category/write".' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('category/write')
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=category/write
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 18:27:22 [error] [exception.CException] exception 'CException' with message 'AlbumController không tìm được view: "album".' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(783): CController->renderPartial('album', Array, true)
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\protected\controllers\AlbumController.php(83): CController->render('album', Array)
+#2 [internal function]: AlbumController->actionView('nhom-album-3', 'album-12-160520...')
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(AlbumController), Array)
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(AlbumController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#9 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/view')
+#10 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#12 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/view&cat_alias=nhom-album-3&album_alias=album-12-16052012
+---
+2012/07/06 18:29:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Yêu cầu của bạn không hợp lệ.' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/view')
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#7 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/view
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 18:30:56 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Yêu cầu của bạn không hợp lệ.' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/view')
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#7 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/view
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 18:30:56 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Yêu cầu của bạn không hợp lệ.' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/view')
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#7 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/view
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 18:31:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Yêu cầu của bạn không hợp lệ.' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/view')
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#7 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/view
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 18:31:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Yêu cầu của bạn không hợp lệ.' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/view')
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#7 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/view
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 18:34:19 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Yêu cầu của bạn không hợp lệ.' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('view')
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/view')
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#7 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/view
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 19:07:03 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Yêu cầu của bạn không hợp lệ.' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('load')
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/load')
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#7 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/load
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 19:07:05 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Yêu cầu của bạn không hợp lệ.' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('load')
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/load')
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#7 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/load
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 19:07:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Yêu cầu của bạn không hợp lệ.' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php:337
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('load')
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/load')
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#7 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/load
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---
+2012/07/06 19:09:18 [error] [exception.CException] exception 'CException' with message 'AlbumController and its behaviors do not have a method or closure named "loadModel".' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\protected\controllers\AlbumController.php(89): CComponent->__call('loadModel', Array)
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\protected\controllers\AlbumController.php(89): AlbumController->loadModel('25')
+#2 [internal function]: AlbumController->actionLoad('25')
+#3 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(AlbumController), Array)
+#4 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(AlbumController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('load')
+#9 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('album/load')
+#10 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#12 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/load&id=25&_=1341594557918
+HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
+---

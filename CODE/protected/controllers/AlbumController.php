@@ -83,6 +83,30 @@ class AlbumController extends Controller
 			$this->render ( 'album', array ('cat' => $cat, 'album' => $album ) );
 		}
 		}
-	}			
+	}
+	public function actionLoad($id)
+	{
+		$model=$this->loadModel($id);
+		$list_image_id=array_diff ( explode ( ',', $model->images ), array ('' ));
+		echo '<ul id="mycarousel" class="jcarousel-skin-tango">';
+		foreach ( $list_image_id as $image_id ) {
+			$image = Image::model ()->findByPk ( $image_id );
+			echo 
+				'
+							<li><table class="gallery-slider">
+								<tr><td><img src="'.$image->getThumb('Album','thumb_list_page_big').'" alt="'.$image->title.'" /></td></tr>
+							</table></li>
+				';
+		}
+		echo '</ul>';
+	}
+
+	public function loadModel($id)
+	{
+		$model=Album::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
 }
 
