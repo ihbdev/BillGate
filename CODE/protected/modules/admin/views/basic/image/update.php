@@ -23,7 +23,7 @@
 					</div>		
 				</ul>
 			</div>		
-           <a id="update_image" style="margin-bottom:10px; margin-left:10px;width:125px;" class="button" title="Cập nhật" onclick="update_image(this);return false;">Cập nhật</a>
+           <a href="<?php echo Yii::app()->createUrl('admin/image/update',array('id'=>$model->id))?>" id="update_image" style="margin-bottom:10px; margin-left:10px;width:125px;" class="button" title="Cập nhật">Cập nhật</a>
 		   <a style= "margin-bottom:10px; width:125px;" class="button" title="Hủy thao tác" onclick="popup('popUpDiv')">Hủy thao tác</a>
 			<!--end left content-->			
 			<?php $this->endWidget(); ?>

@@ -60,7 +60,7 @@
     foreach (array_diff(explode(',',$model->$attribute),array('')) as $image_id){
     	$image=Image::model()->findByPk($image_id);
     	if(isset($image))
-    		echo '<div class="item-image" id="'.$image_id.'"><img style="height:'.$h.'px; width:'.$w.'px" src="'.$image->getThumb($category,$type_image).'" /><a target="_blank" class="edit" href="'.Yii::app()->createUrl('admin/image/update',array('id'=>$image_id)).'" onclick="image_select=$(this);update_form_image();return false;"></a><a class="close"></a></div>';
+    		echo '<div class="item-image" id="'.$image_id.'"><img style="height:'.$h.'px; width:'.$w.'px" src="'.$image->getThumb($category,$type_image).'" /><a target="_blank" class="edit" href="'.Yii::app()->createUrl('admin/image/update',array('id'=>$image_id)).'"></a><a class="close"></a></div>';
     }
     ?>
     </div>
@@ -109,34 +109,33 @@
 	            <a style= "float:right;margin-top:-20px" onclick="popup('popUpDiv')"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/images/admin/close.png"></a>
 			    <h1 align='center'>Cập nhật thông tin ảnh</h1>
 			    <div id='form_update_image'>	
-			     	 <a id="update_image" style="margin-bottom:10px; margin-left:10px;width:125px;" class="button" title="Cập nhật" onclick="update_image();return false;">Cập nhật</a>
+			     	 <a id="update_image" style="margin-bottom:10px; margin-left:10px;width:125px;" class="button" title="Cập nhật">Cập nhật</a>
 		  			 <a style= "margin-bottom:10px; width:125px;" class="button" title="Hủy thao tác" onclick="popup('popUpDiv');return false;">Hủy thao tác</a>		    	
 			    </div>
 			</div>
 		</div>
     </div>
 <script type="text/javascript">
-var image_select;
-function update_form_image(){
-  jQuery.ajax({
-	'success':function(data){
-		$("#form_update_image").html(data);
-		popup('popUpDiv');
-		},
-	'type':'GET',
-	'url':image_select.attr("href"),
-	'cache':false});
-  return false;
-};
-function update_image(){
+$("body").delegate(".edit", 'click', function(){
+	  jQuery.ajax({
+			'success':function(data){
+				$("#form_update_image").html($(data));
+				popup('popUpDiv');
+				},
+			'type':'GET',
+			'url':$(this).attr("href"),
+			'cache':false});
+		  return false;
+});
+$("body").delegate("#update_image", 'click', function(){
 	jQuery.ajax({
 		'data': $("#form_image").serialize(),
 		'success':function(data){
 			popup('popUpDiv');
 			},
 		'type':'POST',
-		'url':image_select.attr("href"),
+		'url':$(this).attr("href"),
 		'cache':false});
 	  return false;
-}
+});
 </script>

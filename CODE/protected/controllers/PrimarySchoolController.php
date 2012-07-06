@@ -10,6 +10,7 @@ class PrimarySchoolController extends Controller {
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'status', PrimarySchool::STATUS_ACTIVE );
 		$criteria->addInCondition('special',PrimarySchool::getCode_special(PrimarySchool::SPECIAL_REMARK));
+		$criteria->order = 'id desc';
 		$criteria->limit=3;
 		$list_remark_news = PrimarySchool::model ()->findAll( $criteria );
 		$list_remark_news_id=array();
@@ -20,6 +21,7 @@ class PrimarySchoolController extends Controller {
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'status', PrimarySchool::STATUS_ACTIVE );
 		$criteria->addNotInCondition('id', $list_remark_news_id);
+		$criteria->order = 'id desc';
 		$criteria->limit=6;
 		$list_news = PrimarySchool::model ()->findAll( $criteria );
 		$this->render ( 'index',array(

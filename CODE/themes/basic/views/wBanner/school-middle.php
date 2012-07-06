@@ -1,4 +1,4 @@
-                	<div class="box-title"><label><?php echo Language::t('ĐỘI NGŨ GIÁO VIÊN','layout')?></label></div>
+                	<div class="box-title"><label><?php echo Language::t($banner->title,'layout')?></label></div>
                     <div class="box-content">
                     	<div class="box-teatcher">
                             <ul id="mycarousel" class="jcarousel-skin-tango">

@@ -10,6 +10,7 @@ class HighSchoolController extends Controller {
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'status', HighSchool::STATUS_ACTIVE );
 		$criteria->addInCondition('special',HighSchool::getCode_special(HighSchool::SPECIAL_REMARK));
+		$criteria->order = 'id desc';
 		$criteria->limit=3;
 		$list_remark_news = HighSchool::model ()->findAll( $criteria );
 		$list_remark_news_id=array();
@@ -20,6 +21,7 @@ class HighSchoolController extends Controller {
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'status', HighSchool::STATUS_ACTIVE );
 		$criteria->addNotInCondition('id', $list_remark_news_id);
+		$criteria->order = 'id desc';
 		$criteria->limit=6;
 		$list_news = HighSchool::model ()->findAll( $criteria );
 		$this->render ( 'index',array(
