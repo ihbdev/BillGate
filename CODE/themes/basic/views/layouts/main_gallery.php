@@ -22,7 +22,7 @@
 <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/style.js"></script>
 <!--js only page-->
 <script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/jquery.jcarousel.min.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/newslider.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->theme->baseUrl?>/js/gallery.js"></script>
 <title><?php echo Language::t(Setting::s('FRONT_SITE_TITLE','System'));?></title>
 </head>
 <body>
@@ -53,77 +53,16 @@
         </div><!--menu-inner-->
     </div><!--wrapper-->
 </div><!--menu-outer-->
-<div class="slider-outer">
-	<div class="wrapper">
-    	<div class="slider-wrapper theme-default">
-			<?php $this->widget('wBanner',array('code'=>Banner::CODE_HEADLINE,'view'=>'head-line'))?>
-            <div class="slider-left"></div>
-        </div><!--slider-wrapper-->
-        <div class="video-top">
-        	<?php $this->widget('wVideo',array('view'=>'video','limit'=>4))?>
-		</div><!--video-top-->
-    </div><!--wrapper-->
-</div><!--slider-outer-->
-<div class="main-panel">
-	<div class="wrapper">
-    	<div class="bigicon-menu">
-        	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-mail.png" alt="mail" /><p>Hệ thống mail</p></a>
-            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-book.png" alt="book" /><p>Sổ liên lạc điện tử</p></a>
-            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-lib.png" alt="book" /><p>Thư viện nhà trường</p></a>
-        </div><!--bigicon-menu-->
-        <div class="main-login">
-        	<form action="#" method="get">
-            	<div class="row"><label><?php echo Language::t('Học sinh');?></label></div>
-                <div class="row"><input name="" type="text" class="text" /></div>
-                <div class="row"><label><?php echo Language::t('Mật khẩu');?></label></div>
-                <div class="row"><input name="" type="password" class="text" /></div>
-                <div class="row"><input name="" type="submit" class="main-login-submit" value="<?php echo Language::t('Đăng nhập');?>" /></div>
-            </form>
-        </div><!--main-login-->
-    </div><!--wrapper-->	
-</div><!--main-panel-->
 <div class="bground-outer">
-    <div class="wrapper">
-        <div class="bground">
-            <div class="sidebar-left">
-            	<div class="shool-level">
-                	<a class="box-level level-1" href="#">
-                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level1.png" alt="Mầm non" />
-                        <label><?php echo Language::t('Mầm non');?></label>
-                    </a><!--box-level-->
-                    <a class="box-level level-2" href="#">
-                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level2.png" alt="Tiểu học" />
-                        <label><?php echo Language::t('Tiểu học');?></label>
-                    </a><!--box-level-->
-                    <a class="box-level level-3" href="#">
-                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level3.png" alt="THCS&THPT" />
-                        <label><?php echo Language::t('THCS&amp;THPT');?></label>
-                    </a><!--box-level-->
-                    <a class="box-level level-4" href="#">
-                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level4.png" alt="Du học" />
-                        <label><?php echo Language::t('Du học');?></label>
-                    </a><!--box-level-->
-                </div><!--shool-level-->
-                <div class="winget">
-                	<div class="winget-title"><label><?php echo Language::t('Thông báo');?></label></div>
-                    <div class="winget-content">
-                    	<div class="box-message">
-                    		<?php $this->widget('wNotice',array('view'=>'notice','limit'=>8))?>
-                        </div><!--box-message-->
-                    </div>
-                </div><!--winget-->
-            </div><!--sidebar-left-->
-            <div class="main">
-            	<?php echo $content?>
-            </div><!--main-->
-            <div class="sidebar-right">
-			<?php $this->widget('wBanner',array('code'=>Banner::CODE_RIGHT,'view'=>'banner-right'))?>
-			<div class="box-ad">
-               	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/ad1.jpg" alt="Quang cao" /></a>
-			</div><!--box-ad-->
-            </div><!--sidebar-right-->
-        </div><!--bground-->
-    </div><!--wrapper-->
+    <div class="bground-home">
+        <div class="wrapper">
+            <div class="content-home">
+                <div class="box">
+                	<?php echo $content;?>
+                </div><!--box-->
+            </div><!--content-home-->
+        </div><!--wrapper-->
+    </div><!--bground-home-->
 </div><!--bground-outer-->
 <div class="menu-bottom">
 	<?php $this->widget('wMenu',array('type'=>Menu::TYPE_USER_MENU,'view'=>'menu-footer'))?>

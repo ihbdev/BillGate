@@ -1,33 +1,33 @@
 <?php
 
-class NewsController extends Controller
+class AppController extends Controller
 {
 	/**
-	 * Displays all news
+	 * Displays all app
 	 */
 	public function actionIndex()
 	{	
 				$criteria=new CDbCriteria;				
-				$criteria->compare('status',News::STATUS_ACTIVE);				
+				$criteria->compare('status',App::STATUS_ACTIVE);				
 				$criteria->order='id desc';
-				$list_news=new CActiveDataProvider('News', array(
+				$list_app=new CActiveDataProvider('App', array(
 					'pagination'=>array(
-						'pageSize'=>Setting::s('NEWS_PAGE_SIZE','News'),
+						'pageSize'=>Setting::s('APP_PAGE_SIZE','Application'),
 					),
 					'criteria'=>$criteria,
 				));
-				$this->render('list-news',array(
-					'list_news'=>$list_news
+				$this->render('list-app',array(
+					'list_app'=>$list_app
 				));
 	}	
 	/**
-	 * Displays news
+	 * Displays app
 	 */
 	public function actionList($cat_alias)
 	{	
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'alias', $cat_alias );
-		$criteria->compare('type',Category::TYPE_NEWS);
+		$criteria->compare('type',Category::TYPE_APP);
 		$cat = Category::model ()->find( $criteria );
 		if(isset($cat)) {
 				$child_categories=$cat->child_nodes;
@@ -39,35 +39,35 @@ class NewsController extends Controller
  				}
 				$criteria=new CDbCriteria;
 				$criteria->addInCondition('catid',$list_child_id);
-				$criteria->compare('status',News::STATUS_ACTIVE);
+				$criteria->compare('status',App::STATUS_ACTIVE);
 				$criteria->order='id desc';
-				$list_news=new CActiveDataProvider('News', array(
+				$list_app=new CActiveDataProvider('App', array(
 					'pagination'=>array(
-						'pageSize'=>Setting::s('NEWS_PAGE_SIZE','News'),
+						'pageSize'=>Setting::s('APP_PAGE_SIZE','Application'),
 					),
 					'criteria'=>$criteria,
 				));
-				$this->render('list-news',array(
+				$this->render('list-app',array(
 					'cat'=>$cat,
-					'list_news'=>$list_news
+					'list_app'=>$list_app
 				));
-		}
+		}	
 	}	
-	public function actionView($cat_alias,$news_alias)
+	public function actionView($cat_alias,$app_alias)
 	{
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'alias', $cat_alias );
-		$criteria->compare('type',Category::TYPE_NEWS);
+		$criteria->compare('type',Category::TYPE_APP);
 		$cat = Category::model ()->find( $criteria );
 		if(isset($cat)){
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'catid', $cat->id );
-		$criteria->compare ( 'alias', $news_alias );
-		$news = News::model ()->find ( $criteria );
-		if (isset ( $news )) {
-			$news->visits=$news->visits+1;
-			$news->save();
-			$this->render ( 'news', array ('cat' => $cat, 'news' => $news ) );
+		$criteria->compare ( 'alias', $app_alias );
+		$app = App::model ()->find ( $criteria );
+		if (isset ( $app )) {
+			$app->visits=$app->visits+1;
+			$app->save();
+			$this->render ( 'app', array ('cat' => $cat, 'app' => $app ) );
 		}
 		}
 	}	

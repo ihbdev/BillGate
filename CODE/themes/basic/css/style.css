@@ -697,6 +697,12 @@ body{
 	font-weight:bold;
 	color:#333;
 }
+.news-detail .news-title .news-time{
+	font-size:11px;
+	float:right;
+	font-weight:normal;
+	color:#900;
+}
 .news-detail .news-maindetail{
 	color:#333;
 	font-size:12px;
@@ -760,7 +766,7 @@ body{
 	height:17px;
 }
 .contact-form .button{
-	margin:10px 10px 0 285px;
+	margin:10px 10px 0 365px;
 }
 .contact-form .row {	
 	padding:0 0 12px 0;

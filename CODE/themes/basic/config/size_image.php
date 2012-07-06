@@ -10,7 +10,9 @@ return array(
 		),
 		'Album'=>array(
 			'thumb_upload'=>array('h'=>100,'w'=>125),
-			'thumb'=>array('h'=>100,'w'=>125)
+			'thumb'=>array('h'=>100,'w'=>125),
+			'thumb_list_page_big'=>array('h'=>468,'w'=>986),
+			'thumb_list_page'=>array('h'=>116,'w'=>157),
 		),
 		'Banner'=>array(
 			'thumb_upload'=>array('h'=>350,'w'=>655),
@@ -30,7 +32,8 @@ return array(
 		'GalleryVideo'=>array(
 			'thumb_upload'=>array('h'=>53,'w'=>93),
 			'thumb'=>array('h'=>53,'w'=>93),
-			'thumb_video'=>array('h'=>53,'w'=>93)
+			'thumb_video'=>array('h'=>53,'w'=>93),
+			'thumb_video_big'=>array('h'=>116,'w'=>157)
 		),
 		'Image'=>array(
 		),
