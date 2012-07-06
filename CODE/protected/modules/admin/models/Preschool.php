@@ -173,7 +173,7 @@ class Preschool extends CActiveRecord
 				$preschool=Preschool::model()->findByPk($id);
 				if(isset($preschool)){
 					$index++;
-					if($index <= Setting::s('LIMIT_SIMILAR_PRESCHOOL','Preschool'))
+					if($index <= Setting::s('LIMIT_SIMILAR_SCHOOL','Preschool'))
 						$result[]=Preschool::model()->findByPk($id);
 				}
 				else{
@@ -191,7 +191,7 @@ class Preschool extends CActiveRecord
 			$criteria->compare ( 'status', QA::STATUS_ACTIVE );
 			$criteria->order='id desc';
 			$criteria->compare('catid',$this->catid);
-			$criteria->limit=Setting::s('LIMIT_SIMILAR_PRESCHOOL','Preschool');
+			$criteria->limit=Setting::s('LIMIT_SIMILAR_SCHOOL','School');
 			$result=Preschool::model()->findAll($criteria);		
 		}
 		return $result;

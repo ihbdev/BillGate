@@ -17,7 +17,6 @@ class Banner extends CActiveRecord
 	const DOMAIN_PRESCHOOL=1;
 	const DOMAIN_PRIMARYSCHOOL=2;
 	const DOMAIN_HIGHSCHOOL=3;
-	const CODE_HOMEPAGE=57;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -51,13 +50,12 @@ class Banner extends CActiveRecord
 	const CODE_PRESCHOOL_HEADLINE=57;
 	const CODE_PRESCHOOL_MIDDLE=58;
 	const CODE_PRIMARY_SCHOOL_LEFT=60;
-	const CODE_PRIMAREY_SCHOOL_HEADLINE=61;
+	const CODE_PRIMARY_SCHOOL_HEADLINE=61;
 	const CODE_PRIMARY_SCHOOL_MIDDLE=62;
 	const CODE_HIGH_SCHOOL_LEFT=63;
 	const CODE_HIGH_SCHOOL_HEADLINE=64;
 	const CODE_HIGH_SCHOOL_MIDDLE=65;
 	const CODE_HOMEPAGE=66;
-	
 
 	/**
 	 * @var string old images of the banner	 

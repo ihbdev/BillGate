@@ -1,4 +1,4 @@
-<?php 
+<?php
 							switch ($model->id){
 								case Banner::CODE_HEADLINE:
 									$type_image="thumb_headline";
@@ -32,6 +32,9 @@
 									break;
 								case Banner::CODE_HIGH_SCHOOL_MIDDLE:
 									$type_image="thumb_school_middle";
+									break;
+								case Banner::CODE_HOMEPAGE:
+									$type_image="thumb_homepage";
 									break;
 							}
 ?>

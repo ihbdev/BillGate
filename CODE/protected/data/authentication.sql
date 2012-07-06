@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 04, 2012 at 11:57 AM
+-- Generation Time: Jul 05, 2012 at 05:31 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -801,6 +801,34 @@ INSERT INTO `tbl_role` (`id`, `type`, `name`, `parent_id`, `category`, `other`, 
 (320, 3, 'Manager PreSchool', 11, '', '{"value":["317","133","136"],"description":"","modified":"{\\"1341308540\\":\\"1\\",\\"1341308598\\":\\"1\\",\\"1341369288\\":\\"1\\",\\"1341371672\\":\\"1\\"}"}', 1, 1341308493),
 (321, 3, 'Manager Primary School', 11, '', '{"value":["314","133","136"],"description":"","modified":"{\\"1341308545\\":\\"1\\",\\"1341308607\\":\\"1\\",\\"1341369275\\":\\"1\\",\\"1341371681\\":\\"1\\"}"}', 1, 1341308522),
 (322, 3, 'Manager High School', 11, '', '{"value":["311","133","136"],"description":"","modified":"{\\"1341308550\\":\\"1\\",\\"1341308615\\":\\"1\\",\\"1341369293\\":\\"1\\",\\"1341371691\\":\\"1\\"}"}', 1, 1341308535);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `salt` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0',
+  `email` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `other` varchar(2048) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id`, `username`, `password`, `salt`, `status`, `email`, `other`) VALUES
+(1, 'admin', '068bf8c42edece5daa08c9ec0dc0b317', '4f570d19da3d07.31748483', 1, 'kythuat@ihbvietnam.com', '{"phone":"0906244804","address":"Truong Son, An Lao, Hai Phong","firstname":"YHCT","lastname":"YHCT","register_date":1331006642,"last_visit_date":1331006642}'),
+(2, 'thanhlx', '5a342655e45008a74855cd58f7891e11', '4ff27c11ee2b42.32887402', 1, 'thanhlx0204@gmail.com', '{"status":0,"phone":"0906244804","address":"Tr\\u01b0\\u1eddng S\\u01a1n, An L\\u00e3o, H\\u1ea3i Ph\\u00f2ng","firstname":"L\\u00ea","lastname":"Th\\u00e0nh","register_date":1338343527,"last_visit_date":1338343527}'),
+(3, 'truonglx', 'ae9bf11853ac9c449c7d635c352edde5', '4fc6fc41bb9784.80928057', 1, 'truonglx@gmail.com', '{"status":0,"phone":"0906244804","address":"Tr\\u01b0\\u1eddng S\\u01a1n, An L\\u00e3o, H\\u1ea3i Ph\\u00f2ng","firstname":"L\\u00ea","lastname":"Tr\\u01b0\\u1eddng","register_date":1338440769,"last_visit_date":1338440769}');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

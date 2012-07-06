@@ -29,7 +29,7 @@ $template='	{items}
 	                   			'class'=>'iPhoenixLinkPager',
 	   							'prevPageLabel'=>'Đầu',
 	   							'nextPageLabel'=>'Cuối',        
-	                   			'maxButtonCount'=>3
+	                   			'maxButtonCount'=> 5
 	                   		),
 					)); ?>
 				</div>
