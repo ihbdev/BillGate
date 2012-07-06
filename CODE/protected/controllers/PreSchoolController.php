@@ -10,6 +10,7 @@ class PreSchoolController extends Controller {
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'status', Preschool::STATUS_ACTIVE );
 		$criteria->addInCondition('special',Preschool::getCode_special(PreSchool::SPECIAL_REMARK));
+		$criteria->order = 'id desc';
 		$criteria->limit=3;
 		$list_remark_news = PreSchool::model ()->findAll( $criteria );
 		$list_remark_news_id=array();
@@ -20,6 +21,7 @@ class PreSchoolController extends Controller {
 		$criteria = new CDbCriteria ();
 		$criteria->compare ( 'status', Preschool::STATUS_ACTIVE );
 		$criteria->addNotInCondition('id', $list_remark_news_id);
+		$criteria->order = 'id desc';
 		$criteria->limit=6;
 		$list_news = PreSchool::model ()->findAll( $criteria );
 		$this->render ( 'index',array(
@@ -65,10 +67,17 @@ class PreSchoolController extends Controller {
 			$criteria->compare ( 'catid', $cat->id );
 		$criteria->compare ( 'alias', $preschool_alias );
 		$preschool = Preschool::model ()->find ( $criteria );
+		
+		//List newest news
+		$criteria = new CDbCriteria ();
+		$criteria->compare ( 'status', Preschool::STATUS_ACTIVE );
+		$criteria->limit=3;
+		$list_news = PreSchool::model ()->findAll( $criteria );
+		
 		if (isset ( $preschool )) {
 			$preschool->visits=$preschool->visits+1;
 			$preschool->save();
-			$this->render ( 'view', array ('cat' => $cat, 'preschool' => $preschool ) );
+			$this->render ( 'view', array ('cat' => $cat, 'preschool' => $preschool, 'list_news'=>$list_news ) );
 		}
 		}
 	}

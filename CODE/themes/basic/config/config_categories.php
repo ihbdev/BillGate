@@ -66,7 +66,7 @@ return array(
 		Category::TYPE_PRIMARYSCHOOL=>array(
 			'form'=>'_form',
 			'max_rank'=>1,
-			'code'=>'primayShool',
+			'code'=>'primarySchool',
 			'class'=>'PrimarySchool',
 			'label'=>'Danh mục tin của trường tiểu học'
 		),

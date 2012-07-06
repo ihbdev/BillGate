@@ -3,8 +3,6 @@ return array(
 	'album'=>'Album',
 	'banner'=>'Banner',
 	'setting'=>'Cấu hình',
-	'register'=>'Đơn đăng kí',
-	'order'=>'Đơn hàng',
 	'qa'=>'Hỏi đáp',
 	'image'=>'Image',
 	'keyword'=>'Keyword',
