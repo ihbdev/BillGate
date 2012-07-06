@@ -150,7 +150,7 @@ class BannerController extends Controller
 		$model=new Banner('search');		
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Banner']))
-			$model->attributes=$_GET['Banner'];
+			$model->attributes=$_GET['Banner'];		
 		$this->render('index',array(
 			'model'=>$model
 		));

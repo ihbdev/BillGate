@@ -55,24 +55,9 @@ class DefaultController extends Controller
 					$url = 'http://'.Yii::app()->getRequest()->serverName .Yii::app()->createUrl('admin/news/index');			
 					$this->redirect($url);
 				}
-				if (Yii::app ()->user->checkAccess ( 'product_index'))
+				if (Yii::app ()->user->checkAccess ( 'banner_index'))
 				{
-					$url = 'http://'.Yii::app()->getRequest()->serverName .Yii::app()->createUrl('admin/product/index');			
-					$this->redirect($url);
-				}
-				if (Yii::app ()->user->checkAccess ( 'video_index'))
-				{
-					$url = 'http://'.Yii::app()->getRequest()->serverName .Yii::app()->createUrl('admin/galleryVideo/index');			
-					$this->redirect($url);
-				}
-				if (Yii::app ()->user->checkAccess ( 'album_index'))
-				{
-					$url = 'http://'.Yii::app()->getRequest()->serverName .Yii::app()->createUrl('admin/album/index');			
-					$this->redirect($url);
-				}
-				if (Yii::app ()->user->checkAccess ( 'static_page_index'))
-				{
-					$url = 'http://'.Yii::app()->getRequest()->serverName .Yii::app()->createUrl('admin/staticPage/index');			
+					$url = 'http://'.Yii::app()->getRequest()->serverName .Yii::app()->createUrl('admin/banner/index');			
 					$this->redirect($url);
 				}
 			}
@@ -106,6 +91,15 @@ class DefaultController extends Controller
 	public function actionView($view)
 	{
 		Yii::app()->session['view']=$view;
-		$this->redirect(array('product/index'));
+		if (Yii::app ()->user->checkAccess ( 'news_index'))
+		{
+			$url = 'http://'.Yii::app()->getRequest()->serverName .Yii::app()->createUrl('admin/news/index');			
+			$this->redirect($url);
+		}
+		if (Yii::app ()->user->checkAccess ( 'banner_index'))
+		{
+			$url = 'http://'.Yii::app()->getRequest()->serverName .Yii::app()->createUrl('admin/banner/index');			
+			$this->redirect($url);
+		}
 	}	
 }

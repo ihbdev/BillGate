@@ -64,39 +64,7 @@
                         	<?php echo $form->textArea($model,'description',array('style'=>'width:300px;max-width:300px;','rows'=>6)); ?>
                    			<?php echo $form->error($model, 'description'); ?>
                     	</li>
-                    </div>
-                    <div class="row">
-							<li>
-								<?php echo $form->labelEx($model,'metadesc'); ?>
-								<?php echo $form->textArea($model,'metadesc',array('style'=>'width:300px;max-width:300px;','rows'=>6)); ?>			
-							</li>
-					</div>
-					<?php 
-						//Group keyword
-						$group=new Category();		
-						$group->type=Category::TYPE_KEYWORD;
-						$list_keyword_categories=$group->list_nodes;
-						$list=array();
-						foreach ($list_keyword_categories as $id=>$level){
-							$cat=Category::model()->findByPk($id);
-							$view = "";
-							for($i=1;$i<$level;$i++){
-								$view .="---";
-							}
-							$keywords=Keyword::viewListKeyword($id);
-							if($keywords != "")
-								$list[$id]=$view." ".$cat->name." (".$keywords.") ".$view;
-							else 	
-								$list[$id]=$view." ".$cat->name." ".$view;
-						}
-						?>
-						<div class="row">
-						<li>
-							<?php echo $form->labelEx($model,'keyword'); ?>
-							<?php echo $form->dropDownList($model,'keyword',$list,array('style'=>'width:200px')); ?>
-							<?php echo $form->error($model, 'keyword'); ?>
-						</li>
-						</div>
+                    </div>                  
                    	<li>
                     	<?php 
                     	if($action=="update") 
