@@ -546,4 +546,13 @@ class GalleryVideo extends CActiveRecord
 		}
 		else return false;
 	}
+
+	/**
+	 * Get url of Youtube video
+	 */
+	public function parseUrl()
+	{
+		parse_str( parse_url( $this->link, PHP_URL_QUERY ), $tmp );
+		return $tmp['v'];
+	}
 }

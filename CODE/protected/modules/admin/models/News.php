@@ -60,10 +60,6 @@ class News extends CActiveRecord
 	const OTHER_NEWS=5;
 	const LIST_NEWS=10;
 	const LIST_SEARCH=10;
-	const PRESENT_CATEGORY=30;
-	const GUIDE_CATEGORY=59;
-	const ALIAS_PRESENT_CATEGORY='gioi-thieu';
-	const ALIAS_GUIDE_CATEGORY='huong-dan';
 	
 	/**
 	 * variable using to store cached data

@@ -1,0 +1,24 @@
+2012/07/06 12:04:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "qA/view".' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('qA/view')
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=qA/view&cat_alias=nhom-hoi-dap-1&qa_alias=lam-the-nao-de-thanh-cong-17052012
+---
+2012/07/06 12:05:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "qA/view".' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('qA/view')
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=qA/view&cat_alias=nhom-hoi-dap-1&qa_alias=lam-the-nao-de-thanh-cong-17052012
+---
+2012/07/06 12:06:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "qa/view".' in C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('qa/view')
+#1 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\RELEASE_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=qa/view&cat_alias=nhom-hoi-dap-1&qa_alias=lam-the-nao-de-thanh-cong-17052012
+---

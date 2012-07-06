@@ -1,4 +1,4 @@
-<?php 
+<?php
 							switch ($model->id){
 								case Banner::CODE_HEADLINE:
 									$type_image="thumb_headline";
@@ -8,6 +8,7 @@
 									break;	
 								case Banner::CODE_PRESCHOOL_HEADLINE:
 									$type_image="thumb_school_headline";
+<<<<<<< HEAD
 									break;
 								case Banner::CODE_PRESCHOOL_LEFT:
 									$type_image="thumb_school_left";
@@ -24,6 +25,24 @@
 								case Banner::CODE_PRIMARY_SCHOOL_MIDDLE:
 									$type_image="thumb_school_middle";
 									break;
+=======
+									break;
+								case Banner::CODE_PRESCHOOL_LEFT:
+									$type_image="thumb_school_left";
+									break;
+								case Banner::CODE_PRESCHOOL_MIDDLE:
+									$type_image="thumb_school_middle";
+									break;
+								case Banner::CODE_PRIMARY_SCHOOL_HEADLINE:
+									$type_image="thumb_school_headline";
+									break;
+								case Banner::CODE_PRIMARY_SCHOOL_LEFT:
+									$type_image="thumb_school_left";
+									break;
+								case Banner::CODE_PRIMARY_SCHOOL_MIDDLE:
+									$type_image="thumb_school_middle";
+									break;
+>>>>>>> backup
 								case Banner::CODE_HIGH_SCHOOL_HEADLINE:
 									$type_image="thumb_school_headline";
 									break;
@@ -33,6 +52,12 @@
 								case Banner::CODE_HIGH_SCHOOL_MIDDLE:
 									$type_image="thumb_school_middle";
 									break;
+<<<<<<< HEAD
+=======
+								case Banner::CODE_HOMEPAGE:
+									$type_image="thumb_homepage";
+									break;
+>>>>>>> backup
 							}
 ?>
 <!--begin inside content-->

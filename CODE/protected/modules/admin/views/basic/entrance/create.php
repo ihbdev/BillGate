@@ -97,13 +97,7 @@
 								<?php echo $form->textField($model,'list_suggest',array('readonly'=>'readonly','style'=>'width:200px')); ?>	
 								<a title="Chọn tin tuyển sinh" href="#" onclick="showPopUp();" id="btn-add-product" class="button" style="width: 60px;padding:1px;margin-top:-5px;text-decoration:none;">Chọn tin tuyển sinh</a>			
 							</li>
-						</div>
-						<div class="row">
-							<li>
-								<?php echo $form->labelEx($model,'metadesc'); ?>
-								<?php echo $form->textArea($model,'metadesc',array('style'=>'width:280px;max-width:280px;','rows'=>6)); ?>			
-							</li>
-						</div>
+						</div>						
 					</div>
 					</div>		
                     <div class="row">

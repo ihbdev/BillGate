@@ -10,7 +10,9 @@ return array(
 		),
 		'Album'=>array(
 			'thumb_upload'=>array('h'=>100,'w'=>125),
-			'thumb'=>array('h'=>100,'w'=>125)
+			'thumb'=>array('h'=>100,'w'=>125),
+			'thumb_list_page_big'=>array('h'=>468,'w'=>986),
+			'thumb_list_page'=>array('h'=>116,'w'=>157),
 		),
 		'Banner'=>array(
 			'thumb_upload'=>array('h'=>350,'w'=>655),
@@ -24,12 +26,14 @@ return array(
 			'thumb_school_left'=>array('h'=>200,'w'=>110),
 			'school_middle'=>array('h'=>100,'w'=>150),
 			'thumb_school_middle'=>array('h'=>100,'w'=>150),
-			
+			'thumb_homepage'=>array('h'=>100,'w'=>150),
+			'homepage'=>array('h'=>100,'w'=>150),
 		),
 		'GalleryVideo'=>array(
 			'thumb_upload'=>array('h'=>53,'w'=>93),
 			'thumb'=>array('h'=>53,'w'=>93),
-			'thumb_video'=>array('h'=>53,'w'=>93)
+			'thumb_video'=>array('h'=>53,'w'=>93),
+			'thumb_video_big'=>array('h'=>116,'w'=>157)
 		),
 		'Image'=>array(
 		),
@@ -43,16 +47,19 @@ return array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),
 		'Preschool'=>array(
-			'introimage'=>array('h'=>135,'w'=>180)
+			'remark'=>array('h'=>100,'w'=>150),
+			'introimage'=>array('h'=>100,'w'=>130)
 		),
 		'Entrance'=>array(
 			'introimage'=>array('h'=>135,'w'=>180)
 		),
 		'PrimarySchool'=>array(
-			'introimage'=>array('h'=>135,'w'=>180)
+			'remark'=>array('h'=>100,'w'=>150),
+			'introimage'=>array('h'=>100,'w'=>130)
 		),
 		'HighSchool'=>array(
-			'introimage'=>array('h'=>135,'w'=>180)
+			'remark'=>array('h'=>100,'w'=>150),
+			'introimage'=>array('h'=>100,'w'=>130)
 		),
 	);
 ?>

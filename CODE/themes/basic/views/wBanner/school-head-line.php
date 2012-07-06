@@ -8,7 +8,11 @@
 	  			$index++;
 	  			$image = Image::model()->findByPk ( $id );
 	  			?>
+<<<<<<< HEAD
 	  			 <img src="<?php echo $image->getThumb('Banner','school_headline')?>" title="<?php if(isset($image->title)) echo $image->tilte?>" alt="<?php if(isset($image->title)) echo $image->tilte?>" />
+=======
+	  			 <img src="<?php echo $image->getThumb('Banner','school_headline')?>" title="<?php if(isset($image->title)) echo $image->title?>" alt="<?php if(isset($image->title)) echo $image->title?>" />
+>>>>>>> backup
 			<?php endforeach;?>
             </div>                    	
             </div><!--slider-wrapper-->
