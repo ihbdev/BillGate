@@ -839,4 +839,8 @@ body{
 	color:#333;
 	line-height:18px;
 }
+.video-item img.img{
+	width:93px;
+	height:53px;
+}
 /*end search*/

@@ -867,8 +867,8 @@ class ETinyMce extends CInputWidget
 
       $baseDir = dirname(__FILE__);
       //$assets = Yii::app()->getAssetManager()->publish($baseDir.DIRECTORY_SEPARATOR.'assets');
-	  $assets=Yii::app()->request->getBaseUrl(true)."/tinymce";
-      $tinyOptions = $this->makeOptions($assets);
+	  $assets1=Yii::app()->request->getBaseUrl(true)."/tinymce";
+      $tinyOptions = $this->makeOptions($assets1);
       $jsUseCookies = ($this->useCookies) ? 'true' : 'false';
       $jsMode = strval($this->mode);
       $jsToggleLabels = CJavaScript::encode($this->switchLabels);  
@@ -877,7 +877,7 @@ class ETinyMce extends CInputWidget
 		$cs->registerCoreScript('jquery');
 
       if ($this->useCompression) {
-         $cs->registerScriptFile($assets.'/tiny_mce/tiny_mce_gzip.js');
+         $cs->registerScriptFile($assets1.'/tiny_mce/tiny_mce_gzip.js');
          $gzOptions = $this->makeCompressor();
          $js =<<<EOP
 tinyMCE_GZ.init({$gzOptions});
@@ -885,19 +885,19 @@ EOP;
          $cs->registerScript('Yii.'.get_class($this).'#'.$id.'_gz', $js, CClientScript::POS_HEAD);
       }
       else {
-         $cs->registerScriptFile($assets.'/tiny_mce/tiny_mce.js');
+         $cs->registerScriptFile($assets1.'/tiny_mce/tiny_mce.js');
       }
 
       if ($this->useElFinder) {
-         $cs->registerScriptFile($assets.'/elfinder/js/jquery-ui-1.7.2.custom.min.js');
-         $cs->registerScriptFile($assets.'/elfinder/js/elfinder.min.js');
-         $cs->registerScriptFile($assets.'/elfinder/js/i18n/elfinder.uk.js');
-         $cs->registerCssFile($assets.'/elfinder/js/ui-themes/base/ui.all.css');
-         $cs->registerCssFile($assets.'/elfinder/css/elfinder.css');
+         $cs->registerScriptFile($assets1.'/elfinder/js/jquery-ui-1.7.2.custom.min.js');
+         $cs->registerScriptFile($assets1.'/elfinder/js/elfinder.min.js');
+         $cs->registerScriptFile($assets1.'/elfinder/js/i18n/elfinder.uk.js');
+         $cs->registerCssFile($assets1.'/elfinder/js/ui-themes/base/ui.all.css');
+         $cs->registerCssFile($assets1.'/elfinder/css/elfinder.css');
       }
 
-      $cs->registerScriptFile($assets.'/jquery/jquery.tinymce.js');
-      $cs->registerScriptFile($assets.'/embedmedia/embed.js');
+      $cs->registerScriptFile($assets1.'/jquery/jquery.tinymce.js');
+      $cs->registerScriptFile($assets1.'/embedmedia/embed.js');
 
       $this->htmlOptions['id'] = $id;
       if (!array_key_exists('style', $this->htmlOptions)) {

@@ -46,7 +46,7 @@
 <div class="menu-outer">
 	<div class="wrapper">
     	<div class="menu-inner">
-            <a href="#" class="logo"></a>
+            <a href="<?php echo Yii::app()->createUrl('site/home')?>" class="logo"></a>
             <div class="menu">
             <?php $this->widget('wMenu',array('type'=>Menu::TYPE_USER_MENU,'view'=>'menu-top'))?>
             </div><!--menu-->
@@ -67,9 +67,9 @@
 <div class="main-panel">
 	<div class="wrapper">
     	<div class="bigicon-menu">
-        	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-mail.png" alt="mail" /><p>Hệ thống mail</p></a>
-            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-book.png" alt="book" /><p>Sổ liên lạc điện tử</p></a>
-            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-lib.png" alt="book" /><p>Thư viện nhà trường</p></a>
+        	<a href="<?php echo Setting::s('SYSTEM_MAIL','system')?>"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-mail.png" alt="mail" /><p>Hệ thống mail</p></a>
+            <a href="<?php echo Setting::s('SYSTEM_MANAGER','system')?>"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-book.png" alt="book" /><p>Sổ liên lạc điện tử</p></a>
+            <a href="<?php echo Setting::s('SYSTEM_LIBRARY','system')?>"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/bigicon-lib.png" alt="book" /><p>Thư viện nhà trường</p></a>
         </div><!--bigicon-menu-->
         <div class="main-login">
         	<form action="#" method="get">
@@ -87,21 +87,17 @@
         <div class="bground">
             <div class="sidebar-left">
             	<div class="shool-level">
-                	<a class="box-level level-1" href="#">
+                	<a class="box-level level-1" href="<?php echo Yii::app()->createUrl('preSchool')?>">
                     	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level1.png" alt="Mầm non" />
                         <label><?php echo Language::t('Mầm non');?></label>
                     </a><!--box-level-->
-                    <a class="box-level level-2" href="#">
+                    <a class="box-level level-2" href="<?php echo Yii::app()->createUrl('primarySchool')?>">
                     	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level2.png" alt="Tiểu học" />
                         <label><?php echo Language::t('Tiểu học');?></label>
                     </a><!--box-level-->
-                    <a class="box-level level-3" href="#">
+                    <a class="box-level level-3" href="<?php echo Yii::app()->createUrl('highSchool')?>">
                     	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level3.png" alt="THCS&THPT" />
                         <label><?php echo Language::t('THCS&amp;THPT');?></label>
-                    </a><!--box-level-->
-                    <a class="box-level level-4" href="#">
-                    	<img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/data/level4.png" alt="Du học" />
-                        <label><?php echo Language::t('Du học');?></label>
                     </a><!--box-level-->
                 </div><!--shool-level-->
                 <div class="winget">
@@ -138,28 +134,11 @@
         </div><!--icon-footer-->
         <div class="footer-content">
         	<div class="footer-contact"></div>
-            <ul>
-            	<li><a href="#">Ban giám hiệu mầm non</a></li>
-                <li><a href="#">Ban giám hiệu tiểu học</a></li>
-                <li><a href="#">Ban giám hiệu THCS</a></li>
-                <li><a href="#">Văn phòng</a></li>
-                <li><a href="#">Cán bộ phụ trách ô tô</a></li>
-                <li><a href="#">Can bộ y tế</a></li>
-                <li><a href="#">Chuyên gia tâm lý</a></li>
-                <li><a href="#">Bộ phần truyền thông</a></li>
-            </ul>
+        	<?php $this->widget('wCategory',array('type'=>Category::TYPE_CONTACT,'view'=>'category'));?>
         </div><!--footer-content-->
         <div class="footer-content">
         	<div class="footer-faq"></div>
-            <ul>
-            	<li><a href="#">Ban giám hiệu mầm non</a></li>
-                <li><a href="#">Ban giám hiệu tiểu học</a></li>
-                <li><a href="#">Ban giám hiệu THCS</a></li>
-                <li><a href="#">Văn phòng</a></li>
-                <li><a href="#">Cán bộ phụ trách ô tô</a></li>
-                <li><a href="#">Cán bộ y tế</a></li>
-                <li><a href="#">Chuyên gia tâm lý</a></li>
-            </ul>
+			<?php $this->widget('wCategory',array('type'=>Category::TYPE_QA,'view'=>'category'));?>
         </div><!--footer-content-->
     </div><!--wrapper-->
 </div><!--footer-->
