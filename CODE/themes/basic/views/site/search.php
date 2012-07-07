@@ -13,17 +13,16 @@ $template='	{items}
 			</div><!--pages-->';
 ?>
 	<div class="box">
-		<div class="box-title"><label><?php echo Language::t($cat->name)?></label></div>
+		<div class="box-title"><label><?php echo Language::t('Kết quả tìm kiếm')?></label></div>
 		<div class="box-content">
-				<?php $this->widget('wBanner',array('code'=>Banner::CODE_HOMEPAGE,'view'=>'home-page'))?>
 				<div class="news-list">
 					<?php $this->widget('iPhoenixListView', 
 						array(
 	            			'id'=>'list-search',
-							'dataProvider'=>$list_news,
-							'itemView'=>'_news',
+							'dataProvider'=>$result,
+							'itemView'=>'_search',
 							'template'=>$template,
-	            			'itemsCssClass'=>'news-list',
+	            			'itemsCssClass'=>'search-list',
 	                   		'pagerCssClass'=>'pages-inner',
 	                   		'pager'=>array(
 	                   			'class'=>'iPhoenixLinkPager',

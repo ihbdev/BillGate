@@ -4,7 +4,7 @@ $this->bread_crumbs=array(
 	array('url'=>Yii::app()->createUrl('news'),'title'=>Language::t('Tin tức')),
 )
 ?>
-<?php
+<?php 
 $template='	{items}
 			<div class="pages">
 				<div class="pages-inner">
@@ -13,15 +13,15 @@ $template='	{items}
 			</div><!--pages-->';
 ?>
 	<div class="box">
-		<div class="box-title"><label><?php echo Language::t($cat->name)?></label></div>
+		<div class="box-title"><label><?php echo Language::t(isset($cat->name)?$cat->name:'Các khóa học')?></label></div>
 		<div class="box-content">
 				<?php $this->widget('wBanner',array('code'=>Banner::CODE_HOMEPAGE,'view'=>'home-page'))?>
 				<div class="news-list">
 					<?php $this->widget('iPhoenixListView', 
 						array(
-	            			'id'=>'list-search',
-							'dataProvider'=>$list_news,
-							'itemView'=>'_news',
+	            			'id'=>'list-product',
+							'dataProvider'=>$list_entrance,
+							'itemView'=>'_entrance',
 							'template'=>$template,
 	            			'itemsCssClass'=>'news-list',
 	                   		'pagerCssClass'=>'pages-inner',

@@ -74,7 +74,6 @@ $cs->registerScript(
         			'url':'".$this->createUrl('album/load')."',
         			'cache':true,
         		});
-
         		return false;
         	});
         })",

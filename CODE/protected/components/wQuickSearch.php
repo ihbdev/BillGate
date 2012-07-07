@@ -9,7 +9,7 @@ class wQuickSearch extends CPortlet
 	protected function renderContent()
 	{
 		$search=new SearchForm();
-		$search->name='Tìm kiếm...';
+		$search->name=Language::t('Từ khóa...');
 		if(isset($_GET['SearchForm']))
 			$search->attributes=$_GET['SearchForm'];
 		$this->render('quick-search',array(

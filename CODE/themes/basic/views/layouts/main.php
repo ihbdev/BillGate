@@ -30,17 +30,16 @@
 <div class="header-top">
 	<div class="wrapper">
     	<div class="menu-top">
-        	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/icon-home.png" alt="home" /></a>
-            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/icon-sitemap.png" alt="sitemap" /></a>
-            <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/icon-email.png" alt="email" /></a>
+        	<a href="<?php echo Yii::app()->createUrl('site/home')?>"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/icon-home.png" alt="home" /></a>
+            <a href="<?php echo Yii::app()->createUrl('site/sitemap')?>"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/icon-sitemap.png" alt="sitemap" /></a>
+            <a href="<?php echo Yii::app()->createUrl('site/contact')?>"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/icon-email.png" alt="email" /></a>
         </div><!--menu-top-->
     	<div class="box-search">
         	<div class="box-language">
             	<a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/vie.png" alt="vie" /></a>
                 <a href="#"><img src="<?php echo Yii::app()->request->getBaseUrl(true)?>/themes/basic/images/eng.png" alt="vie" /></a>
           	</div>
-            <input name="" type="text" class="text" onfocus="javascript:if(this.value=='Từ khoá...'){this.value='';};" onblur="javascript:if(this.value==''){this.value='<?php echo Language::t('Từ khoá...');?>';};" value="<?php echo Language::t('Từ khoá...');?>" />
-            <input name="" type="submit" class="btn-search" value="<?php echo Language::t('Tìm kiếm');?>" />
+			<?php $this->widget('wQuickSearch')?>
         </div><!--box-search-->
     </div><!--wrapper-->
 </div><!--header-top-->
@@ -132,10 +131,10 @@
 <div class="footer">
 	<div class="wrapper">
         <div class="icon-footer">
-        	<a href="#" class="icon-gmail"></a>
-            <a href="#" class="icon-facebook"></a>
-            <a href="#" class="icon-twitter"></a>
-            <a href="#" class="icon-yahoo"></a>
+        	<a href="<?php echo Setting::s('CONTACT_GMAIL','Contact')?>" class="icon-gmail"></a>
+            <a href="<?php echo Setting::s('CONTACT_FACEBOOK','Contact')?>" class="icon-facebook"></a>
+            <a href="<?php echo Setting::s('CONTACT_TWITER','Contact')?>" class="icon-twitter"></a>
+            <a href="<?php echo Setting::s('CONTACT_YAHOO','Contact')?>" class="icon-yahoo"></a>
         </div><!--icon-footer-->
         <div class="footer-content">
         	<div class="footer-contact"></div>

@@ -13,7 +13,7 @@
  */
 class Setting extends CActiveRecord
 {
-	public $list=array('System'=>'System','Contact'=>'Contact','News'=>'News','QA'=>'QA','StaticPage'=>'StaticPage','GalleryVideo'=>'GalleryVideo','Album'=>'Album','School'=>'School');
+	public $list=array('System'=>'System','Contact'=>'Contact','News'=>'News','QA'=>'QA','StaticPage'=>'StaticPage','GalleryVideo'=>'GalleryVideo','Album'=>'Album','School'=>'School','Entrance'=>'Entrance');
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -98,7 +98,7 @@ class Setting extends CActiveRecord
 			$model->category=$category;
 			$model->save();
 			*/
-			throw new CHttpException(400,'Trong nhóm '.$category.'không tồn tại tham số cấu hình '.$name);
+			throw new CHttpException(400,'Trong nhóm '.$category.' không tồn tại tham số cấu hình '.$name);
 		}
 
 	}

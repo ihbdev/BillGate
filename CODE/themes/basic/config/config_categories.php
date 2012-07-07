@@ -83,5 +83,12 @@ return array(
 			'code'=>'contact',
 			'class'=>'Contact',
 			'label'=>'Danh mục liên hệ'
+		),
+		Category::TYPE_ENTRANCE=>array(
+			'form'=>'_form',
+			'max_rank'=>1,
+			'code'=>'entrance',
+			'class'=>'Entrance',
+			'label'=>'Danh mục khóa học'
 		)				
 	);

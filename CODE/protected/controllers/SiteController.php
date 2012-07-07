@@ -50,19 +50,16 @@ class SiteController extends Controller
 	 */
 	public function actionSearch()
 	{
+		Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+		Yii::app()->clientScript->scriptMap['jquery.min.js'] = false;
 		$search=new SearchForm();
 		$criteria = new CDbCriteria ();
 		if(isset($_GET['SearchForm'])){
 			$search->attributes=$_GET['SearchForm'];
-			$criteria->compare ( 'name', $search->name, true );
-			$criteria->compare ( 'catid', $search->catid );
-			if($search->end_price != '')
-				$criteria->addCondition('num_price <= '.$search->end_price);
-			if($search->start_price != '')
-				$criteria->addCondition('num_price >= '. $search->start_price);
+			$criteria->compare ( 'title', $search->name, true );
 		}
 		$criteria->order = "id DESC";
-		$result=new CActiveDataProvider ( 'Product', array ('criteria' => $criteria, 'pagination' => array ('pageSize' => Setting::s('SEARCH_PAGE_SIZE','Product' ) ) ) );
+		$result=new CActiveDataProvider ( 'News', array ('criteria' => $criteria, 'pagination' => array ('pageSize' => Setting::s('SEARCH_PAGE_SIZE','News' ) ) ) );
 		$this->render( 'search',array('result'=>$result) );
 	}	
 	/**
