@@ -217,3 +217,150 @@ Stack trace:
 REQUEST_URI=/RELEASE_PROJECT/BillGate/Code/index.php?r=album/load&id=25&_=1341594557918
 HTTP_REFERER=http://localhost/RELEASE_PROJECT/BillGate/Code/index.php?r=album
 ---
+2012/07/07 11:29:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection không thể mở kết nối DB: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php:382
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CModule.php(388): CDbConnection->init()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(StaticPage))
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\StaticPage.php(237): CActiveRecord::model('StaticPage')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wStaticPage.php(19): StaticPage::model()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\zii\widgets\CPortlet.php(95): wStaticPage->renderContent()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(174): CPortlet->run()
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\site\home.php(2): CBaseController->widget('wStaticPage', Array)
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require('F:\xampp\htdocs...')
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', NULL, true)
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): CBaseController->renderFile('F:\xampp\htdocs...', NULL, true)
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): CController->renderPartial('home', NULL, true)
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\SiteController.php(46): CController->render('home')
+#17 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): SiteController->actionHome()
+#18 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#19 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#20 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('home')
+#22 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#23 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#25 {main}
+REQUEST_URI=/
+---
+2012/07/07 11:29:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection không thể mở kết nối DB: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php:382
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CModule.php(388): CDbConnection->init()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(StaticPage))
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\StaticPage.php(237): CActiveRecord::model('StaticPage')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wStaticPage.php(19): StaticPage::model()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\zii\widgets\CPortlet.php(95): wStaticPage->renderContent()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(174): CPortlet->run()
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\site\home.php(2): CBaseController->widget('wStaticPage', Array)
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require('F:\xampp\htdocs...')
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', NULL, true)
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): CBaseController->renderFile('F:\xampp\htdocs...', NULL, true)
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): CController->renderPartial('home', NULL, true)
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\SiteController.php(46): CController->render('home')
+#17 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): SiteController->actionHome()
+#18 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#19 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#20 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('home')
+#22 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#23 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#25 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/07 11:29:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection không thể mở kết nối DB: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php:382
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CModule.php(388): CDbConnection->init()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(StaticPage))
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\StaticPage.php(237): CActiveRecord::model('StaticPage')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wStaticPage.php(19): StaticPage::model()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\zii\widgets\CPortlet.php(95): wStaticPage->renderContent()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(174): CPortlet->run()
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\site\home.php(2): CBaseController->widget('wStaticPage', Array)
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require('F:\xampp\htdocs...')
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', NULL, true)
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): CBaseController->renderFile('F:\xampp\htdocs...', NULL, true)
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): CController->renderPartial('home', NULL, true)
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\SiteController.php(46): CController->render('home')
+#17 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): SiteController->actionHome()
+#18 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#19 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#20 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('home')
+#22 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#23 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#25 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/07 11:29:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection không thể mở kết nối DB: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php:382
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php(331): CDbConnection->open()
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\CDbConnection.php(309): CDbConnection->setActive(true)
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CModule.php(388): CDbConnection->init()
+#3 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(431): CModule->getComponent('db')
+#4 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(615): CApplication->getDb()
+#5 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(StaticPage))
+#7 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\modules\admin\models\StaticPage.php(237): CActiveRecord::model('StaticPage')
+#8 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\components\wStaticPage.php(19): StaticPage::model()
+#9 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\zii\widgets\CPortlet.php(95): wStaticPage->renderContent()
+#10 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(174): CPortlet->run()
+#11 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\themes\basic\views\site\home.php(2): CBaseController->widget('wStaticPage', Array)
+#12 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(127): require('F:\xampp\htdocs...')
+#13 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CBaseController.php(96): CBaseController->renderInternal('F:\xampp\htdocs...', NULL, true)
+#14 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(870): CBaseController->renderFile('F:\xampp\htdocs...', NULL, true)
+#15 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(783): CController->renderPartial('home', NULL, true)
+#16 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\protected\controllers\SiteController.php(46): CController->render('home')
+#17 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\actions\CInlineAction.php(50): SiteController->actionHome()
+#18 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#19 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#20 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(276): CController->run('home')
+#22 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('')
+#23 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#25 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/07/07 11:34:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "news/view".' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php:280
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('news/view')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=news/view&cat_alias=tin-du-hoc&news_alias=doi-giophong-cach-hoang-gia
+HTTP_REFERER=http://billgate.com/
+---
+2012/07/07 11:35:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "news/list".' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php:280
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('news/list')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=news/list&cat_alias=tin-tuyen-sinh
+HTTP_REFERER=http://billgate.com/index.php?r=galleryVideo/index
+---
+2012/07/07 11:36:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "news/view".' in F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php:280
+Stack trace:
+#0 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\web\CWebApplication.php(135): CWebApplication->runController('news/view')
+#1 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 F:\xampp\htdocs\MANAGER_PROJECT\BillGate\CODE\index.php(17): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=news/view&cat_alias=tin-du-hoc&news_alias=doi-giophong-cach-hoang-gia
+HTTP_REFERER=http://billgate.com/index.php?r=site/home
+---
